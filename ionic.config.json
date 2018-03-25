@@ -1,0 +1,12 @@
+{
+  "name": "MyAlloDakar",
+  "app_id": "575e22a5",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },
+  "proxies": [{
+    "path": "/",
+    "proxyUrl": "http://localhost:2121"
+}]
+}
