@@ -1,31 +1,56 @@
 <ion-menu [content]="mainContent">
   <ion-header>
     <ion-toolbar>
-      <ion-title>
-        Menu {{username}}
+      <ion-title class="header">
+        Allo Dakar Menu 
       </ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content id="side-menu21">
-    <div style="width:100%;height:220px;margin:0px 0px;line-height:250px;background-color:#e8ebef;text-align:center;">
-      <i class="icon ion-image" style="font-size:64px;color:#888;vertical-align:middle;"></i>
-    </div>
-    <div class="spacer" style="width:268px;height:30px;" id="menu-spacer2"></div>
+    
+    <div class="spacer" style="width:268px;height:30px;" id="menu-list-item1"></div>
     <ion-list id="menu-list1">
+        <ion-item color="none" id="menu-list-item14">
+            <ion-avatar item-left>
+                <img src="assets/img/laat.jpeg">
+            </ion-avatar>
+            <h2>
+              {{userprenom}} {{usernom}}
+            </h2>
+          </ion-item>
       <ion-item color="positive" menuClose="" on-click="goToAlloDakar()" id="menu-list-item1">
+          <ion-icon class="custom-icon" name="home" item-left></ion-icon>
         Home
       </ion-item>
-      <ion-item color="positive" menuClose="" on-click="goToCloud()" id="menu-list-item3">
-        Les Evenements
+      <ion-item color="positive" menuClose="" on-click="goToAlloDakar()" id="menu-list-item2">
+          <ion-icon name="search" item-left></ion-icon>
+        Rechercher
       </ion-item>
-      <ion-item color="positive" menuClose="" on-click="goToConnexion()" id="menu-list-item4">
+      <ion-item color="positive" menuClose="" on-click="goToAlloDakar()" id="menu-list-item3">
+          <ion-icon name="car" item-left></ion-icon>
+        Proposer
+      </ion-item>
+      <ion-item color="positive" menuClose="" on-click="goToAlloDakar()" id="menu-list-item4">
+          <ion-icon name="create" item-left></ion-icon>
+        Inscription
+      </ion-item>
+      <ion-item color="positive" menuClose="" on-click="goToConnexion()" id="menu-list-item5">
+          <ion-icon name="log-in" item-left></ion-icon>
         Connexion
       </ion-item>
-      <ion-item color="none" menuClose="" on-click="goToCart()" id="menu-list-item2">
-        Cart
+      <ion-item color="positive" menuClose="" on-click="goToCloud()" id="menu-list-item6">
+          <ion-icon name="help-circle" item-left></ion-icon>
+        Aide
+      </ion-item>
+      <ion-item color="none" menuClose="" on-click="goToCart()" id="menu-list-item7">
+          <ion-icon name="information-circle" item-left></ion-icon>
+        
+        A propos
       </ion-item>
     </ion-list>
   </ion-content>
 </ion-menu>
+
+
 
 <ion-nav #mainContent [root]="rootPage"></ion-nav>

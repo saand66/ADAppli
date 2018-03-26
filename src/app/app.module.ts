@@ -8,6 +8,7 @@ import { CloudPage } from '../pages/cloud/cloud';
 import { SeetVoyagePage } from '../pages/seet-voyage/seet-voyage';
 import { TrajetPage } from '../pages/trajet/trajet';
 import { ConnexionPage } from '../pages/connexion/connexion';
+import { InscriptionPage } from '../pages/inscription/inscription';
 import { ProposerDamayTukkiPage } from '../pages/proposer-damay-tukki/proposer-damay-tukki';
 import { HttpModule } from '@angular/http';
 import {AlloDakarService} from '../services/AlloDakarApi.service';
@@ -23,7 +24,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SeetVoyagePage,
     ProposerDamayTukkiPage,
     TrajetPage,
-    ConnexionPage
+    ConnexionPage,
+    InscriptionPage
   ],
   imports: [
     HttpModule,
@@ -39,7 +41,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SeetVoyagePage,
     ProposerDamayTukkiPage,
     TrajetPage,
-    ConnexionPage
+    ConnexionPage,
+    InscriptionPage
   ],
   providers: [
     AlloDakarService,

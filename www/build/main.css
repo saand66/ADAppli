@@ -25677,3 +25677,16 @@ ion-navbar.toolbar {
   min-height: calc(46px + constant(safe-area-inset-bottom));
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
+
+.header {
+  height: 40px;
+}
+
+.sub-header {
+  height: 40px;
+}
+
+.custom-icon {
+  font-size: 64px;
+  color: green;
+}

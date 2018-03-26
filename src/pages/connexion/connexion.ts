@@ -5,6 +5,7 @@ import {AlloDakarService} from '../../services/AlloDakarApi.service';
 import {Login} from '../../models/AlloDakar-Login';
 import { TrajetPage } from '../trajet/trajet';
 import { AlloDakarPage } from '../allo-dakar/allo-dakar';
+import { InscriptionPage} from '../inscription/inscription';
 /**
  * Generated class for the ConnexionPage page.
  *
@@ -33,12 +34,19 @@ export class ConnexionPage {
     .then(data => {
       console.log(data);
       if (data.token){
-       localStorage.setItem("Username", data.UserName);
-       this.navCtrl.setRoot(AlloDakarPage);
+       localStorage.setItem("UserPrenom", data.UserPrenom);
+       localStorage.setItem("UserNom", data.UserNom);
+       localStorage.setItem("Token", data.token);
+        this.navCtrl.setRoot(AlloDakarPage);
       }
     });
   }
+  
 
+  Inscription(params){
+    if (!params) params = {};
+    this.navCtrl.push(InscriptionPage);
+  }
   }
 
 

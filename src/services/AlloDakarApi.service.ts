@@ -10,6 +10,7 @@ import 'rxjs/add/operator/map';
 
 import { Trajet } from '../models/AlloDakar-Trajet';
 import { Login } from '../models/AlloDakar-Login';
+import { NewUser } from '../models/AlloDakar-NewUser';
 
 @Injectable()
 
@@ -37,14 +38,10 @@ return this.http.get(url)
 .catch(error => console.log ('une erreur est survenue ' + error))
 }
 
-public RegisterNewUsers() {
+public inscription(NewUser) {
     const url = `${this.baseUrl}${this.serviceRegister}`;
-//const url = this.baseUrl;
-
-let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-        headers.append('Authorization', 'Bearer '+this.token);
-      return this.http.post(url, Login)
-
+   return this.http.post(url, NewUser)
+   
 .toPromise()
 .then( response => response.json() )
 .catch(error => console.log ('une erreur est survenue ' + error))

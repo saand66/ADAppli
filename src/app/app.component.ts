@@ -2,11 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
 import { CloudPage } from '../pages/cloud/cloud';
 import { ConnexionPage } from '../pages/connexion/connexion';
-
-
 import { AlloDakarPage } from '../pages/allo-dakar/allo-dakar';
 
 
@@ -17,8 +14,8 @@ import { AlloDakarPage } from '../pages/allo-dakar/allo-dakar';
 export class MyApp {
   @ViewChild(Nav) navCtrl: Nav;
     rootPage:any = AlloDakarPage;
-  username : string;
- 
+  userprenom : string;
+  usernom : string;
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -26,7 +23,8 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
-    this.username = localStorage.getItem("Username");
+    this.userprenom = localStorage.getItem("UserPrenom");
+    this.usernom = localStorage.getItem("UserNom");
   }
   goToCloud(params){
     if (!params) params = {};

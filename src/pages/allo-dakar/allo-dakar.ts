@@ -9,10 +9,11 @@ import { TrajetPage } from '../trajet/trajet';
   templateUrl: 'allo-dakar.html'
 })
 export class AlloDakarPage {
-  username: string;
-
+  userprenom: string;
+  usernom: string;
   constructor(public navCtrl: NavController) {
-    this.username = localStorage.getItem("Username");
+    this.userprenom = localStorage.getItem("UserPrenom");
+    this.usernom = localStorage.getItem("UserNom");
   }
   goToSeetVoyage(params){
     if (!params) params = {};
