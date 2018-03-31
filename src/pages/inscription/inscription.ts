@@ -31,7 +31,7 @@ export class InscriptionPage {
     this.alloDakarService.inscription(this.newuser)
     .then(data => {
       console.log(data);
-      if(data.userID){
+      if(data){
       this.navCtrl.setRoot(ConnexionPage);
       }
     });

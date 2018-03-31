@@ -1,3 +1,49 @@
 page-allo-dakar {
 
+    // This CSS will print because %message-shared is extended.
+%message-shared {
+    border: 1px solid #ccc;
+    padding: 10px;
+    color: #333;
+  }
+  
+  .message {
+    @extend %message-shared;
+  }
+  
+  .success {
+    @extend %message-shared;
+    border-color: green;
+  }
+  
+  .error {
+    @extend %message-shared;
+    border-color: red;
+  }
+  
+  .warning {
+    @extend %message-shared;
+    border-color: yellow;
+  }
+
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #ff5700;
+
+.background {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+.bg {
+   // background: #4776E6;  /* fallback for old browsers */
+   // background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);  /* Chrome 10-25, Safari 5.1-6 */
+   // background: linear-gradient(to right, #8E54E9, #4776E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  //  background: linear-gradient(to right, #1488cc, #2b32b2);
+    background: linear-gradient(to right, #ff00cc, #333399); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+  }
+  
+
+
 }

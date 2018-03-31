@@ -18,34 +18,22 @@
         Liste des trajets diponible
       </ion-card-header>
     <ion-card *ngFor="let trajet of trajets">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="../assets/img/laat.jpeg">
+        </ion-avatar>
+        <h3>{{trajet.User.prenom}} {{trajet.User.nom}}</h3>
+        <p>{{trajet.dateDep | date: 'dd/MM/yyyy'}}</p>
+      </ion-item>
         <ion-card-content>
+        <div class="card-title" on-click="GoToDetails()" > 
           <ion-card-title>
-            {{trajet.lieuDep + " => " + trajet.lieuArr}} 
-             </ion-card-title>
-          <p>
-             Depart : {{trajet.lieuDep}}
-          </p>
-          <p>
-           Arrivee : {{trajet.lieuArr}}
-          </p>
-          <p>
-              Date de départ :  {{trajet.dateDep | date: 'dd/MM/yyyy'}}
-          </p>
-          <p>
-              Heure : {{trajet.heureDep}}
-          </p>
-          <p>
-              Tarif : {{trajet.tarifvoy}}
-          </p>
-          <p>
-              Nombre de place  : {{trajet.nbplace}}
-          </p>
-
-          <p>
-              Posté par : {{trajet.User.username}}
-          </p>
-
+            {{trajet.lieuDep + " - " + trajet.lieuArr}} 
+          </ion-card-title>
+            </div>
         </ion-card-content>
-      </ion-card>  
+      </ion-card> 
+
+     
 
 </ion-content>

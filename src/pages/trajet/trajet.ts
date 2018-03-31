@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-
+import { ModalController } from 'ionic-angular';
 import {AlloDakarService} from '../../services/AlloDakarApi.service';
 import {Trajet} from '../../models/AlloDakar-Trajet';
+import {TrajetDetailsPage} from '../../pages/trajet-details/trajet-details';
+
 import { INTERNAL_BROWSER_PLATFORM_PROVIDERS } from '@angular/platform-browser/src/browser';
 /**
  * Generated class for the TrajetPage page.
@@ -22,7 +24,7 @@ export class TrajetPage {
  // trajets : Trajet = new Trajet();
   trajets : any;
   
-   constructor(public navCtrl: NavController, private alloDakarService: AlloDakarService) {
+   constructor(public navCtrl: NavController, private alloDakarService: AlloDakarService, public modalCtrl: ModalController) {
     
     this.getTrajet(null);
    
@@ -43,7 +45,12 @@ export class TrajetPage {
     });
   }
 
-   
+  GoToDetails(){
+    this.navCtrl.push(TrajetDetailsPage);
+
+   // let modal = this.modalCtrl.create(TrajetDetailsPage);
+  //  modal.present();
+  }
   
 
 }

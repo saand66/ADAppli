@@ -5,7 +5,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { CloudPage } from '../pages/cloud/cloud';
 import { ConnexionPage } from '../pages/connexion/connexion';
 import { AlloDakarPage } from '../pages/allo-dakar/allo-dakar';
-
+import { InscriptionPage } from '../pages/inscription/inscription';
+import { ProposerDamayTukkiPage } from '../pages/proposer-damay-tukki/proposer-damay-tukki';
 
 
 @Component({
@@ -13,9 +14,12 @@ import { AlloDakarPage } from '../pages/allo-dakar/allo-dakar';
 })
 export class MyApp {
   @ViewChild(Nav) navCtrl: Nav;
+  theme:String = 'facebook-messenger-theme';
     rootPage:any = AlloDakarPage;
   userprenom : string;
   usernom : string;
+  islogin : string;
+
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -25,6 +29,8 @@ export class MyApp {
     });
     this.userprenom = localStorage.getItem("UserPrenom");
     this.usernom = localStorage.getItem("UserNom");
+    this.islogin = localStorage.getItem("islogin");
+    console.log(this.islogin);
   }
   goToCloud(params){
     if (!params) params = {};
@@ -38,6 +44,19 @@ export class MyApp {
     if (!params) params = {};
     this.navCtrl.setRoot(AlloDakarPage);
   }
+  goToDeconnexion(){
+    localStorage.clear();
+    this.navCtrl.setRoot(AlloDakarPage);
+  }
+  
+  goToInscription(params){
+    if (!params) params = {};
+    this.navCtrl.push(InscriptionPage);
+  }
 
+  goToDamayTukki(params){
+    if (!params) params = {};
+    this.navCtrl.push(ProposerDamayTukkiPage);
+  }
   
 }

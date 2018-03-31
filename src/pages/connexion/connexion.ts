@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AlertController } from 'ionic-angular';
 
 import {AlloDakarService} from '../../services/AlloDakarApi.service';
 import {Login} from '../../models/AlloDakar-Login';
@@ -21,8 +22,8 @@ import { InscriptionPage} from '../inscription/inscription';
 export class ConnexionPage {
 
   login : Login = new Login();
-
-  constructor(public navCtrl: NavController, private alloDakarService: AlloDakarService) {
+   erreur : string;
+  constructor(public navCtrl: NavController, private alloDakarService: AlloDakarService ,public alertCtrl: AlertController) {
       
    // this.Connexion();
   }
@@ -32,13 +33,30 @@ export class ConnexionPage {
     console.log(this.login);
     this.alloDakarService.Connexion(this.login)
     .then(data => {
-      console.log(data);
-      if (data.token){
+      console.log(data.error);
+
+      if (data && data.token){
        localStorage.setItem("UserPrenom", data.UserPrenom);
        localStorage.setItem("UserNom", data.UserNom);
        localStorage.setItem("Token", data.token);
+       localStorage.setItem("islogin","true");
         this.navCtrl.setRoot(AlloDakarPage);
+      }else  if (data && data.error){
+       this.erreur = data.error;
+
+       let alert = this.alertCtrl.create({
+        title: 'Probleme',
+        subTitle: this.erreur,
+        buttons: ['OK']
+      });
+      alert.present();
+
       }
+       
+      
+    }).catch(function(err){
+     //return res.status(500).json({ 'error':'impossible de verifier user'});
+  
     });
   }
   
@@ -47,6 +65,7 @@ export class ConnexionPage {
     if (!params) params = {};
     this.navCtrl.push(InscriptionPage);
   }
+
   }
 
 

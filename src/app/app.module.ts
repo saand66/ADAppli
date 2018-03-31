@@ -14,6 +14,8 @@ import { HttpModule } from '@angular/http';
 import {AlloDakarService} from '../services/AlloDakarApi.service';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TrajetDetailsPage } from '../pages/trajet-details/trajet-details';
 
 @NgModule({
   declarations: [
@@ -25,10 +27,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ProposerDamayTukkiPage,
     TrajetPage,
     ConnexionPage,
-    InscriptionPage
+    InscriptionPage,
+    TrajetDetailsPage
   ],
   imports: [
     HttpModule,
+    HttpClientModule,
     BrowserModule,
     IonicModule.forRoot(MyApp)
   ],
@@ -42,7 +46,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ProposerDamayTukkiPage,
     TrajetPage,
     ConnexionPage,
-    InscriptionPage
+    InscriptionPage,
+    TrajetDetailsPage
   ],
   providers: [
     AlloDakarService,
