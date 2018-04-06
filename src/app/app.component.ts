@@ -7,6 +7,7 @@ import { ConnexionPage } from '../pages/connexion/connexion';
 import { AlloDakarPage } from '../pages/allo-dakar/allo-dakar';
 import { InscriptionPage } from '../pages/inscription/inscription';
 import { ProposerDamayTukkiPage } from '../pages/proposer-damay-tukki/proposer-damay-tukki';
+import { UsersInfosService } from '../services/UsersInfosService';
 
 
 @Component({
@@ -18,19 +19,21 @@ export class MyApp {
     rootPage:any = AlloDakarPage;
   userprenom : string;
   usernom : string;
-  islogin : string;
+  islogin : boolean;
+  usersInfosService: UsersInfosService;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, usersInfosService: UsersInfosService) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
     });
-    this.userprenom = localStorage.getItem("UserPrenom");
-    this.usernom = localStorage.getItem("UserNom");
-    this.islogin = localStorage.getItem("islogin");
-    console.log(this.islogin);
+
+    
+     this.userprenom = usersInfosService.getUserPrenom();
+     this.usernom =  usersInfosService.getUserNom();
+     this.islogin =  usersInfosService.getUserIsLogin();
   }
   goToCloud(params){
     if (!params) params = {};
@@ -45,7 +48,9 @@ export class MyApp {
     this.navCtrl.setRoot(AlloDakarPage);
   }
   goToDeconnexion(){
-    localStorage.clear();
+     
+    //this.usersInfosService.setUserIsLogin(false);
+   // this.islogin = this.usersInfosService.getUserIsLogin();
     this.navCtrl.setRoot(AlloDakarPage);
   }
   

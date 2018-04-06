@@ -24,13 +24,13 @@ export class TrajetPage {
  // trajets : Trajet = new Trajet();
   trajets : any;
   
-   constructor(public navCtrl: NavController, private alloDakarService: AlloDakarService, public modalCtrl: ModalController) {
+   constructor(public navCtrl: NavController, private alloDakarService: AlloDakarService, public navParams: NavParams) {
     
     this.getTrajet(null);
    
   }
 
-  // Chargement des articles
+  // Chargement des trajets
   public getTrajet(refresher) {
    
     this.alloDakarService.getTrajet()
@@ -45,8 +45,10 @@ export class TrajetPage {
     });
   }
 
-  GoToDetails(){
-    this.navCtrl.push(TrajetDetailsPage);
+  GoToDetails(trajet){
+    //this.navParams.data = trajet ;
+   // this.navCtrl.push(trajet, {status: true})
+    this.navCtrl.push(TrajetDetailsPage, {letrajet : trajet});
 
    // let modal = this.modalCtrl.create(TrajetDetailsPage);
   //  modal.present();

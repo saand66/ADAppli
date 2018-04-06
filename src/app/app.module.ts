@@ -16,6 +16,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TrajetDetailsPage } from '../pages/trajet-details/trajet-details';
+import { UsersInfosService } from '../services/UsersInfosService';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,10 @@ import { TrajetDetailsPage } from '../pages/trajet-details/trajet-details';
     AlloDakarService,
     StatusBar,
     SplashScreen,
+    UsersInfosService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
-export class AppModule {}
+export class AppModule {
+    
+}

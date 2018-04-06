@@ -20,13 +20,35 @@
           <ion-avatar item-start>
             <img src="../assets/img/laat.jpeg">
           </ion-avatar>
-          <h2>Marty McFly</h2>
-          <p>November 5, 1955</p>
+          <h3> {{trajetstodetails.lieuDep + " - " + trajetstodetails.lieuArr}}</h3>
+          <p>
+
+            Arrivee : {{trajetstodetails.lieuArr}}
+          </p>
+         <p>
+             Date de départ :  {{trajetstodetails.dateDep | date: 'dd/MM/yyyy'}}
+         </p>
+         <p>
+             Heure : {{trajetstodetails.heureDep}}
+         </p>
+         <p>
+             Tarif : {{trajetstodetails.tarifvoy}}
+         </p>
+         <p>
+             Nombre de place  : {{trajetstodetails.nbplace}}
+         </p>
+
+         <p>
+             Posté par : {{trajetstodetails.User.prenom}}
+         </p>
+
         </ion-item>
       
-        <img src="img/advance-card-bttf.png">
+        <img src="../assets/img/logocar.png">
         <ion-card-content>
-          <p></p>
+            <button  ion-button  round id="alloDakar-button3"   on-click="goToTrajet()">
+                Reserver
+              </button>
         </ion-card-content>
       
         <ion-row>

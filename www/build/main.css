@@ -25765,3 +25765,8 @@ page-trajet .card-background-page .card-subtitle {
   width: 100%;
   color: #fff;
 }
+
+page-trajet-details .imgTaile {
+  height: 5%;
+  width: 5%;
+}

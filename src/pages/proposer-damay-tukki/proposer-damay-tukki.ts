@@ -16,11 +16,9 @@ export class ProposerDamayTukkiPage {
   
 
   public CreerTrajet() {
-    console.log(this.newTrajet);
+    
     this.alloDakarService.NewTrajet(this.newTrajet)
     .then(data => {
-      console.log(data.error);
-
       if (data){
        /*localStorage.setItem("UserPrenom", data.UserPrenom);
        localStorage.setItem("UserNom", data.UserNom);

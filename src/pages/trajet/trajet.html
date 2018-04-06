@@ -26,14 +26,11 @@
         <p>{{trajet.dateDep | date: 'dd/MM/yyyy'}}</p>
       </ion-item>
         <ion-card-content>
-        <div class="card-title" on-click="GoToDetails()" > 
+        <div class="card-title" on-click="GoToDetails(trajet)" > 
           <ion-card-title>
             {{trajet.lieuDep + " - " + trajet.lieuArr}} 
           </ion-card-title>
             </div>
         </ion-card-content>
       </ion-card> 
-
-     
-
 </ion-content>
