@@ -1,14 +1,14 @@
 webpackJsonp([4],{
 
-/***/ 106:
+/***/ 108:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TrajetPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_AlloDakarApi_service__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_trajet_details_trajet_details__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_AlloDakarApi_service__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_trajet_details_trajet_details__ = __webpack_require__(109);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -56,7 +56,7 @@ var TrajetPage = /** @class */ (function () {
     };
     TrajetPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-trajet',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADApp/src/pages/trajet/trajet.html"*/'<!--\n  Generated template for the TrajetPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Trajet</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <ion-card-header>\n        Liste des trajets diponible\n      </ion-card-header>\n    <ion-card *ngFor="let trajet of trajets">\n      <ion-item>\n        <ion-avatar item-start>\n          <img src="../assets/img/laat.jpeg">\n        </ion-avatar>\n        <h3>{{trajet.User.prenom}} {{trajet.User.nom}}</h3>\n        <p>{{trajet.dateDep | date: \'dd/MM/yyyy\'}}</p>\n      </ion-item>\n        <ion-card-content>\n        <div class="card-title" on-click="GoToDetails(trajet)" > \n          <ion-card-title>\n            {{trajet.lieuDep + " - " + trajet.lieuArr}} \n          </ion-card-title>\n            </div>\n        </ion-card-content>\n      </ion-card> \n</ion-content>\n'/*ion-inline-end:"/Users/imac/Documents/DEV/ADApp/src/pages/trajet/trajet.html"*/,
+            selector: 'page-trajet',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADApp/src/pages/trajet/trajet.html"*/'<!--\n  Generated template for the TrajetPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Trajet</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n    \n       \n     <ion-card-header class = "card-title">\n        Liste des trajets diponible\n      </ion-card-header>\n\n\n    <ion-card *ngFor="let trajet of trajets">\n      <ion-item>\n        <ion-avatar item-start>\n          <img src="../assets/img/laat.jpeg">\n        </ion-avatar>\n        <h4>{{trajet.User.prenom}} {{trajet.User.nom}}</h4>\n        <p>{{trajet.dateDep | date: \'dd/MM/yyyy\'}}</p>\n      </ion-item>\n        <ion-card-content>\n        <div class="card-title" on-click="GoToDetails(trajet)" > \n          <ion-card-title>\n            {{trajet.lieuDep + " - " + trajet.lieuArr}} \n          </ion-card-title>\n            </div>\n        </ion-card-content>\n      </ion-card> \n</ion-content>\n'/*ion-inline-end:"/Users/imac/Documents/DEV/ADApp/src/pages/trajet/trajet.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_AlloDakarApi_service__["a" /* AlloDakarService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], TrajetPage);
@@ -67,7 +67,7 @@ var TrajetPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 107:
+/***/ 109:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -75,6 +75,7 @@ var TrajetPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_AlloDakar_Trajet__ = __webpack_require__(262);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_AlloDakarApi_service__ = __webpack_require__(33);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -87,6 +88,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
  * Generated class for the TrajetDetailsPage page.
  *
@@ -94,9 +96,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var TrajetDetailsPage = /** @class */ (function () {
-    function TrajetDetailsPage(navCtrl, navParams) {
+    function TrajetDetailsPage(navCtrl, navParams, alloDakarService, alertCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.alloDakarService = alloDakarService;
+        this.alertCtrl = alertCtrl;
         this.trajetstodetails = new __WEBPACK_IMPORTED_MODULE_2__models_AlloDakar_Trajet__["a" /* Trajet */]();
         console.log('le trajet : ' + this.navParams.get('letrajet'));
         this.trajetstodetails = this.navParams.get('letrajet');
@@ -104,11 +108,38 @@ var TrajetDetailsPage = /** @class */ (function () {
     TrajetDetailsPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad TrajetDetailsPage');
     };
+    TrajetDetailsPage.prototype.goToReservation = function (trajet) {
+        //console.log(" trajet det" , trajet)
+        var alert = this.alertCtrl.create({
+            title: 'Reservation',
+            inputs: [
+                {
+                    name: 'title',
+                    placeholder: 'Title'
+                },
+            ],
+            buttons: [
+                {
+                    text: 'Annuler',
+                    handler: function (data) {
+                        console.log('Cancel clicked');
+                    }
+                },
+                {
+                    text: 'Continuer',
+                    handler: function (data) {
+                        console.log('Saved clicked');
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
     TrajetDetailsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-trajet-details',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADApp/src/pages/trajet-details/trajet-details.html"*/'<!--\n  Generated template for the TrajetDetailsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>trajetDetails</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <ion-card>\n\n        <ion-item>\n          <ion-avatar item-start>\n            <img src="../assets/img/laat.jpeg">\n          </ion-avatar>\n          <h3> {{trajetstodetails.lieuDep + " - " + trajetstodetails.lieuArr}}</h3>\n          <p>\n\n            Arrivee : {{trajetstodetails.lieuArr}}\n          </p>\n         <p>\n             Date de départ :  {{trajetstodetails.dateDep | date: \'dd/MM/yyyy\'}}\n         </p>\n         <p>\n             Heure : {{trajetstodetails.heureDep}}\n         </p>\n         <p>\n             Tarif : {{trajetstodetails.tarifvoy}}\n         </p>\n         <p>\n             Nombre de place  : {{trajetstodetails.nbplace}}\n         </p>\n\n         <p>\n             Posté par : {{trajetstodetails.User.prenom}}\n         </p>\n\n        </ion-item>\n      \n        <img src="../assets/img/logocar.png">\n        <ion-card-content>\n            <button  ion-button  round id="alloDakar-button3"   on-click="goToTrajet()">\n                Reserver\n              </button>\n        </ion-card-content>\n      \n        <ion-row>\n          <ion-col>\n            <button ion-button icon-left clear small>\n              <ion-icon name="thumbs-up"></ion-icon>\n              <div>12 Likes</div>\n            </button>\n          </ion-col>\n          <ion-col>\n            <button ion-button icon-left clear small>\n              <ion-icon name="text"></ion-icon>\n              <div>4 Comments</div>\n            </button>\n          </ion-col>\n          <ion-col center text-center>\n            <ion-note>\n              11h ago\n            </ion-note>\n          </ion-col>\n        </ion-row>\n      \n      </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/imac/Documents/DEV/ADApp/src/pages/trajet-details/trajet-details.html"*/,
+            selector: 'page-trajet-details',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADApp/src/pages/trajet-details/trajet-details.html"*/'<!--\n  Generated template for the TrajetDetailsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>trajetDetails</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <ion-card>\n\n        <ion-item>\n          <ion-avatar item-start>\n           \n          </ion-avatar>\n           <ion-card-title>\n              <h3> {{trajetstodetails.lieuDep + " - " + trajetstodetails.lieuArr}}</h3> \n            </ion-card-title>\n          </ion-item> \n        <ion-card-content>\n\n            <ion-item>  \n            \n                <p>\n                    <b>Arrivée :</b>   {{trajetstodetails.lieuArr}}\n                </p>\n           <p>\n               <b>Date de départ :</b> {{trajetstodetails.dateDep | date: \'dd/MM/yyyy\'}}\n           </p>\n           <p>\n              <b>Heure :</b> {{trajetstodetails.heureDep}}\n           </p>\n           <p>\n               <b>Tarif :</b> {{trajetstodetails.tarifvoy}}\n           </p>\n           <p>\n               <b>Nombre de place : </b> {{trajetstodetails.nbplacedispo}}\n           </p>\n  \n           <p>\n               <b>Posté par : </b> {{trajetstodetails.User.prenom}}\n           </p>\n          </ion-item>\n\n\n        </ion-card-content>\n        <ion-row>\n          <ion-col>\n            <button ion-button icon-left clear small>\n              <ion-icon name="text"></ion-icon>\n              <div>4 Comments</div>\n            </button>\n          </ion-col>\n          <ion-col center text-center>\n            <ion-note>\n              11h ago\n            </ion-note>\n          </ion-col>\n        </ion-row>\n      \n      </ion-card>\n      <ion-card>\n\n        <ion-item>\n          <ion-avatar item-start>\n           \n          </ion-avatar>\n           <ion-card-title>\n            \n            </ion-card-title>\n          </ion-item> \n          \n        <ion-card-content>\n            \n            <ion-item-group> \n                  <ion-row center> \n                <ion-item-divider color="primary"></ion-item-divider> \n                <ion-col text-center>   \n                  <ion-item>\n                    <ion-label>J\'accepte les Conditions Générales</ion-label>\n                    <ion-checkbox color="dark" checked="true"></ion-checkbox>\n                    </ion-item>\n                 </ion-col> \n                </ion-row>\n                <ion-item-divider color="primary"></ion-item-divider> \n                <ion-row center>  \n                    <ion-col text-center>   \n                    <ion-item>\n                        <ion-label>Nombre de place</ion-label>\n                      <ion-select [(ngModel)]="nbplace" name="nbplace">\n                        <ion-option>1</ion-option>\n                        <ion-option>2</ion-option>\n                        <ion-option>3</ion-option>\n                        <ion-option>4</ion-option>\n                        <ion-option>5</ion-option>\n                        <ion-option>6</ion-option>\n                      </ion-select>\n                    </ion-item>\n                   </ion-col> \n                  </ion-row>\n                  <ion-item-divider color="primary"></ion-item-divider> \n                  <ion-row center>  \n                   <ion-col text-center>   \n                    <button  ion-button  round id="alloDakar-button3"  on-click="goToReservation(trajetstodetails)">\n                        Reserver\n                      </button>\n                   </ion-col> \n                  </ion-row>\n                </ion-item-group>\n        </ion-card-content>\n        \n      \n      </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/imac/Documents/DEV/ADApp/src/pages/trajet-details/trajet-details.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__services_AlloDakarApi_service__["a" /* AlloDakarService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], TrajetDetailsPage);
     return TrajetDetailsPage;
 }());
@@ -117,7 +148,7 @@ var TrajetDetailsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 119:
+/***/ 121:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -130,28 +161,28 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 119;
+webpackEmptyAsyncContext.id = 121;
 
 /***/ }),
 
-/***/ 160:
+/***/ 162:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/connexion/connexion.module": [
-		292,
+		295,
 		3
 	],
 	"../pages/inscription/inscription.module": [
-		293,
+		294,
 		2
 	],
 	"../pages/trajet-details/trajet-details.module": [
-		295,
+		296,
 		1
 	],
 	"../pages/trajet/trajet.module": [
-		294,
+		293,
 		0
 	]
 };
@@ -166,12 +197,27 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 160;
+webpackAsyncContext.id = 162;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 162:
+/***/ 164:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Login; });
+var Login = /** @class */ (function () {
+    function Login() {
+    }
+    return Login;
+}());
+
+//# sourceMappingURL=AlloDakar-Login.js.map
+
+/***/ }),
+
+/***/ 166:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -206,7 +252,7 @@ var SeetVoyagePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 206:
+/***/ 208:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -241,13 +287,13 @@ var CloudPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 207:
+/***/ 209:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(228);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(230);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -255,7 +301,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 228:
+/***/ 230:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -263,28 +309,30 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(281);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_allo_dakar_allo_dakar__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_cart_cart__ = __webpack_require__(290);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_cloud_cloud__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_seet_voyage_seet_voyage__ = __webpack_require__(162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_trajet_trajet__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_connexion_connexion__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_inscription_inscription__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_proposer_damay_tukki_proposer_damay_tukki__ = __webpack_require__(83);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_http__ = __webpack_require__(291);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_AlloDakarApi_service__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_status_bar__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_splash_screen__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__angular_common_http__ = __webpack_require__(161);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_trajet_details_trajet_details__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(290);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_allo_dakar_allo_dakar__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_cart_cart__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_cloud_cloud__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_seet_voyage_seet_voyage__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_trajet_trajet__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_connexion_connexion__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_inscription_inscription__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_proposer_damay_tukki_proposer_damay_tukki__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_http__ = __webpack_require__(292);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_AlloDakarApi_service__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_status_bar__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_splash_screen__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__angular_common_http__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_trajet_details_trajet_details__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_UsersInfosService__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_native_native_storage__ = __webpack_require__(82);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -327,9 +375,9 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/connexion/connexion.module#ConnexionPageModule', name: 'ConnexionPage', segment: 'connexion', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/inscription/inscription.module#InscriptionPageModule', name: 'InscriptionPage', segment: 'inscription', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/trajet/trajet.module#TrajetPageModule', name: 'TrajetPage', segment: 'trajet', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/inscription/inscription.module#InscriptionPageModule', name: 'InscriptionPage', segment: 'inscription', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/connexion/connexion.module#ConnexionPageModule', name: 'ConnexionPage', segment: 'connexion', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/trajet-details/trajet-details.module#TrajetDetailsPageModule', name: 'TrajetDetailsPage', segment: 'trajet-details', priority: 'low', defaultHistory: [] }
                     ]
                 })
@@ -352,6 +400,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_14__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_15__ionic_native_splash_screen__["a" /* SplashScreen */],
                 __WEBPACK_IMPORTED_MODULE_18__services_UsersInfosService__["a" /* UsersInfosService */],
+                __WEBPACK_IMPORTED_MODULE_19__ionic_native_native_storage__["a" /* NativeStorage */],
                 { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] }
             ]
         })
@@ -360,36 +409,6 @@ var AppModule = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=app.module.js.map
-
-/***/ }),
-
-/***/ 260:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Login; });
-var Login = /** @class */ (function () {
-    function Login() {
-    }
-    return Login;
-}());
-
-//# sourceMappingURL=AlloDakar-Login.js.map
-
-/***/ }),
-
-/***/ 261:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewTrajet; });
-var NewTrajet = /** @class */ (function () {
-    function NewTrajet() {
-    }
-    return NewTrajet;
-}());
-
-//# sourceMappingURL=AlloDakar-NewTrajet.js.map
 
 /***/ }),
 
@@ -424,21 +443,37 @@ var NewUser = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 281:
+/***/ 272:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewTrajet; });
+var NewTrajet = /** @class */ (function () {
+    function NewTrajet() {
+    }
+    return NewTrajet;
+}());
+
+//# sourceMappingURL=AlloDakar-NewTrajet.js.map
+
+/***/ }),
+
+/***/ 290:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_cloud_cloud__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_connexion_connexion__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_allo_dakar_allo_dakar__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_inscription_inscription__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_proposer_damay_tukki_proposer_damay_tukki__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_cloud_cloud__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_connexion_connexion__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_allo_dakar_allo_dakar__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_inscription_inscription__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_proposer_damay_tukki_proposer_damay_tukki__ = __webpack_require__(86);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_UsersInfosService__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_native_storage__ = __webpack_require__(82);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -451,20 +486,38 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
+
+
+
+
+
+
 var MyApp = /** @class */ (function () {
-    function MyApp(platform, statusBar, splashScreen, usersInfosService) {
+    function MyApp(platform, statusBar, splashScreen, usersInfosService, nativeStorage) {
+        this.nativeStorage = nativeStorage;
         this.theme = 'facebook-messenger-theme';
         this.rootPage = __WEBPACK_IMPORTED_MODULE_6__pages_allo_dakar_allo_dakar__["a" /* AlloDakarPage */];
+        this.numberofresh = 1;
         platform.ready().then(function () {
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
             statusBar.styleDefault();
             splashScreen.hide();
         });
-
-        this.userprenom = usersInfosService.getUserPrenom();
-        this.usernom = usersInfosService.getUserNom();
-        this.islogin = usersInfosService.getUserIsLogin();
+        usersInfosService.setNumberofrefresh(this.numberofresh);
+        this.numberofresh = usersInfosService.getNumberofrefresh();
+        console.log(" numberofresh : ", this.numberofresh);
+        /* this.userprenom = usersInfosService.getUserPrenom();
+         this.usernom =  usersInfosService.getUserNom();
+         this.islogin =  usersInfosService.getUserIsLogin();*/
+        this.goUserInfos();
+        //this.task  = setInterval(this.goUserInfos.bind(this), 1000)
+        /*if (!this.usernom){
+          clearInterval(this.task);
+          console.log(this.task)
+        }*/
     }
     MyApp.prototype.goToCloud = function (params) {
         if (!params)
@@ -483,7 +536,8 @@ var MyApp = /** @class */ (function () {
     };
     MyApp.prototype.goToDeconnexion = function () {
         //this.usersInfosService.setUserIsLogin(false);
-        // this.islogin = this.usersInfosService.getUserIsLogin();
+        this.islogin = "false";
+        localStorage.clear();
         this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_6__pages_allo_dakar_allo_dakar__["a" /* AlloDakarPage */]);
     };
     MyApp.prototype.goToInscription = function (params) {
@@ -496,14 +550,33 @@ var MyApp = /** @class */ (function () {
             params = {};
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_8__pages_proposer_damay_tukki_proposer_damay_tukki__["a" /* ProposerDamayTukkiPage */]);
     };
+    MyApp.prototype.goUserInfos = function () {
+        // Put here the code you want to execute
+        console.log("mangui fi ");
+        this.userprenom = localStorage.getItem("UserPrenom");
+        this.usernom = localStorage.getItem("UserNom");
+        this.islogin = localStorage.getItem("islogin");
+        /*this.userprenom = this.nativeStorage.getItem("UserPrenom");
+        this.usernom =  this.nativeStorage.getItem("UserNom");
+        this.islogin =  this.nativeStorage.getItem("islogin")*/
+        console.log(" this.userprenom ", this.userprenom);
+        console.log("  this.islogin ", this.islogin);
+    };
+    MyApp.prototype.ionViewDidLoad = function () {
+        // Put here the code you want to execute
+    };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Nav */]),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Nav */])
     ], MyApp.prototype, "navCtrl", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADApp/src/app/app.html"*/'<ion-menu  [content]="mainContent">\n  <ion-header  class="bar-balanced" >\n    <ion-toolbar color = "primary">\n      <ion-title >\n        Allo Dakar Menu \n      </ion-title>\n    </ion-toolbar>\n  </ion-header>\n  <ion-content id="side-menu21">\n    \n    <div class="spacer" style="width:268px;height:30px;" id="menu-list-item1"></div>\n    <ion-list id="menu-list1">\n        <ion-item color="none" id="menu-list-item14">\n            <ion-avatar item-left>\n                <img src="assets/img/laat.jpeg">\n            </ion-avatar>\n            <h2>\n              {{userprenom}} {{usernom}}\n            </h2>\n          </ion-item>\n      <ion-item color="positive" menuClose="" on-click="goToAlloDakar()" id="menu-list-item1">\n          <ion-icon color= "primary" name="home" item-left></ion-icon>\n        Home\n      </ion-item>\n      <ion-item color="positive" menuClose="" on-click="goToAlloDakar()" id="menu-list-item2">\n          <ion-icon color= "primary" name="search" item-left></ion-icon>\n        Rechercher\n      </ion-item>\n      <ion-item color="positive" menuClose="" on-click="goToDamayTukki()" id="menu-list-item3">\n          <ion-icon color= "primary" name="car" item-left></ion-icon>\n        Proposer\n      </ion-item>\n      <ion-item color="positive" menuClose="" on-click="goToInscription()" id="menu-list-item4">\n          <ion-icon color= "primary" color= "primary" name="create" item-left></ion-icon>\n        Inscription\n      </ion-item>\n      <ion-item *ngIf ="!islogin" color="positive" menuClose="" on-click="goToConnexion()" id="menu-list-item5">\n          <ion-icon color= "primary" color= "primary" name="log-in" item-left></ion-icon>\n        Connexion\n      </ion-item>\n      <ion-item *ngIf="islogin" color="positive" menuClose="" on-click="goToDeconnexion()" id="menu-list-item5">\n        <ion-icon color= "primary" name="log-out" item-left></ion-icon>\n         Deconnexion\n    </ion-item>\n      <ion-item color="positive" menuClose="" on-click="goToCloud()" id="menu-list-item6">\n          <ion-icon color= "primary" name="help-circle" item-left></ion-icon>\n        Aide\n      </ion-item>\n      <ion-item color="none" menuClose="" on-click="goToCart()" id="menu-list-item7">\n          <ion-icon color= "primary" name="information-circle" item-left></ion-icon>\n        \n        A propos\n      </ion-item>\n    </ion-list>\n  </ion-content>\n</ion-menu>\n\n\n\n<ion-nav #mainContent [root]="rootPage" [class]="theme"></ion-nav>'/*ion-inline-end:"/Users/imac/Documents/DEV/ADApp/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADApp/src/app/app.html"*/'<ion-menu  [content]="mainContent" >\n  <ion-header  class="bar-balanced" >\n    <ion-toolbar color = "primary">\n      <ion-title >\n        Allo Dakar Menu \n      </ion-title>\n    </ion-toolbar>\n  </ion-header>\n  <ion-content id="side-menu21" on-click="goUserInfos()">\n    \n    <div class="spacer" style="width:268px;height:30px;" id="menu-list-item1"></div>\n    <ion-list id="menu-list1">\n        <ion-item color="none" id="menu-list-item14">\n            <ion-avatar item-left>\n                <img src="assets/img/laat.jpeg">\n            </ion-avatar>\n            <h2>\n                {{userprenom}} {{usernom}}\n            </h2>\n          </ion-item>\n      <ion-item color="positive" menuClose="" on-click="goToAlloDakar()" id="menu-list-item1">\n          <ion-icon color= "primary" name="home" item-left></ion-icon>\n        Home\n      </ion-item>\n      <ion-item color="positive" menuClose="" on-click="goToAlloDakar()" id="menu-list-item2">\n          <ion-icon color= "primary" name="search" item-left></ion-icon>\n        Rechercher\n      </ion-item>\n      <ion-item color="positive" menuClose="" on-click="goToDamayTukki()" id="menu-list-item3">\n          <ion-icon color= "primary" name="car" item-left></ion-icon>\n        Proposer\n      </ion-item>\n      <ion-item color="positive" menuClose="" on-click="goToInscription()" id="menu-list-item4">\n          <ion-icon color= "primary" color= "primary" name="create" item-left></ion-icon>\n        Inscription\n      </ion-item>\n      <ion-item *ngIf ="islogin==\'false\' || !islogin " color="positive" menuClose="" on-click="goToConnexion()" id="menu-list-item5">\n          <ion-icon color= "primary" color= "primary" name="log-in" item-left></ion-icon>\n        Connexion\n      </ion-item>\n      <ion-item *ngIf="islogin==\'true\'" color="positive" menuClose="" on-click="goToDeconnexion()" id="menu-list-item5">\n        <ion-icon color= "primary" name="log-out" item-left></ion-icon>\n         Deconnexion\n    </ion-item>\n      <ion-item color="positive" menuClose="" on-click="goToCloud()" id="menu-list-item6">\n          <ion-icon color= "primary" name="help-circle" item-left></ion-icon>\n        Aide\n      </ion-item>\n      <ion-item color="none" menuClose="" on-click="goToCart()" id="menu-list-item7">\n          <ion-icon color= "primary" name="information-circle" item-left></ion-icon>\n        \n        A propos\n      </ion-item>\n    </ion-list>\n  </ion-content>\n</ion-menu>\n\n\n\n<ion-nav #mainContent [root]="rootPage" [class]="theme"></ion-nav>'/*ion-inline-end:"/Users/imac/Documents/DEV/ADApp/src/app/app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_9__services_UsersInfosService__["a" /* UsersInfosService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */],
+            __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
+            __WEBPACK_IMPORTED_MODULE_9__services_UsersInfosService__["a" /* UsersInfosService */],
+            __WEBPACK_IMPORTED_MODULE_10__ionic_native_native_storage__["a" /* NativeStorage */]])
     ], MyApp);
     return MyApp;
 }());
@@ -512,7 +585,7 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 290:
+/***/ 291:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -547,18 +620,19 @@ var CartPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 41:
+/***/ 33:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AlloDakarService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(161);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(258);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(260);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(259);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(261);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__UsersInfosService__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_AlloDakar_Login__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__UsersInfosService__ = __webpack_require__(47);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -574,16 +648,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var AlloDakarService = /** @class */ (function () {
     function AlloDakarService(http, usersInfosService) {
         this.http = http;
         this.usersInfosService = usersInfosService;
-        this.baseUrl = 'http://damaydem.com:49160/api/';
-        //private baseUrl : string ='/api/';
+        // private baseUrl: string = 'http://damaydem.com:49160/api/';
+        this.baseUrl = '/api/';
         this.serviceRegister = 'users/register';
         this.serviceLogin = 'users/login';
         this.newtrajetpath = 'trajets/new';
         this.serviceList = 'trajets';
+        this.serviceReser = 'trajets';
+        this.serviceModifResev = 'trajets';
+        this.serviceAnnulResev = 'trajets';
         //this.token = this.connexionPage.GetUserToken();
         console.log("le token " + this.usersInfosService.getUserToken());
     }
@@ -593,7 +671,7 @@ var AlloDakarService = /** @class */ (function () {
         return this.http.get(url)
             .toPromise()
             .then(function (response) { return response; })
-            .catch(function (error) { return console.log('une erreur est survenue ' + error.json()); });
+            .catch(function (error) { return console.log('une erreur est survenue ' + error); });
     };
     AlloDakarService.prototype.inscription = function (NewUser) {
         var url = "" + this.baseUrl + this.serviceRegister;
@@ -613,13 +691,6 @@ var AlloDakarService = /** @class */ (function () {
     //return this.http.post('url', user, {headers: headers});
     AlloDakarService.prototype.NewTrajet = function (newTrajet) {
         var url = "" + this.baseUrl + this.newtrajetpath;
-        // const url = this.baseUrl;
-        //let headers = new Headers();
-        // headers.append('Content-Type', 'application/json');
-        // headers.append('authorization', 'Bearer ' +this.token);
-        //console.log("headers sene abo  :", headers);
-        // const options = new RequestOptions({ headers: headers });
-        //var header = { "headers": {"Content-Type": "application/json"},"Authorization": {} };
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]()
             .set("Content-Type", "application/json")
             .set("Authorization", 'Bearer ' + this.usersInfosService.getUserToken());
@@ -630,9 +701,33 @@ var AlloDakarService = /** @class */ (function () {
             .catch(function (error) { return error.json(); });
         //.catch(error => console.log ('une erreur est survenue ' + error))
     };
+    AlloDakarService.prototype.reserv = function () {
+        var url = "" + this.baseUrl + this.serviceReser;
+        return this.http.post(url, __WEBPACK_IMPORTED_MODULE_4__models_AlloDakar_Login__["a" /* Login */])
+            .toPromise()
+            .then(function (response) { return response; })
+            .catch(function (error) { return error.json(); });
+        //.catch(error => console.log ('une erreur est survenue ' + error))
+    };
+    AlloDakarService.prototype.modifreserv = function (trajet, userId) {
+        var url = "" + this.baseUrl + this.serviceModifResev;
+        return this.http.post(url, __WEBPACK_IMPORTED_MODULE_4__models_AlloDakar_Login__["a" /* Login */])
+            .toPromise()
+            .then(function (response) { return response; })
+            .catch(function (error) { return error.json(); });
+        //.catch(error => console.log ('une erreur est survenue ' + error))
+    };
+    AlloDakarService.prototype.annulreserv = function (trajet, userId) {
+        var url = "" + this.baseUrl + this.serviceAnnulResev;
+        return this.http.post(url, __WEBPACK_IMPORTED_MODULE_4__models_AlloDakar_Login__["a" /* Login */])
+            .toPromise()
+            .then(function (response) { return response; })
+            .catch(function (error) { return error.json(); });
+        //.catch(error => console.log ('une erreur est survenue ' + error))
+    };
     AlloDakarService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_4__UsersInfosService__["a" /* UsersInfosService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_5__UsersInfosService__["a" /* UsersInfosService */]])
     ], AlloDakarService);
     return AlloDakarService;
 }());
@@ -682,6 +777,12 @@ var UsersInfosService = /** @class */ (function () {
     UsersInfosService.prototype.getUserIsLogin = function () {
         return this.userIsLogin;
     };
+    UsersInfosService.prototype.getNumberofrefresh = function () {
+        return this.numberofrefresh;
+    };
+    UsersInfosService.prototype.setNumberofrefresh = function (numberofrefresh) {
+        this.numberofrefresh = numberofrefresh + 1;
+    };
     UsersInfosService.prototype.setUserIsLogin = function (islogin) {
         this.userIsLogin = islogin;
     };
@@ -700,107 +801,12 @@ var UsersInfosService = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConnexionPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_AlloDakarApi_service__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_AlloDakar_Login__ = __webpack_require__(260);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__allo_dakar_allo_dakar__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__inscription_inscription__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_UsersInfosService__ = __webpack_require__(47);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-
-/**
- * Generated class for the ConnexionPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var ConnexionPage = /** @class */ (function () {
-    function ConnexionPage(navCtrl, alloDakarService, usersInfosService, alertCtrl) {
-        this.navCtrl = navCtrl;
-        this.alloDakarService = alloDakarService;
-        this.usersInfosService = usersInfosService;
-        this.alertCtrl = alertCtrl;
-        this.login = new __WEBPACK_IMPORTED_MODULE_3__models_AlloDakar_Login__["a" /* Login */]();
-        // this.Connexion();
-    }
-    // connexion 
-    ConnexionPage.prototype.Connexion = function () {
-        var _this = this;
-        console.log(this.login);
-        this.alloDakarService.Connexion(this.login)
-            .then(function (data) {
-            if (data && data.token) {
-                /*localStorage.setItem("UserPrenom", data.UserPrenom);
-                localStorage.setItem("UserNom", data.UserNom);
-                localStorage.setItem("Token", data.token);
-                localStorage.setItem("islogin","true");*/
-                _this.usersInfosService.setUserToken(data.token);
-                _this.usersInfosService.setUserPreNom(data.UserPrenom);
-                _this.usersInfosService.setUserNom(data.UserNom);
-                _this.usersInfosService.setUserIsLogin(true);
-                // this.alloDakarService.userNom = data.UserNom;
-                //  this.alloDakarService.userToken = data.token;
-                //  this.alloDakarService.userIsLogin = "true";
-                _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_4__allo_dakar_allo_dakar__["a" /* AlloDakarPage */]);
-            }
-            else if (data && data.error) {
-                _this.erreur = data.error;
-                var alert_1 = _this.alertCtrl.create({
-                    title: 'Probleme',
-                    subTitle: _this.erreur,
-                    buttons: ['OK']
-                });
-                alert_1.present();
-            }
-        }).catch(function (err) {
-            //return res.status(500).json({ 'error':'impossible de verifier user'});
-        });
-    };
-    ConnexionPage.prototype.Inscription = function (params) {
-        if (!params)
-            params = {};
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__inscription_inscription__["a" /* InscriptionPage */]);
-    };
-    ConnexionPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-connexion',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADApp/src/pages/connexion/connexion.html"*/'<!--\n  Generated template for the ConnexionPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>connexion</ion-title>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding   class="">\n\n    <ion-list>\n\n        <ion-item >\n          <ion-label fixed>Numero Tel</ion-label>\n          <ion-input type="text" value="" [(ngModel)]="login.numtel"></ion-input>\n        </ion-item>\n      \n        <ion-item>\n          <ion-label fixed>Password</ion-label>\n          <ion-input type="password" [(ngModel)]="login.motdepass"></ion-input>\n        </ion-item>\n        \n      </ion-list>\n      <div class="spacer" style="width:300px;height:17px;" id="alloDakar-spacer3"></div>\n      <button id="connexion" ion-button color="positive" block style="font-weight:500;font-style:italic;text-align:left;" on-click="Connexion()">\n        <ion-icon name="home"></ion-icon>    Connexion\n      </button>\n\n      <div class="spacer" style="width:300px;height:17px;" id="alloDakar-spacer3"></div>\n      <button id="newcompte" ion-button color="positive" block style="font-weight:500;font-style:italic;text-align:left;" on-click="Inscription()">\n        Creer un compte\n      </button>\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/imac/Documents/DEV/ADApp/src/pages/connexion/connexion.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_AlloDakarApi_service__["a" /* AlloDakarService */], __WEBPACK_IMPORTED_MODULE_6__services_UsersInfosService__["a" /* UsersInfosService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
-    ], ConnexionPage);
-    return ConnexionPage;
-}());
-
-//# sourceMappingURL=connexion.js.map
-
-/***/ }),
-
-/***/ 53:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InscriptionPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_AlloDakarApi_service__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_AlloDakarApi_service__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_AlloDakar_NewUser__ = __webpack_require__(263);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_connexion_connexion__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_connexion_connexion__ = __webpack_require__(53);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -852,16 +858,122 @@ var InscriptionPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 82:
+/***/ 53:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConnexionPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_native_storage__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_AlloDakarApi_service__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_AlloDakar_Login__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__allo_dakar_allo_dakar__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__inscription_inscription__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_UsersInfosService__ = __webpack_require__(47);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+/**
+ * Generated class for the ConnexionPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ConnexionPage = /** @class */ (function () {
+    function ConnexionPage(navCtrl, alloDakarService, usersInfosService, alertCtrl, nativeStorage) {
+        this.navCtrl = navCtrl;
+        this.alloDakarService = alloDakarService;
+        this.usersInfosService = usersInfosService;
+        this.alertCtrl = alertCtrl;
+        this.nativeStorage = nativeStorage;
+        this.login = new __WEBPACK_IMPORTED_MODULE_4__models_AlloDakar_Login__["a" /* Login */]();
+        // this.Connexion();
+    }
+    // connexion 
+    ConnexionPage.prototype.Connexion = function () {
+        var _this = this;
+        console.log(this.login);
+        this.alloDakarService.Connexion(this.login)
+            .then(function (data) {
+            if (data && data.token) {
+                localStorage.setItem("UserPrenom", data.UserPrenom);
+                localStorage.setItem("UserNom", data.UserNom);
+                localStorage.setItem("Token", data.token);
+                localStorage.setItem("islogin", "true");
+                _this.usersInfosService.setUserToken(data.token);
+                _this.usersInfosService.setUserPreNom(data.UserPrenom);
+                _this.usersInfosService.setUserNom(data.UserNom);
+                _this.usersInfosService.setUserIsLogin(true);
+                _this.nativeStorage.setItem("UserPrenom", data.UserPrenom);
+                _this.nativeStorage.setItem("UserNom", data.UserNom);
+                _this.nativeStorage.setItem("Token", data.token);
+                _this.nativeStorage.setItem("islogin", true);
+                // this.alloDakarService.userNom = data.UserNom;
+                //  this.alloDakarService.userToken = data.token;
+                //  this.alloDakarService.userIsLogin = "true";
+                _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_5__allo_dakar_allo_dakar__["a" /* AlloDakarPage */]);
+            }
+            else if (data && data.error) {
+                _this.erreur = data.error;
+                var alert_1 = _this.alertCtrl.create({
+                    title: 'Probleme',
+                    subTitle: _this.erreur,
+                    buttons: ['OK']
+                });
+                alert_1.present();
+            }
+        }).catch(function (err) {
+            ///  return Response.status(500).json({ 'error':'impossible de verifier user'});
+        });
+    };
+    ConnexionPage.prototype.Inscription = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__inscription_inscription__["a" /* InscriptionPage */]);
+    };
+    ConnexionPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-connexion',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADApp/src/pages/connexion/connexion.html"*/'<!--\n  Generated template for the ConnexionPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>connexion</ion-title>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding   class="">\n\n    <ion-list>\n\n        <ion-item >\n          <ion-label fixed>Numero Tel</ion-label>\n          <ion-input type="text" value="" [(ngModel)]="login.numtel"></ion-input>\n        </ion-item>\n      \n        <ion-item>\n          <ion-label fixed>Password</ion-label>\n          <ion-input type="password" [(ngModel)]="login.motdepass"></ion-input>\n        </ion-item>\n        \n      </ion-list>\n      <div class="spacer" style="width:300px;height:17px;" id="alloDakar-spacer3"></div>\n      <button id="connexion" ion-button color="positive" block style="font-weight:500;font-style:italic;text-align:left;" on-click="Connexion()">\n        <ion-icon name="home"></ion-icon>    Connexion\n      </button>\n\n      <div class="spacer" style="width:300px;height:17px;" id="alloDakar-spacer3"></div>\n      <button id="newcompte" ion-button color="positive" block style="font-weight:500;font-style:italic;text-align:left;" on-click="Inscription()">\n        Creer un compte\n      </button>\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/imac/Documents/DEV/ADApp/src/pages/connexion/connexion.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_3__services_AlloDakarApi_service__["a" /* AlloDakarService */],
+            __WEBPACK_IMPORTED_MODULE_7__services_UsersInfosService__["a" /* UsersInfosService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_native_native_storage__["a" /* NativeStorage */]])
+    ], ConnexionPage);
+    return ConnexionPage;
+}());
+
+//# sourceMappingURL=connexion.js.map
+
+/***/ }),
+
+/***/ 85:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AlloDakarPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__seet_voyage_seet_voyage__ = __webpack_require__(162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__proposer_damay_tukki_proposer_damay_tukki__ = __webpack_require__(83);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__trajet_trajet__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__seet_voyage_seet_voyage__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__proposer_damay_tukki_proposer_damay_tukki__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__trajet_trajet__ = __webpack_require__(108);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -910,15 +1022,15 @@ var AlloDakarPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 83:
+/***/ 86:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProposerDamayTukkiPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_AlloDakarApi_service__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_AlloDakar_NewTrajet__ = __webpack_require__(261);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_AlloDakarApi_service__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_AlloDakar_NewTrajet__ = __webpack_require__(272);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -977,5 +1089,5 @@ var ProposerDamayTukkiPage = /** @class */ (function () {
 
 /***/ })
 
-},[207]);
+},[209]);
 //# sourceMappingURL=main.js.map

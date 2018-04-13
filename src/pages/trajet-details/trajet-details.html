@@ -18,46 +18,40 @@
 
         <ion-item>
           <ion-avatar item-start>
-            <img src="../assets/img/laat.jpeg">
+           
           </ion-avatar>
-          <h3> {{trajetstodetails.lieuDep + " - " + trajetstodetails.lieuArr}}</h3>
-          <p>
-
-            Arrivee : {{trajetstodetails.lieuArr}}
-          </p>
-         <p>
-             Date de départ :  {{trajetstodetails.dateDep | date: 'dd/MM/yyyy'}}
-         </p>
-         <p>
-             Heure : {{trajetstodetails.heureDep}}
-         </p>
-         <p>
-             Tarif : {{trajetstodetails.tarifvoy}}
-         </p>
-         <p>
-             Nombre de place  : {{trajetstodetails.nbplace}}
-         </p>
-
-         <p>
-             Posté par : {{trajetstodetails.User.prenom}}
-         </p>
-
-        </ion-item>
-      
-        <img src="../assets/img/logocar.png">
+           <ion-card-title>
+              <h3> {{trajetstodetails.lieuDep + " - " + trajetstodetails.lieuArr}}</h3> 
+            </ion-card-title>
+          </ion-item> 
         <ion-card-content>
-            <button  ion-button  round id="alloDakar-button3"   on-click="goToTrajet()">
-                Reserver
-              </button>
+
+            <ion-item>  
+            
+                <p>
+                    <b>Arrivée :</b>   {{trajetstodetails.lieuArr}}
+                </p>
+           <p>
+               <b>Date de départ :</b> {{trajetstodetails.dateDep | date: 'dd/MM/yyyy'}}
+           </p>
+           <p>
+              <b>Heure :</b> {{trajetstodetails.heureDep}}
+           </p>
+           <p>
+               <b>Tarif :</b> {{trajetstodetails.tarifvoy}}
+           </p>
+           <p>
+               <b>Nombre de place : </b> {{trajetstodetails.nbplacedispo}}
+           </p>
+  
+           <p>
+               <b>Posté par : </b> {{trajetstodetails.User.prenom}}
+           </p>
+          </ion-item>
+
+
         </ion-card-content>
-      
         <ion-row>
-          <ion-col>
-            <button ion-button icon-left clear small>
-              <ion-icon name="thumbs-up"></ion-icon>
-              <div>12 Likes</div>
-            </button>
-          </ion-col>
           <ion-col>
             <button ion-button icon-left clear small>
               <ion-icon name="text"></ion-icon>
@@ -70,6 +64,58 @@
             </ion-note>
           </ion-col>
         </ion-row>
+      
+      </ion-card>
+      <ion-card>
+
+        <ion-item>
+          <ion-avatar item-start>
+           
+          </ion-avatar>
+           <ion-card-title>
+            
+            </ion-card-title>
+          </ion-item> 
+          
+        <ion-card-content>
+            
+            <ion-item-group> 
+                  <ion-row center> 
+                <ion-item-divider color="primary"></ion-item-divider> 
+                <ion-col text-center>   
+                  <ion-item>
+                    <ion-label>J'accepte les Conditions Générales</ion-label>
+                    <ion-checkbox color="dark" checked="true"></ion-checkbox>
+                    </ion-item>
+                 </ion-col> 
+                </ion-row>
+                <ion-item-divider color="primary"></ion-item-divider> 
+                <ion-row center>  
+                    <ion-col text-center>   
+                    <ion-item>
+                        <ion-label>Nombre de place</ion-label>
+                      <ion-select [(ngModel)]="nbplace" name="nbplace">
+                        <ion-option>1</ion-option>
+                        <ion-option>2</ion-option>
+                        <ion-option>3</ion-option>
+                        <ion-option>4</ion-option>
+                        <ion-option>5</ion-option>
+                        <ion-option>6</ion-option>
+                      </ion-select>
+                    </ion-item>
+                   </ion-col> 
+                  </ion-row>
+                  <ion-item-divider color="primary"></ion-item-divider> 
+                  <ion-row center>  
+                   <ion-col text-center>   
+                    <button  ion-button  round id="alloDakar-button3"  on-click="goToReservation(trajetstodetails)">
+                        Reserver
+                      </button>
+                   </ion-col> 
+                  </ion-row>
+                </ion-item-group>
+        </ion-card-content>
+        
       
       </ion-card>
 

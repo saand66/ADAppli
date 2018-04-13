@@ -1,4 +1,4 @@
-<ion-menu  [content]="mainContent">
+<ion-menu  [content]="mainContent" >
   <ion-header  class="bar-balanced" >
     <ion-toolbar color = "primary">
       <ion-title >
@@ -6,7 +6,7 @@
       </ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-content id="side-menu21">
+  <ion-content id="side-menu21" on-click="goUserInfos()">
     
     <div class="spacer" style="width:268px;height:30px;" id="menu-list-item1"></div>
     <ion-list id="menu-list1">
@@ -15,7 +15,7 @@
                 <img src="assets/img/laat.jpeg">
             </ion-avatar>
             <h2>
-              {{userprenom}} {{usernom}}
+                {{userprenom}} {{usernom}}
             </h2>
           </ion-item>
       <ion-item color="positive" menuClose="" on-click="goToAlloDakar()" id="menu-list-item1">
@@ -34,11 +34,11 @@
           <ion-icon color= "primary" color= "primary" name="create" item-left></ion-icon>
         Inscription
       </ion-item>
-      <ion-item *ngIf ="!islogin" color="positive" menuClose="" on-click="goToConnexion()" id="menu-list-item5">
+      <ion-item *ngIf ="islogin=='false' || !islogin " color="positive" menuClose="" on-click="goToConnexion()" id="menu-list-item5">
           <ion-icon color= "primary" color= "primary" name="log-in" item-left></ion-icon>
         Connexion
       </ion-item>
-      <ion-item *ngIf="islogin" color="positive" menuClose="" on-click="goToDeconnexion()" id="menu-list-item5">
+      <ion-item *ngIf="islogin=='true'" color="positive" menuClose="" on-click="goToDeconnexion()" id="menu-list-item5">
         <ion-icon color= "primary" name="log-out" item-left></ion-icon>
          Deconnexion
     </ion-item>
