@@ -17,7 +17,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TrajetDetailsPage } from '../pages/trajet-details/trajet-details';
 import { UsersInfosService } from '../services/UsersInfosService';
-
+import { NativeStorage } from '@ionic-native/native-storage';
 @NgModule({
   declarations: [
     MyApp,
@@ -55,6 +55,7 @@ import { UsersInfosService } from '../services/UsersInfosService';
     StatusBar,
     SplashScreen,
     UsersInfosService,
+    NativeStorage,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

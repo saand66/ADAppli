@@ -12,17 +12,20 @@
 
 </ion-header>
 
-
 <ion-content padding>
-    <ion-card-header>
+    
+       
+     <ion-card-header class = "card-title">
         Liste des trajets diponible
       </ion-card-header>
+
+
     <ion-card *ngFor="let trajet of trajets">
       <ion-item>
         <ion-avatar item-start>
           <img src="../assets/img/laat.jpeg">
         </ion-avatar>
-        <h3>{{trajet.User.prenom}} {{trajet.User.nom}}</h3>
+        <h4>{{trajet.User.prenom}} {{trajet.User.nom}}</h4>
         <p>{{trajet.dateDep | date: 'dd/MM/yyyy'}}</p>
       </ion-item>
         <ion-card-content>

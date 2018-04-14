@@ -8,6 +8,7 @@ export class UsersInfosService {
   public userNom: string;
   public userIsLogin: boolean;
   public userToken: string;
+  public numberofrefresh: number;
 
 
   constructor() {
@@ -45,6 +46,15 @@ export class UsersInfosService {
   public getUserIsLogin() {
     return this.userIsLogin;
 
+  }
+  
+  public getNumberofrefresh() {
+    return this.numberofrefresh;
+
+  }
+
+  public setNumberofrefresh(numberofrefresh) {
+    this.numberofrefresh = numberofrefresh +1;
   }
 
   public setUserIsLogin(islogin) {
