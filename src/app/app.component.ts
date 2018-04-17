@@ -9,6 +9,7 @@ import { InscriptionPage } from '../pages/inscription/inscription';
 import { ProposerDamayTukkiPage } from '../pages/proposer-damay-tukki/proposer-damay-tukki';
 import { UsersInfosService } from '../services/UsersInfosService';
 import { NativeStorage } from '@ionic-native/native-storage';
+import { AcceuilPage } from '../pages/acceuil/acceuil';
 
 @Component({
   templateUrl: 'app.html'
@@ -16,7 +17,7 @@ import { NativeStorage } from '@ionic-native/native-storage';
 export class MyApp{
   @ViewChild(Nav) navCtrl: Nav;
   theme:String = 'facebook-messenger-theme';
-    rootPage:any = AlloDakarPage;
+    rootPage:any = AcceuilPage;
   userprenom : string;
   usernom : string;
   islogin : string;
@@ -53,9 +54,8 @@ export class MyApp{
 
 
 
-  goToCloud(params){
-    if (!params) params = {};
-    this.navCtrl.setRoot(CloudPage);
+  goToAcceuil(){
+    this.navCtrl.setRoot(AcceuilPage);
   }
   goToConnexion(params){
     if (!params) params = {};

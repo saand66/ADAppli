@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, DateTime } from 'ionic-angular';
 import {AlloDakarService} from '../../services/AlloDakarApi.service';
 import { NewTrajet } from '../../models/AlloDakar-NewTrajet';
 import { AlertController } from 'ionic-angular';
@@ -11,12 +11,15 @@ import { AlertController } from 'ionic-angular';
 export class ProposerDamayTukkiPage {
   newTrajet : NewTrajet = new NewTrajet();
   erreur : string;
+  myDate: string = new Date().toISOString();
+  myTime: string = new Date().toISOString();
   constructor(public navCtrl: NavController,private alloDakarService: AlloDakarService,public alertCtrl: AlertController) {
   }
   
 
   public CreerTrajet() {
-    
+    this.newTrajet.dateDep = this.myDate.replace("/","");
+    this.newTrajet.heureDep = this.myTime.replace(":","");
     this.alloDakarService.NewTrajet(this.newTrajet)
     .then(data => {
       if (data){

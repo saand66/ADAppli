@@ -14,19 +14,20 @@ import { NewUser } from '../models/AlloDakar-NewUser';
 import { NewTrajet } from '../models/AlloDakar-NewTrajet';
 import { ConnexionPage } from '../pages/connexion/connexion'
 import { UsersInfosService } from './UsersInfosService';
+import { Reservation } from '../models/Reservation';
 @Injectable()
 
 export class AlloDakarService {
 
- // private baseUrl: string = 'http://damaydem.com:49160/api/';
-  private baseUrl : string ='/api/';
+  private baseUrl: string = 'http://damaydem.com:49160/api/';
+  //private baseUrl : string ='/api/';
   private serviceRegister: string = 'users/register';
   private serviceLogin: string = 'users/login';
   private newtrajetpath: string = 'trajets/new';
   private serviceList: string = 'trajets';
-  private serviceReser: string = 'trajets';
-  private serviceModifResev: string = 'trajets';
-  private serviceAnnulResev: string = 'trajets';
+  private serviceReser: string = 'reservation/new';
+  private serviceModifResev: string = 'reservation/modif';
+  private serviceAnnulResev: string = 'reservation/annul';
 
 
 
@@ -84,12 +85,18 @@ export class AlloDakarService {
     //.catch(error => console.log ('une erreur est survenue ' + error))
   }
 
-  public reserv() {
+  public reserv(newReservation : Reservation) {
     const url = `${this.baseUrl}${this.serviceReser}`;
-    return this.http.post(url, Login)
+    const headers = new HttpHeaders()
+      .set("Content-Type", "application/json")
+      .set("Authorization", 'Bearer ' + this.usersInfosService.getUserToken());
+  
+
+    return this.http.post(url,newReservation, { headers: headers })
       .toPromise()
       .then(response => response)
       .catch(error => error.json())
+      
     //.catch(error => console.log ('une erreur est survenue ' + error))
   }
 

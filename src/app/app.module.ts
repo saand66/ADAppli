@@ -18,6 +18,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TrajetDetailsPage } from '../pages/trajet-details/trajet-details';
 import { UsersInfosService } from '../services/UsersInfosService';
 import { NativeStorage } from '@ionic-native/native-storage';
+import { AcceuilPage } from '../pages/acceuil/acceuil';
 @NgModule({
   declarations: [
     MyApp,
@@ -29,7 +30,8 @@ import { NativeStorage } from '@ionic-native/native-storage';
     TrajetPage,
     ConnexionPage,
     InscriptionPage,
-    TrajetDetailsPage
+    TrajetDetailsPage,
+    AcceuilPage
   ],
   imports: [
     HttpModule,
@@ -48,7 +50,8 @@ import { NativeStorage } from '@ionic-native/native-storage';
     TrajetPage,
     ConnexionPage,
     InscriptionPage,
-    TrajetDetailsPage
+    TrajetDetailsPage,
+    AcceuilPage
   ],
   providers: [
     AlloDakarService,

@@ -3,8 +3,8 @@ import { DateTime } from "ionic-angular";
 export class NewTrajet {
     lieuDep: string;
     lieuArr: string; 
-    dateDep: Date;
-    heureDep: DateTime;
+    dateDep: string;
+    heureDep: string;
     tarifvoy: Number;
     nbplace: Number;
   }
