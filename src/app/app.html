@@ -54,6 +54,31 @@
   </ion-content>
 </ion-menu>
 
+<ion-footer  style="width:100%;height:45px;">
+  <ion-toolbar color = "primary">
+    <ion-segment [(ngModel)]="icons" color="dark">
+      <ion-segment-button value="car">
+        <ion-icon name="car"></ion-icon>
+      </ion-segment-button>
 
+      <ion-segment-button value="md-search">
+        <ion-icon name="md-search"></ion-icon>
+      </ion-segment-button>
+
+      <ion-segment-button value="md-add-circle">
+        <ion-icon name="md-add-circle"></ion-icon>
+      </ion-segment-button>
+     
+      <ion-segment-button value="ios-chatbubbles">
+          <ion-icon name="ios-chatbubbles"></ion-icon> 
+      </ion-segment-button>
+
+      <ion-segment-button value="md-person">
+        <ion-icon name="md-person"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+  
+</ion-footer>
 
 <ion-nav #mainContent [root]="rootPage" [class]="theme"></ion-nav>

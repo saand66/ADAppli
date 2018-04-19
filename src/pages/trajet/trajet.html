@@ -16,11 +16,13 @@
     
        
      <ion-card-header class = "card-title">
-        Liste des trajets diponible
+        Trajets diponible
       </ion-card-header>
 
-
-    <ion-card *ngFor="let trajet of trajets">
+   
+    <ion-card *ngFor="let trajet of trajets" class="card-subtitle">
+     <ion-row> 
+      <ion-col> 
       <ion-item>
         <ion-avatar item-start>
           <img src="../assets/img/laat.jpeg">
@@ -28,12 +30,18 @@
         <h4>{{trajet.User.prenom}} {{trajet.User.nom}}</h4>
         <p>{{trajet.dateDep}}</p>
       </ion-item>
+    </ion-col>
+      <ion-col> {{trajet.tarifvoy}}</ion-col>
+    </ion-row>
         <ion-card-content>
-        <div class="card-title" on-click="GoToDetails(trajet)" > 
-          <ion-card-title>
-            {{trajet.lieuDep + " - " + trajet.lieuArr}} 
-          </ion-card-title>
+       
+            <div class="card-title" on-click="GoToDetails(trajet)" > 
+            <ion-card-title class="card-title">
+              {{trajet.lieuDep + " - " + trajet.lieuArr}} 
+             </ion-card-title>
             </div>
+        
+        
         </ion-card-content>
       </ion-card> 
 </ion-content>
