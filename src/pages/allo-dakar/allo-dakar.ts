@@ -18,10 +18,12 @@ export class AlloDakarPage {
   goToSeetVoyage(params){
     if (!params) params = {};
     this.navCtrl.push(SeetVoyagePage);
-  }goToProposerDamayTukki(params){
+  }
+  goToProposerDamayTukki(params){
     if (!params) params = {};
     this.navCtrl.push(ProposerDamayTukkiPage);
-  }goToTrajet(params){
+  }
+  goToTrajet(params){
     if (!params) params = {};
     this.navCtrl.push(TrajetPage);
   }

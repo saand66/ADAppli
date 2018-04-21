@@ -16,30 +16,43 @@
 </ion-header>
 
 
-<ion-content padding   class="">
+   <ion-content padding   class="">
+     <ion-list> 
 
+        <img src="assets/img/mcv.jpg" style="display:block;width:50%;height:20%;margin-left:auto;margin-right:auto;" />
+
+     </ion-list>
+     <div class="spacer" style="width:300px;height:20px;" id="alloDakar-spacer3"></div>
     <ion-list>
 
+         {{messageerreur}}
+
+
         <ion-item >
-          <ion-label fixed>Numero Tel</ion-label>
+          <ion-label floating>Numero Tel</ion-label>
           <ion-input type="text" value="" [(ngModel)]="login.numtel"></ion-input>
         </ion-item>
       
         <ion-item>
-          <ion-label fixed>Password</ion-label>
+          <ion-label floating>Password</ion-label>
           <ion-input type="password" [(ngModel)]="login.motdepass"></ion-input>
         </ion-item>
         
       </ion-list>
       <div class="spacer" style="width:300px;height:17px;" id="alloDakar-spacer3"></div>
-      <button id="connexion" ion-button round color="positive" block style="width:300px;height:30px;"  on-click="Connexion()">
-           Connexion
-      </button>
+      <ion-item>
+          <button id="connexion" ion-button round color="positive" block style="width:300px;height:30px;"  on-click="Connexion()">
+              Connexion
+         </button>
+       </ion-item>
+      
 
       <div class="spacer" style="width:300px;height:17px;" id="alloDakar-spacer3"></div>
+      <ion-item>
       <button id="newcompte" ion-button round color="positive" block style="width:300px;height:30px;"  on-click="Inscription()">
         Creer un compte
       </button>
+    </ion-item>
 
 
 </ion-content>

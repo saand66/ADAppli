@@ -19,6 +19,9 @@ import { TrajetDetailsPage } from '../pages/trajet-details/trajet-details';
 import { UsersInfosService } from '../services/UsersInfosService';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { AcceuilPage } from '../pages/acceuil/acceuil';
+import { UserprofilPage } from '../pages/userprofil/userprofil';
+import { UsertrajetPage } from '../pages/usertrajet/usertrajet';
+import { UsermessagePage } from '../pages/usermessage/usermessage';
 @NgModule({
   declarations: [
     MyApp,
@@ -31,7 +34,10 @@ import { AcceuilPage } from '../pages/acceuil/acceuil';
     ConnexionPage,
     InscriptionPage,
     TrajetDetailsPage,
-    AcceuilPage
+    AcceuilPage,
+    UserprofilPage,
+    UsertrajetPage,
+    UsermessagePage,
   ],
   imports: [
     HttpModule,
@@ -51,7 +57,10 @@ import { AcceuilPage } from '../pages/acceuil/acceuil';
     ConnexionPage,
     InscriptionPage,
     TrajetDetailsPage,
-    AcceuilPage
+    AcceuilPage,
+    UserprofilPage,
+    UsertrajetPage,
+    UsermessagePage
   ],
   providers: [
     AlloDakarService,

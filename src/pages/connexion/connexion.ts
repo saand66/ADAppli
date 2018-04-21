@@ -25,6 +25,8 @@ export class ConnexionPage {
 
     login : Login = new Login();
     erreur : string;
+    messageerreur : string;
+
    
    
   constructor(public navCtrl: NavController,
@@ -42,6 +44,7 @@ export class ConnexionPage {
     this.alloDakarService.Connexion(this.login)
     .then(data => {
    
+      console.log( "mon erreur : " + data) ;
 
       if (data && data.token){
        localStorage.setItem("UserPrenom", data.UserPrenom);
@@ -63,9 +66,10 @@ export class ConnexionPage {
 
         this.navCtrl.setRoot(AlloDakarPage);
 
-      }else  if (data && data.error){
-       this.erreur = data.error;
+      }else if (data && data.error){
 
+       this.erreur = data.error;
+        console.log( "mon erreur : " + this.erreur) ;
        let alert = this.alertCtrl.create({
         title: 'Probleme',
         subTitle: this.erreur,
@@ -75,6 +79,8 @@ export class ConnexionPage {
 
       }
        }).catch(function(err){
+
+      
       ///  return Response.status(500).json({ 'error':'impossible de verifier user'});
   
     });

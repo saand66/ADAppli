@@ -10,6 +10,10 @@ import { ProposerDamayTukkiPage } from '../pages/proposer-damay-tukki/proposer-d
 import { UsersInfosService } from '../services/UsersInfosService';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { AcceuilPage } from '../pages/acceuil/acceuil';
+import { SeetVoyagePage } from '../pages/seet-voyage/seet-voyage';
+import { UsertrajetPage } from '../pages/usertrajet/usertrajet';
+import { UserprofilPage } from '../pages/userprofil/userprofil';
+import { UsermessagePage } from '../pages/usermessage/usermessage';
 
 @Component({
   templateUrl: 'app.html'
@@ -99,6 +103,27 @@ export class MyApp{
   
   }
 
+  goToSeetVoyage(params){
+    if (!params) params = {};
+    this.navCtrl.push(SeetVoyagePage);
+  }
+
+  goToUsertrajet(params){
+    if (!params) params = {};
+    this.navCtrl.push(UsertrajetPage);
+  }
+
+  goToUserprofil(params){
+    if (!params) params = {};
+    this.navCtrl.push(UserprofilPage);
+  }
+  goToUsermessage(params){
+    if (!params) params = {};
+    this.navCtrl.push(UsermessagePage);
+  }
+  
+  
+ 
   ionViewDidLoad() {
     // Put here the code you want to execute
   }

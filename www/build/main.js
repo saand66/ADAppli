@@ -1,12 +1,12 @@
-webpackJsonp([5],{
+webpackJsonp([8],{
 
-/***/ 108:
+/***/ 109:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AcceuilPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__allo_dakar_allo_dakar__ = __webpack_require__(47);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -39,7 +39,7 @@ var AcceuilPage = /** @class */ (function () {
     };
     AcceuilPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-acceuil',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADApp/src/pages/acceuil/acceuil.html"*/'<!--\n  Generated template for the AcceuilPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n    <ion-navbar>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n      <ion-title>\n       DAMAYDEM.COM\n      </ion-title>\n    </ion-navbar>\n  </ion-header>\n\n\n<ion-content  class ="" padding>\n    <img src="assets/img/mcv.jpg" style="display:block;width:580%;height:auto;margin-left:auto;margin-right:auto;" />\n     \n    <ion-row center>  \n      <ion-col text-center>   \n        <button id="loca-button1" style="width:300px;height:50px;" ion-button round  on-click="goToCovoit()">\n          Location de voitures\n        </button>\n      </ion-col>\n     </ion-row>\n    <div class="spacer" style="width:300px;height:17px;" id="alloDakar-spacer3"></div>\n    <ion-row center>  \n      <ion-col text-center>   \n        <button id="transurbain-button2" style="width:300px;height:50px;" ion-button round on-click="goToCovoit()">\n         Transport Urbain\n        </button>\n      </ion-col> \n     </ion-row>\n    <div class="spacer" style="width:300px;height:17px;"  id="alloDakar-spacer3"></div>\n    <ion-row center>  \n        <ion-col text-center>   \n          <button  id="transinterurbain-button2" style="width:300px;height:50px;"  ion-button round on-click="goToCovoit()">\n           Transport Inter-Urbain\n          </button>\n        </ion-col> \n       </ion-row>\n      <div class="spacer" style="width:300px;height:17px;" id="alloDakar-spacer3"></div>\n    <ion-row center>  \n      <ion-col text-center>   \n        <button  id="covoit-button3"  style="width:300px;height:50px;" ion-button  round  on-click="goToCovoit()">\n         Covoiturage\n        </button>\n      </ion-col> \n     </ion-row>\n     \n    \n     \n</ion-content>\n'/*ion-inline-end:"/Users/imac/Documents/DEV/ADApp/src/pages/acceuil/acceuil.html"*/,
+            selector: 'page-acceuil',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADAppli/src/pages/acceuil/acceuil.html"*/'<!--\n  Generated template for the AcceuilPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n    <ion-navbar>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n      <ion-title>\n       DAMAYDEM.COM\n      </ion-title>\n    </ion-navbar>\n  </ion-header>\n\n\n<ion-content  class ="" padding>\n    <img src="assets/img/mcv.jpg" style="display:block;width:580%;height:auto;margin-left:auto;margin-right:auto;" />\n     \n    <ion-row center>  \n      <ion-col text-center>   \n        <button id="loca-button1" style="width:300px;height:50px;" ion-button round  on-click="goToCovoit()">\n          Location de voitures\n        </button>\n      </ion-col>\n     </ion-row>\n    <div class="spacer" style="width:300px;height:17px;" id="alloDakar-spacer3"></div>\n    <ion-row center>  \n      <ion-col text-center>   \n        <button id="transurbain-button2" style="width:300px;height:50px;" ion-button round on-click="goToCovoit()">\n         Transport Urbain\n        </button>\n      </ion-col> \n     </ion-row>\n    <div class="spacer" style="width:300px;height:17px;"  id="alloDakar-spacer3"></div>\n    <ion-row center>  \n        <ion-col text-center>   \n          <button  id="transinterurbain-button2" style="width:300px;height:50px;"  ion-button round on-click="goToCovoit()">\n           Transport Inter-Urbain\n          </button>\n        </ion-col> \n       </ion-row>\n      <div class="spacer" style="width:300px;height:17px;" id="alloDakar-spacer3"></div>\n    <ion-row center>  \n      <ion-col text-center>   \n        <button  id="covoit-button3"  style="width:300px;height:50px;" ion-button  round  on-click="goToCovoit()">\n         Covoiturage\n        </button>\n      </ion-col> \n     </ion-row>\n     \n    \n     \n</ion-content>\n'/*ion-inline-end:"/Users/imac/Documents/DEV/ADAppli/src/pages/acceuil/acceuil.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], AcceuilPage);
@@ -50,15 +50,15 @@ var AcceuilPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 109:
+/***/ 110:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TrajetPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_AlloDakarApi_service__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_trajet_details_trajet_details__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_trajet_details_trajet_details__ = __webpack_require__(111);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -106,7 +106,7 @@ var TrajetPage = /** @class */ (function () {
     };
     TrajetPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-trajet',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADApp/src/pages/trajet/trajet.html"*/'<!--\n  Generated template for the TrajetPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Trajet</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n    \n       \n     <ion-card-header class = "card-title">\n        Trajets diponible\n      </ion-card-header>\n\n   \n    <ion-card *ngFor="let trajet of trajets" class="card-subtitle">\n     <ion-row> \n      <ion-col> \n      <ion-item>\n        <ion-avatar item-start>\n          <img src="../assets/img/laat.jpeg">\n        </ion-avatar>\n        <h4>{{trajet.User.prenom}} {{trajet.User.nom}}</h4>\n        <p>{{trajet.dateDep}}</p>\n      </ion-item>\n    </ion-col>\n      <ion-col> {{trajet.tarifvoy}}</ion-col>\n    </ion-row>\n        <ion-card-content>\n       \n            <div class="card-title" on-click="GoToDetails(trajet)" > \n            <ion-card-title class="card-title">\n              {{trajet.lieuDep + " - " + trajet.lieuArr}} \n             </ion-card-title>\n            </div>\n        \n        \n        </ion-card-content>\n      </ion-card> \n</ion-content>\n'/*ion-inline-end:"/Users/imac/Documents/DEV/ADApp/src/pages/trajet/trajet.html"*/,
+            selector: 'page-trajet',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADAppli/src/pages/trajet/trajet.html"*/'<!--\n  Generated template for the TrajetPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Trajet</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n    \n       \n     <ion-card-header class = "card-title">\n        Trajets diponible\n      </ion-card-header>\n\n   \n    <ion-card *ngFor="let trajet of trajets" class="card-subtitle">\n     <ion-row> \n      <ion-col> \n      <ion-item>\n        <ion-avatar item-start>\n          <img src="../assets/img/laat.jpeg">\n        </ion-avatar>\n        <h4>{{trajet.User.prenom}} {{trajet.User.nom}}</h4>\n        <p>{{trajet.dateDep}}</p>\n      </ion-item>\n    </ion-col>\n      <ion-col> {{trajet.tarifvoy}}</ion-col>\n    </ion-row>\n        <ion-card-content>\n       \n            <div class="card-title" on-click="GoToDetails(trajet)" > \n            <ion-card-title class="card-title">\n              {{trajet.lieuDep + " - " + trajet.lieuArr}} \n             </ion-card-title>\n            </div>\n        \n        \n        </ion-card-content>\n      </ion-card> \n</ion-content>\n'/*ion-inline-end:"/Users/imac/Documents/DEV/ADAppli/src/pages/trajet/trajet.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_AlloDakarApi_service__["a" /* AlloDakarService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], TrajetPage);
@@ -117,16 +117,16 @@ var TrajetPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 110:
+/***/ 111:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TrajetDetailsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_AlloDakar_Trajet__ = __webpack_require__(263);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_AlloDakar_Trajet__ = __webpack_require__(266);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_AlloDakarApi_service__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_Reservation__ = __webpack_require__(264);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_Reservation__ = __webpack_require__(267);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -197,7 +197,7 @@ var TrajetDetailsPage = /** @class */ (function () {
     };
     TrajetDetailsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-trajet-details',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADApp/src/pages/trajet-details/trajet-details.html"*/'<!--\n  Generated template for the TrajetDetailsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>trajetDetails</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <ion-card>\n\n        <ion-item>\n          <ion-avatar item-start>\n           \n          </ion-avatar>\n           <ion-card-title>\n              <h3> {{trajetstodetails.lieuDep + " - " + trajetstodetails.lieuArr}}</h3> \n            </ion-card-title>\n          </ion-item> \n        <ion-card-content>\n\n            <ion-item>  \n            \n                <p>\n                    <b>Arrivée :</b>   {{trajetstodetails.lieuArr}}\n                </p>\n           <p>\n               <b>Date de départ :</b> {{trajetstodetails.dateDep}}\n           </p>\n           <p>\n              <b>Heure :</b> {{trajetstodetails.heureDep}}\n           </p>\n           <p>\n               <b>Tarif :</b> {{trajetstodetails.tarifvoy}}\n           </p>\n           <p>\n               <b>Nombre de place : </b> {{trajetstodetails.nbplacedispo}}\n           </p>\n  \n           <p>\n               <b>Posté par : </b> {{trajetstodetails.User.prenom}}\n           </p>\n          </ion-item>\n\n\n        </ion-card-content>\n        <ion-row>\n          <ion-col>\n            <button ion-button icon-left clear small>\n              <ion-icon name="text"></ion-icon>\n              <div>4 Comments</div>\n            </button>\n          </ion-col>\n          <ion-col center text-center>\n            <ion-note>\n              11h ago\n            </ion-note>\n          </ion-col>\n        </ion-row>\n      \n      </ion-card>\n      <ion-card>\n\n        <ion-item>\n          <ion-avatar item-start>\n           \n          </ion-avatar>\n           <ion-card-title>\n            \n            </ion-card-title>\n          </ion-item> \n          \n        <ion-card-content>\n            \n            <ion-item-group> \n                  <ion-row center> \n                <ion-item-divider color="primary"></ion-item-divider> \n                <ion-col text-center>   \n                  <ion-item>\n                    <ion-label>J\'accepte les Conditions Générales</ion-label>\n                    <ion-checkbox color="dark" checked="true"></ion-checkbox>\n                    </ion-item>\n                 </ion-col> \n                </ion-row>\n                <ion-item-divider color="primary"></ion-item-divider> \n                <ion-row center>  \n                    <ion-col text-center>   \n                    <ion-item>\n                        <ion-label>Nombre de place</ion-label>\n                      <ion-select [(ngModel)]="nbplace" name="nbplace">\n                        <ion-option>1</ion-option>\n                        <ion-option>2</ion-option>\n                        <ion-option>3</ion-option>\n                        <ion-option>4</ion-option>\n                        <ion-option>5</ion-option>\n                        <ion-option>6</ion-option>\n                      </ion-select>\n                    </ion-item>\n                   </ion-col> \n                  </ion-row>\n                  <ion-item-divider color="primary"></ion-item-divider> \n                  <ion-row center>  \n                   <ion-col text-center>   \n                    <button  ion-button  round id="alloDakar-button3"  on-click="goToReservation(trajetstodetails)">\n                        Reserver\n                      </button>\n                   </ion-col> \n                  </ion-row>\n                </ion-item-group>\n        </ion-card-content>\n        \n      \n      </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/imac/Documents/DEV/ADApp/src/pages/trajet-details/trajet-details.html"*/,
+            selector: 'page-trajet-details',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADAppli/src/pages/trajet-details/trajet-details.html"*/'<!--\n  Generated template for the TrajetDetailsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>trajetDetails</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <ion-card>\n\n        <ion-item>\n          <ion-avatar item-start>\n           \n          </ion-avatar>\n           <ion-card-title>\n              <h3> {{trajetstodetails.lieuDep + " - " + trajetstodetails.lieuArr}}</h3> \n            </ion-card-title>\n          </ion-item> \n        <ion-card-content>\n\n            <ion-item>  \n            \n                <p>\n                    <b>Arrivée :</b>   {{trajetstodetails.lieuArr}}\n                </p>\n           <p>\n               <b>Date de départ :</b> {{trajetstodetails.dateDep}}\n           </p>\n           <p>\n              <b>Heure :</b> {{trajetstodetails.heureDep}}\n           </p>\n           <p>\n               <b>Tarif :</b> {{trajetstodetails.tarifvoy}}\n           </p>\n           <p>\n               <b>Nombre de place : </b> {{trajetstodetails.nbplacedispo}}\n           </p>\n  \n           <p>\n               <b>Posté par : </b> {{trajetstodetails.User.prenom}}\n           </p>\n          </ion-item>\n\n\n        </ion-card-content>\n        <ion-row>\n          <ion-col>\n            <button ion-button icon-left clear small>\n              <ion-icon name="text"></ion-icon>\n              <div>4 Comments</div>\n            </button>\n          </ion-col>\n          <ion-col center text-center>\n            <ion-note>\n              11h ago\n            </ion-note>\n          </ion-col>\n        </ion-row>\n      \n      </ion-card>\n      <ion-card>\n\n        <ion-item>\n          <ion-avatar item-start>\n           \n          </ion-avatar>\n           <ion-card-title>\n            \n            </ion-card-title>\n          </ion-item> \n          \n        <ion-card-content>\n            \n            <ion-item-group> \n                  <ion-row center> \n                <ion-item-divider color="primary"></ion-item-divider> \n                <ion-col text-center>   \n                  <ion-item>\n                    <ion-label>J\'accepte les Conditions Générales</ion-label>\n                    <ion-checkbox color="dark" checked="true"></ion-checkbox>\n                    </ion-item>\n                 </ion-col> \n                </ion-row>\n                <ion-item-divider color="primary"></ion-item-divider> \n                <ion-row center>  \n                    <ion-col text-center>   \n                    <ion-item>\n                        <ion-label>Nombre de place</ion-label>\n                      <ion-select [(ngModel)]="nbplace" name="nbplace">\n                        <ion-option>1</ion-option>\n                        <ion-option>2</ion-option>\n                        <ion-option>3</ion-option>\n                        <ion-option>4</ion-option>\n                        <ion-option>5</ion-option>\n                        <ion-option>6</ion-option>\n                      </ion-select>\n                    </ion-item>\n                   </ion-col> \n                  </ion-row>\n                  <ion-item-divider color="primary"></ion-item-divider> \n                  <ion-row center>  \n                   <ion-col text-center>   \n                    <button  ion-button  style="width:300px;height:60px;" round id="alloDakar-button3"  on-click="goToReservation(trajetstodetails)">\n                        Reserver\n                      </button>\n                   </ion-col> \n                  </ion-row>\n                </ion-item-group>\n        </ion-card-content>\n        \n      \n      </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/imac/Documents/DEV/ADAppli/src/pages/trajet-details/trajet-details.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__services_AlloDakarApi_service__["a" /* AlloDakarService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], TrajetDetailsPage);
@@ -208,7 +208,142 @@ var TrajetDetailsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 122:
+/***/ 112:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UsermessagePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the UsermessagePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var UsermessagePage = /** @class */ (function () {
+    function UsermessagePage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    UsermessagePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad UsermessagePage');
+    };
+    UsermessagePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-usermessage',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADAppli/src/pages/usermessage/usermessage.html"*/'<!--\n  Generated template for the UsermessagePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>usermessage</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/imac/Documents/DEV/ADAppli/src/pages/usermessage/usermessage.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+    ], UsermessagePage);
+    return UsermessagePage;
+}());
+
+//# sourceMappingURL=usermessage.js.map
+
+/***/ }),
+
+/***/ 113:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UsertrajetPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the UsertrajetPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var UsertrajetPage = /** @class */ (function () {
+    function UsertrajetPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    UsertrajetPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad UsertrajetPage');
+    };
+    UsertrajetPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-usertrajet',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADAppli/src/pages/usertrajet/usertrajet.html"*/'<!--\n  Generated template for the UsertrajetPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>usertrajet</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/imac/Documents/DEV/ADAppli/src/pages/usertrajet/usertrajet.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+    ], UsertrajetPage);
+    return UsertrajetPage;
+}());
+
+//# sourceMappingURL=usertrajet.js.map
+
+/***/ }),
+
+/***/ 114:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserprofilPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the UserprofilPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var UserprofilPage = /** @class */ (function () {
+    function UserprofilPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    UserprofilPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad UserprofilPage');
+    };
+    UserprofilPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-userprofil',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADAppli/src/pages/userprofil/userprofil.html"*/'<!--\n  Generated template for the UserprofilPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>userprofil</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/imac/Documents/DEV/ADAppli/src/pages/userprofil/userprofil.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+    ], UserprofilPage);
+    return UserprofilPage;
+}());
+
+//# sourceMappingURL=userprofil.js.map
+
+/***/ }),
+
+/***/ 126:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -221,32 +356,44 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 122;
+webpackEmptyAsyncContext.id = 126;
 
 /***/ }),
 
-/***/ 163:
+/***/ 167:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/acceuil/acceuil.module": [
-		295,
-		4
+		298,
+		7
 	],
 	"../pages/connexion/connexion.module": [
-		296,
-		3
+		303,
+		6
 	],
 	"../pages/inscription/inscription.module": [
-		297,
-		2
+		299,
+		5
 	],
 	"../pages/trajet-details/trajet-details.module": [
-		299,
-		1
+		300,
+		4
 	],
 	"../pages/trajet/trajet.module": [
-		298,
+		301,
+		3
+	],
+	"../pages/usermessage/usermessage.module": [
+		302,
+		2
+	],
+	"../pages/userprofil/userprofil.module": [
+		305,
+		1
+	],
+	"../pages/usertrajet/usertrajet.module": [
+		304,
 		0
 	]
 };
@@ -261,47 +408,12 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 163;
+webpackAsyncContext.id = 167;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 164:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SeetVoyagePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var SeetVoyagePage = /** @class */ (function () {
-    function SeetVoyagePage(navCtrl) {
-        this.navCtrl = navCtrl;
-    }
-    SeetVoyagePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-seet-voyage',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADApp/src/pages/seet-voyage/seet-voyage.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-buttons start>\n      <button ion-button icon-only>\n        <ion-icon name="search"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>\n      Seet Voyage\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page4">\n  <form id="seetVoyage-form1">\n    <ion-item id="seetVoyage-select1">\n      <ion-label>\n        Depart\n      </ion-label>\n      <ion-select name="">\n        <ion-option>\n          Louga\n        </ion-option>\n        <ion-option>\n          Ziguinchor\n        </ion-option>\n        <ion-option>\n          Matam\n        </ion-option>\n        <ion-option>\n          Touba\n        </ion-option>\n        <ion-option>\n          Thies\n        </ion-option>\n        <ion-option>\n          St louis\n        </ion-option>\n        <ion-option>\n          Fatick\n        </ion-option>\n        <ion-option>\n          Diourbel\n        </ion-option>\n        <ion-option>\n          Kaolack\n        </ion-option>\n        <ion-option>\n          Dakar\n        </ion-option>\n        <ion-option>\n          Sédiou\n        </ion-option>\n        <ion-option>\n          Kafrine\n        </ion-option>\n        <ion-option>\n          Kédougou\n        </ion-option>\n      </ion-select>\n    </ion-item>\n    <ion-item id="proposerDamayTukki-select1">\n      <ion-label>\n        Destination\n      </ion-label>\n      <ion-select name="Destination">\n        <ion-option>\n          Louga\n        </ion-option>\n        <ion-option>\n          Ziguinchor\n        </ion-option>\n        <ion-option>\n          Matam\n        </ion-option>\n        <ion-option>\n          Touba\n        </ion-option>\n        <ion-option>\n          Thies\n        </ion-option>\n        <ion-option>\n          St louis\n        </ion-option>\n        <ion-option>\n          Fatick\n        </ion-option>\n        <ion-option>\n          Diourbel\n        </ion-option>\n        <ion-option>\n          Kaolack\n        </ion-option>\n        <ion-option>\n          Dakar\n        </ion-option>\n        <ion-option>\n          Sédiou\n        </ion-option>\n        <ion-option>\n          Kafrine\n        </ion-option>\n        <ion-option>\n          Kédougou\n        </ion-option>\n      </ion-select>\n    </ion-item>\n    <ion-item id="seetVoyage-input3">\n      <ion-label>\n        Date\n      </ion-label>\n      <ion-input type="date" placeholder=""></ion-input>\n    </ion-item>\n    <ion-item id="seetVoyage-input4">\n      <ion-label>\n        Heure\n      </ion-label>\n      <ion-input type="time" placeholder=""></ion-input>\n    </ion-item>\n    <ion-item id="seetVoyage-input5">\n      <ion-label>\n        Nombre de Place\n      </ion-label>\n      <ion-input type="number" placeholder=""></ion-input>\n    </ion-item>\n  </form>\n  <button id="seetVoyage-button3" ion-button color="positive" block>\n    <ion-icon name="search"></ion-icon>\n    Rechercher (Seet)\n  </button>\n</ion-content>'/*ion-inline-end:"/Users/imac/Documents/DEV/ADApp/src/pages/seet-voyage/seet-voyage.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]])
-    ], SeetVoyagePage);
-    return SeetVoyagePage;
-}());
-
-//# sourceMappingURL=seet-voyage.js.map
-
-/***/ }),
-
-/***/ 166:
+/***/ 169:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -316,13 +428,13 @@ var Login = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 209:
+/***/ 212:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(230);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(233);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -330,38 +442,44 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 230:
+/***/ 233:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(294);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_allo_dakar_allo_dakar__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_cart_cart__ = __webpack_require__(292);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_cloud_cloud__ = __webpack_require__(293);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_seet_voyage_seet_voyage__ = __webpack_require__(164);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_trajet_trajet__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_connexion_connexion__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_inscription_inscription__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_proposer_damay_tukki_proposer_damay_tukki__ = __webpack_require__(83);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_http__ = __webpack_require__(294);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_cart_cart__ = __webpack_require__(295);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_cloud_cloud__ = __webpack_require__(296);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_seet_voyage_seet_voyage__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_trajet_trajet__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_connexion_connexion__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_inscription_inscription__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_proposer_damay_tukki_proposer_damay_tukki__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_http__ = __webpack_require__(297);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_AlloDakarApi_service__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_status_bar__ = __webpack_require__(207);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_splash_screen__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__angular_common_http__ = __webpack_require__(165);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_trajet_details_trajet_details__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_status_bar__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_splash_screen__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__angular_common_http__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_trajet_details_trajet_details__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_UsersInfosService__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_native_native_storage__ = __webpack_require__(84);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_acceuil_acceuil__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_native_native_storage__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_acceuil_acceuil__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_userprofil_userprofil__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_usertrajet_usertrajet__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_usermessage_usermessage__ = __webpack_require__(112);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
 
 
 
@@ -399,7 +517,10 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_9__pages_connexion_connexion__["a" /* ConnexionPage */],
                 __WEBPACK_IMPORTED_MODULE_10__pages_inscription_inscription__["a" /* InscriptionPage */],
                 __WEBPACK_IMPORTED_MODULE_17__pages_trajet_details_trajet_details__["a" /* TrajetDetailsPage */],
-                __WEBPACK_IMPORTED_MODULE_20__pages_acceuil_acceuil__["a" /* AcceuilPage */]
+                __WEBPACK_IMPORTED_MODULE_20__pages_acceuil_acceuil__["a" /* AcceuilPage */],
+                __WEBPACK_IMPORTED_MODULE_21__pages_userprofil_userprofil__["a" /* UserprofilPage */],
+                __WEBPACK_IMPORTED_MODULE_22__pages_usertrajet_usertrajet__["a" /* UsertrajetPage */],
+                __WEBPACK_IMPORTED_MODULE_23__pages_usermessage_usermessage__["a" /* UsermessagePage */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_12__angular_http__["a" /* HttpModule */],
@@ -408,10 +529,13 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/acceuil/acceuil.module#AcceuilPageModule', name: 'AcceuilPage', segment: 'acceuil', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/connexion/connexion.module#ConnexionPageModule', name: 'ConnexionPage', segment: 'connexion', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/inscription/inscription.module#InscriptionPageModule', name: 'InscriptionPage', segment: 'inscription', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/trajet-details/trajet-details.module#TrajetDetailsPageModule', name: 'TrajetDetailsPage', segment: 'trajet-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/trajet/trajet.module#TrajetPageModule', name: 'TrajetPage', segment: 'trajet', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/trajet-details/trajet-details.module#TrajetDetailsPageModule', name: 'TrajetDetailsPage', segment: 'trajet-details', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/usermessage/usermessage.module#UsermessagePageModule', name: 'UsermessagePage', segment: 'usermessage', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/connexion/connexion.module#ConnexionPageModule', name: 'ConnexionPage', segment: 'connexion', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/usertrajet/usertrajet.module#UsertrajetPageModule', name: 'UsertrajetPage', segment: 'usertrajet', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/userprofil/userprofil.module#UserprofilPageModule', name: 'UserprofilPage', segment: 'userprofil', priority: 'low', defaultHistory: [] }
                     ]
                 })
             ],
@@ -427,7 +551,10 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_9__pages_connexion_connexion__["a" /* ConnexionPage */],
                 __WEBPACK_IMPORTED_MODULE_10__pages_inscription_inscription__["a" /* InscriptionPage */],
                 __WEBPACK_IMPORTED_MODULE_17__pages_trajet_details_trajet_details__["a" /* TrajetDetailsPage */],
-                __WEBPACK_IMPORTED_MODULE_20__pages_acceuil_acceuil__["a" /* AcceuilPage */]
+                __WEBPACK_IMPORTED_MODULE_20__pages_acceuil_acceuil__["a" /* AcceuilPage */],
+                __WEBPACK_IMPORTED_MODULE_21__pages_userprofil_userprofil__["a" /* UserprofilPage */],
+                __WEBPACK_IMPORTED_MODULE_22__pages_usertrajet_usertrajet__["a" /* UsertrajetPage */],
+                __WEBPACK_IMPORTED_MODULE_23__pages_usermessage_usermessage__["a" /* UsermessagePage */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_13__services_AlloDakarApi_service__["a" /* AlloDakarService */],
@@ -446,7 +573,7 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 262:
+/***/ 265:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -461,7 +588,7 @@ var NewTrajet = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 263:
+/***/ 266:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -477,7 +604,7 @@ var Trajet = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 264:
+/***/ 267:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -492,7 +619,7 @@ var Reservation = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 273:
+/***/ 268:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -507,22 +634,26 @@ var NewUser = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 291:
+/***/ 294:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(207);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_connexion_connexion__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_connexion_connexion__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_allo_dakar_allo_dakar__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_inscription_inscription__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_proposer_damay_tukki_proposer_damay_tukki__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_inscription_inscription__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_proposer_damay_tukki_proposer_damay_tukki__ = __webpack_require__(84);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_UsersInfosService__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_native_storage__ = __webpack_require__(84);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_acceuil_acceuil__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_native_storage__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_acceuil_acceuil__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_seet_voyage_seet_voyage__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_usertrajet_usertrajet__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_userprofil_userprofil__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_usermessage_usermessage__ = __webpack_require__(112);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -532,6 +663,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
+
+
 
 
 
@@ -609,6 +744,26 @@ var MyApp = /** @class */ (function () {
         console.log(" this.userprenom ", this.userprenom);
         console.log("  this.islogin ", this.islogin);
     };
+    MyApp.prototype.goToSeetVoyage = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_11__pages_seet_voyage_seet_voyage__["a" /* SeetVoyagePage */]);
+    };
+    MyApp.prototype.goToUsertrajet = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_12__pages_usertrajet_usertrajet__["a" /* UsertrajetPage */]);
+    };
+    MyApp.prototype.goToUserprofil = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_13__pages_userprofil_userprofil__["a" /* UserprofilPage */]);
+    };
+    MyApp.prototype.goToUsermessage = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_14__pages_usermessage_usermessage__["a" /* UsermessagePage */]);
+    };
     MyApp.prototype.ionViewDidLoad = function () {
         // Put here the code you want to execute
     };
@@ -617,7 +772,7 @@ var MyApp = /** @class */ (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Nav */])
     ], MyApp.prototype, "navCtrl", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADApp/src/app/app.html"*/'<ion-menu  [content]="mainContent" >\n  <ion-header  class="bar-balanced" >\n    <ion-toolbar color = "primary">\n      <ion-title >\n        Allo Dakar Menu \n      </ion-title>\n    </ion-toolbar>\n  </ion-header>\n  <ion-content id="side-menu21" on-click="goUserInfos()">\n    \n    <div class="spacer" style="width:268px;height:30px;" id="menu-list-item1"></div>\n    <ion-list id="menu-list1">\n        <ion-item color="none" id="menu-list-item14">\n            <ion-avatar item-left>\n                <img src="assets/img/laat.jpeg">\n            </ion-avatar>\n            <h2>\n                {{userprenom}} {{usernom}}\n            </h2>\n          </ion-item>\n      <ion-item color="positive" menuClose="" on-click="goToAcceuil()" id="menu-list-item1">\n          <ion-icon color= "primary" name="home" item-left></ion-icon>\n        Home\n      </ion-item>\n      <ion-item color="positive" menuClose="" on-click="goToAlloDakar()" id="menu-list-item2">\n          <ion-icon color= "primary" name="search" item-left></ion-icon>\n        Rechercher\n      </ion-item>\n      <ion-item color="positive" menuClose="" on-click="goToDamayTukki()" id="menu-list-item3">\n          <ion-icon color= "primary" name="car" item-left></ion-icon>\n        Proposer\n      </ion-item>\n      <ion-item color="positive" menuClose="" on-click="goToInscription()" id="menu-list-item4">\n          <ion-icon color= "primary" color= "primary" name="create" item-left></ion-icon>\n        Inscription\n      </ion-item>\n      <ion-item *ngIf ="islogin==\'false\' || !islogin " color="positive" menuClose="" on-click="goToConnexion()" id="menu-list-item5">\n          <ion-icon color= "primary" color= "primary" name="log-in" item-left></ion-icon>\n        Connexion\n      </ion-item>\n      <ion-item *ngIf="islogin==\'true\'" color="positive" menuClose="" on-click="goToDeconnexion()" id="menu-list-item5">\n        <ion-icon color= "primary" name="log-out" item-left></ion-icon>\n         Deconnexion\n    </ion-item>\n      <ion-item color="positive" menuClose="" on-click="goToCloud()" id="menu-list-item6">\n          <ion-icon color= "primary" name="help-circle" item-left></ion-icon>\n        Aide\n      </ion-item>\n      <ion-item color="none" menuClose="" on-click="goToCart()" id="menu-list-item7">\n          <ion-icon color= "primary" name="information-circle" item-left></ion-icon>\n        A propos\n      </ion-item>\n    </ion-list>\n  </ion-content>\n</ion-menu>\n\n<ion-footer  style="width:100%;height:45px;">\n  <ion-toolbar color = "primary">\n    <ion-segment [(ngModel)]="icons" color="dark">\n      <ion-segment-button value="car">\n        <ion-icon name="car"></ion-icon>\n      </ion-segment-button>\n\n      <ion-segment-button value="md-search">\n        <ion-icon name="md-search"></ion-icon>\n      </ion-segment-button>\n\n      <ion-segment-button value="md-add-circle">\n        <ion-icon name="md-add-circle"></ion-icon>\n      </ion-segment-button>\n     \n      <ion-segment-button value="ios-chatbubbles">\n          <ion-icon name="ios-chatbubbles"></ion-icon> \n      </ion-segment-button>\n\n      <ion-segment-button value="md-person">\n        <ion-icon name="md-person"></ion-icon>\n      </ion-segment-button>\n    </ion-segment>\n  </ion-toolbar>\n  \n</ion-footer>\n\n<ion-nav #mainContent [root]="rootPage" [class]="theme"></ion-nav>'/*ion-inline-end:"/Users/imac/Documents/DEV/ADApp/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADAppli/src/app/app.html"*/'<ion-menu  [content]="mainContent" >\n  <ion-header  class="bar-balanced" >\n    <ion-toolbar color = "primary">\n      <ion-title >\n        Allo Dakar Menu \n      </ion-title>\n    </ion-toolbar>\n  </ion-header>\n  <ion-content id="side-menu21" on-click="goUserInfos()">\n    \n    <div class="spacer" style="width:268px;height:30px;" id="menu-list-item1"></div>\n    <ion-list id="menu-list1">\n        <ion-item color="none" id="menu-list-item14">\n            <ion-avatar item-left>\n                <img src="assets/img/laat.jpeg">\n            </ion-avatar>\n            <h2>\n                {{userprenom}} {{usernom}}\n            </h2>\n          </ion-item>\n      <ion-item color="positive" menuClose="" on-click="goToAcceuil()" id="menu-list-item1">\n          <ion-icon color= "primary" name="home" item-left></ion-icon>\n        Home\n      </ion-item>\n      <ion-item color="positive" menuClose="" on-click="goToAlloDakar()" id="menu-list-item2">\n          <ion-icon color= "primary" name="search" item-left></ion-icon>\n        Rechercher\n      </ion-item>\n      <ion-item color="positive" menuClose="" on-click="goToDamayTukki()" id="menu-list-item3">\n          <ion-icon color= "primary" name="car" item-left></ion-icon>\n        Proposer\n      </ion-item>\n      <ion-item color="positive" menuClose="" on-click="goToInscription()" id="menu-list-item4">\n          <ion-icon color= "primary" color= "primary" name="create" item-left></ion-icon>\n        Inscription\n      </ion-item>\n      <ion-item *ngIf ="islogin==\'false\' || !islogin " color="positive" menuClose="" on-click="goToConnexion()" id="menu-list-item5">\n          <ion-icon color= "primary" color= "primary" name="log-in" item-left></ion-icon>\n        Connexion\n      </ion-item>\n      <ion-item *ngIf="islogin==\'true\'" color="positive" menuClose="" on-click="goToDeconnexion()" id="menu-list-item5">\n        <ion-icon color= "primary" name="log-out" item-left></ion-icon>\n         Deconnexion\n    </ion-item>\n      <ion-item color="positive" menuClose="" on-click="goToCloud()" id="menu-list-item6">\n          <ion-icon color= "primary" name="help-circle" item-left></ion-icon>\n        Aide\n      </ion-item>\n      <ion-item color="none" menuClose="" on-click="goToCart()" id="menu-list-item7">\n          <ion-icon color= "primary" name="information-circle" item-left></ion-icon>\n        A propos\n      </ion-item>\n    </ion-list>\n  </ion-content>\n</ion-menu>\n\n<ion-footer  style="width:100%;height:70px;">\n  <ion-toolbar color = "primary">\n    <ion-segment [(ngModel)]="icons" color="dark">\n\n        <ion-segment-button value="ios-home" on-click="goToAcceuil()">\n            <ion-icon name="ios-home"></ion-icon>\n         </ion-segment-button>\n    \n            <ion-segment-button value="car" on-click="goToUsertrajet()">\n                <ion-icon name="car"></ion-icon>\n             </ion-segment-button>\n        \n      <ion-segment-button value="md-search"  on-click="goToSeetVoyage()">\n        <ion-icon name="md-search"></ion-icon>\n      </ion-segment-button>\n   \n    \n      <ion-segment-button value="md-add-circle" on-click="goToDamayTukki()">\n        <ion-icon name="md-add-circle"></ion-icon>\n      </ion-segment-button>\n    \n      <ion-segment-button value="ios-chatbubbles"  on-click="goToUsermessage()">\n          <ion-icon name="ios-chatbubbles"></ion-icon> \n      </ion-segment-button>\n    \n      <ion-segment-button value="md-person" on-click="goToUserprofil()">\n        <ion-icon name="md-person"></ion-icon>\n      </ion-segment-button>\n\n\n    </ion-segment>\n  </ion-toolbar>\n  \n</ion-footer>\n\n<ion-nav #mainContent [root]="rootPage" [class]="theme"></ion-nav>'/*ion-inline-end:"/Users/imac/Documents/DEV/ADAppli/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */],
@@ -632,13 +787,13 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 292:
+/***/ 295:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CartPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -656,7 +811,7 @@ var CartPage = /** @class */ (function () {
     }
     CartPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-cart',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADApp/src/pages/cart/cart.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      Cart\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page2"></ion-content>'/*ion-inline-end:"/Users/imac/Documents/DEV/ADApp/src/pages/cart/cart.html"*/
+            selector: 'page-cart',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADAppli/src/pages/cart/cart.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      Cart\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page2"></ion-content>'/*ion-inline-end:"/Users/imac/Documents/DEV/ADAppli/src/pages/cart/cart.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]])
     ], CartPage);
@@ -667,13 +822,13 @@ var CartPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 293:
+/***/ 296:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CloudPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -691,7 +846,7 @@ var CloudPage = /** @class */ (function () {
     }
     CloudPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-cloud',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADApp/src/pages/cloud/cloud.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      Cloud\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page3"></ion-content>'/*ion-inline-end:"/Users/imac/Documents/DEV/ADApp/src/pages/cloud/cloud.html"*/
+            selector: 'page-cloud',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADAppli/src/pages/cloud/cloud.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      Cloud\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page3"></ion-content>'/*ion-inline-end:"/Users/imac/Documents/DEV/ADAppli/src/pages/cloud/cloud.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]])
     ], CloudPage);
@@ -708,12 +863,12 @@ var CloudPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AlloDakarService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(165);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(260);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(263);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(261);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(264);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_AlloDakar_Login__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_AlloDakar_Login__ = __webpack_require__(169);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__UsersInfosService__ = __webpack_require__(48);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -827,10 +982,10 @@ var AlloDakarService = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AlloDakarPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__seet_voyage_seet_voyage__ = __webpack_require__(164);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__proposer_damay_tukki_proposer_damay_tukki__ = __webpack_require__(83);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__trajet_trajet__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__seet_voyage_seet_voyage__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__proposer_damay_tukki_proposer_damay_tukki__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__trajet_trajet__ = __webpack_require__(110);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -868,7 +1023,7 @@ var AlloDakarPage = /** @class */ (function () {
     };
     AlloDakarPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-allo-dakar',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADApp/src/pages/allo-dakar/allo-dakar.html"*/'<ion-header>\n        <ion-navbar>\n          <button ion-button menuToggle>\n            <ion-icon name="menu"></ion-icon>\n          </button>\n          <ion-title>\n          Allo Dakar\n          </ion-title>\n        </ion-navbar>\n</ion-header>\n<ion-content class ="" padding id="page1">\n  <img src="assets/img/logo_dev.png" style="display:block;width:50%;height:auto;margin-left:auto;margin-right:auto;" />\n \n  <ion-row center>  \n    <ion-col text-center>   \n      <button id="alloDakar-button1" style="width:300px;height:60px;" ion-button round  on-click="goToProposerDamayTukki()">\n        Damay Tukki (Proposer)\n      </button>\n    </ion-col>\n   </ion-row>\n  <div class="spacer" style="width:300px;height:17px;" id="alloDakar-spacer3"></div>\n \n\n  <ion-row center>  \n    <ion-col text-center>   \n      <button ion-button  style="width:300px;height:60px;" round id="alloDakar-button2"   on-click="goToSeetVoyage()">\n        Yobaléma (Rechercher)\n      </button>\n    </ion-col> \n   </ion-row>\n\n  <div class="spacer" style="width:300px;height:17px;" id="alloDakar-spacer3"></div>\n\n  <ion-row center>  \n    <ion-col text-center>   \n      <button  ion-button style="width:300px;height:60px;"  round id="alloDakar-button3"   on-click="goToTrajet()">\n        List Trajets\n      </button>\n    </ion-col> \n   </ion-row>\n</ion-content>'/*ion-inline-end:"/Users/imac/Documents/DEV/ADApp/src/pages/allo-dakar/allo-dakar.html"*/
+            selector: 'page-allo-dakar',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADAppli/src/pages/allo-dakar/allo-dakar.html"*/'<ion-header>\n        <ion-navbar>\n          <button ion-button menuToggle>\n            <ion-icon name="menu"></ion-icon>\n          </button>\n          <ion-title>\n          Allo Dakar\n          </ion-title>\n        </ion-navbar>\n</ion-header>\n<ion-content class ="" padding id="page1">\n  <img src="assets/img/logo_dev.png" style="display:block;width:50%;height:auto;margin-left:auto;margin-right:auto;" />\n \n  <ion-row center>  \n    <ion-col text-center>   \n      <button id="alloDakar-button1" style="width:300px;height:60px;" ion-button round  on-click="goToProposerDamayTukki()">\n        Damay Tukki (Proposer)\n      </button>\n    </ion-col>\n   </ion-row>\n  <div class="spacer" style="width:300px;height:17px;" id="alloDakar-spacer3"></div>\n \n\n  <ion-row center>  \n    <ion-col text-center>   \n      <button ion-button  style="width:300px;height:60px;" round id="alloDakar-button2"   on-click="goToSeetVoyage()">\n        Yobaléma (Rechercher)\n      </button>\n    </ion-col> \n   </ion-row>\n\n  <div class="spacer" style="width:300px;height:17px;" id="alloDakar-spacer3"></div>\n\n  <ion-row center>  \n    <ion-col text-center>   \n      <button  ion-button style="width:300px;height:60px;"  round id="alloDakar-button3"   on-click="goToTrajet()">\n        List Trajets\n      </button>\n    </ion-col> \n   </ion-row>\n</ion-content>'/*ion-inline-end:"/Users/imac/Documents/DEV/ADAppli/src/pages/allo-dakar/allo-dakar.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]])
     ], AlloDakarPage);
@@ -944,14 +1099,75 @@ var UsersInfosService = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InscriptionPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_AlloDakarApi_service__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_AlloDakar_NewUser__ = __webpack_require__(268);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_connexion_connexion__ = __webpack_require__(54);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the InscriptionPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var InscriptionPage = /** @class */ (function () {
+    function InscriptionPage(navCtrl, alloDakarService) {
+        this.navCtrl = navCtrl;
+        this.alloDakarService = alloDakarService;
+        this.newuser = new __WEBPACK_IMPORTED_MODULE_3__models_AlloDakar_NewUser__["a" /* NewUser */]();
+    }
+    // connexion 
+    InscriptionPage.prototype.inscription = function () {
+        var _this = this;
+        console.log(this.newuser);
+        this.alloDakarService.inscription(this.newuser)
+            .then(function (data) {
+            console.log(data);
+            if (data) {
+                _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_4__pages_connexion_connexion__["a" /* ConnexionPage */]);
+            }
+        });
+    };
+    InscriptionPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-inscription',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADAppli/src/pages/inscription/inscription.html"*/'<!--\n  Generated template for the InscriptionPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>inscription</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>\n\n    <ion-item >\n      <ion-label fixed>Prénom</ion-label>\n      <ion-input type="text" value="" [(ngModel)]="newuser.prenom"></ion-input>\n    </ion-item>\n\n    <ion-item >\n      <ion-label fixed>Nom</ion-label>\n      <ion-input type="text" value="" [(ngModel)]="newuser.nom"></ion-input>\n    </ion-item>\n\n    <ion-item >\n      <ion-label fixed>Telephone</ion-label>\n      <ion-input type="text" value="" [(ngModel)]="newuser.numtel"></ion-input>\n    </ion-item>\n  \n    <ion-item >\n      <ion-label fixed>Mot de pass</ion-label>\n      <ion-input type="text" value="" [(ngModel)]="newuser.motdepass"></ion-input>\n    </ion-item>\n\n    <ion-item >\n      <ion-label fixed>Description</ion-label>\n      <ion-input type="text" value="" [(ngModel)]="newuser.descrip"></ion-input>\n    </ion-item>\n\n    <div class="spacer" style="width:300px;height:17px;" id="alloDakar-spacer3"></div>\n    \n  </ion-list>\n  \n  <button id="creercompte" ion-button color="positive" block style="font-weight:500;font-style:italic;text-align:left;" on-click="inscription()">\n    inscription\n  </button>\n</ion-content>\n'/*ion-inline-end:"/Users/imac/Documents/DEV/ADAppli/src/pages/inscription/inscription.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_AlloDakarApi_service__["a" /* AlloDakarService */]])
+    ], InscriptionPage);
+    return InscriptionPage;
+}());
+
+//# sourceMappingURL=inscription.js.map
+
+/***/ }),
+
+/***/ 54:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConnexionPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_native_storage__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_native_storage__ = __webpack_require__(85);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_AlloDakarApi_service__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_AlloDakar_Login__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_AlloDakar_Login__ = __webpack_require__(169);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__allo_dakar_allo_dakar__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__inscription_inscription__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__inscription_inscription__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_UsersInfosService__ = __webpack_require__(48);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -993,6 +1209,7 @@ var ConnexionPage = /** @class */ (function () {
         console.log(this.login);
         this.alloDakarService.Connexion(this.login)
             .then(function (data) {
+            console.log("mon erreur : " + data);
             if (data && data.token) {
                 localStorage.setItem("UserPrenom", data.UserPrenom);
                 localStorage.setItem("UserNom", data.UserNom);
@@ -1013,6 +1230,7 @@ var ConnexionPage = /** @class */ (function () {
             }
             else if (data && data.error) {
                 _this.erreur = data.error;
+                console.log("mon erreur : " + _this.erreur);
                 var alert_1 = _this.alertCtrl.create({
                     title: 'Probleme',
                     subTitle: _this.erreur,
@@ -1031,7 +1249,7 @@ var ConnexionPage = /** @class */ (function () {
     };
     ConnexionPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-connexion',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADApp/src/pages/connexion/connexion.html"*/'<!--\n  Generated template for the ConnexionPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>connexion</ion-title>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding   class="">\n\n    <ion-list>\n\n        <ion-item >\n          <ion-label fixed>Numero Tel</ion-label>\n          <ion-input type="text" value="" [(ngModel)]="login.numtel"></ion-input>\n        </ion-item>\n      \n        <ion-item>\n          <ion-label fixed>Password</ion-label>\n          <ion-input type="password" [(ngModel)]="login.motdepass"></ion-input>\n        </ion-item>\n        \n      </ion-list>\n      <div class="spacer" style="width:300px;height:17px;" id="alloDakar-spacer3"></div>\n      <button id="connexion" ion-button round color="positive" block style="width:300px;height:30px;"  on-click="Connexion()">\n           Connexion\n      </button>\n\n      <div class="spacer" style="width:300px;height:17px;" id="alloDakar-spacer3"></div>\n      <button id="newcompte" ion-button round color="positive" block style="width:300px;height:30px;"  on-click="Inscription()">\n        Creer un compte\n      </button>\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/imac/Documents/DEV/ADApp/src/pages/connexion/connexion.html"*/,
+            selector: 'page-connexion',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADAppli/src/pages/connexion/connexion.html"*/'<!--\n  Generated template for the ConnexionPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>connexion</ion-title>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n  </ion-navbar>\n\n</ion-header>\n\n\n   <ion-content padding   class="">\n     <ion-list> \n\n        <img src="assets/img/mcv.jpg" style="display:block;width:50%;height:20%;margin-left:auto;margin-right:auto;" />\n\n     </ion-list>\n     <div class="spacer" style="width:300px;height:20px;" id="alloDakar-spacer3"></div>\n    <ion-list>\n\n         {{messageerreur}}\n\n\n        <ion-item >\n          <ion-label floating>Numero Tel</ion-label>\n          <ion-input type="text" value="" [(ngModel)]="login.numtel"></ion-input>\n        </ion-item>\n      \n        <ion-item>\n          <ion-label floating>Password</ion-label>\n          <ion-input type="password" [(ngModel)]="login.motdepass"></ion-input>\n        </ion-item>\n        \n      </ion-list>\n      <div class="spacer" style="width:300px;height:17px;" id="alloDakar-spacer3"></div>\n      <ion-item>\n          <button id="connexion" ion-button round color="positive" block style="width:300px;height:30px;"  on-click="Connexion()">\n              Connexion\n         </button>\n       </ion-item>\n      \n\n      <div class="spacer" style="width:300px;height:17px;" id="alloDakar-spacer3"></div>\n      <ion-item>\n      <button id="newcompte" ion-button round color="positive" block style="width:300px;height:30px;"  on-click="Inscription()">\n        Creer un compte\n      </button>\n    </ion-item>\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/imac/Documents/DEV/ADAppli/src/pages/connexion/connexion.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_3__services_AlloDakarApi_service__["a" /* AlloDakarService */],
@@ -1046,16 +1264,13 @@ var ConnexionPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 54:
+/***/ 83:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InscriptionPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SeetVoyagePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_AlloDakarApi_service__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_AlloDakar_NewUser__ = __webpack_require__(273);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_connexion_connexion__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1067,55 +1282,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
-
-
-/**
- * Generated class for the InscriptionPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var InscriptionPage = /** @class */ (function () {
-    function InscriptionPage(navCtrl, alloDakarService) {
+var SeetVoyagePage = /** @class */ (function () {
+    function SeetVoyagePage(navCtrl) {
         this.navCtrl = navCtrl;
-        this.alloDakarService = alloDakarService;
-        this.newuser = new __WEBPACK_IMPORTED_MODULE_3__models_AlloDakar_NewUser__["a" /* NewUser */]();
     }
-    // connexion 
-    InscriptionPage.prototype.inscription = function () {
-        var _this = this;
-        console.log(this.newuser);
-        this.alloDakarService.inscription(this.newuser)
-            .then(function (data) {
-            console.log(data);
-            if (data) {
-                _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_4__pages_connexion_connexion__["a" /* ConnexionPage */]);
-            }
-        });
-    };
-    InscriptionPage = __decorate([
+    SeetVoyagePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-inscription',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADApp/src/pages/inscription/inscription.html"*/'<!--\n  Generated template for the InscriptionPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>inscription</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>\n\n    <ion-item >\n      <ion-label fixed>Prénom</ion-label>\n      <ion-input type="text" value="" [(ngModel)]="newuser.prenom"></ion-input>\n    </ion-item>\n\n    <ion-item >\n      <ion-label fixed>Nom</ion-label>\n      <ion-input type="text" value="" [(ngModel)]="newuser.nom"></ion-input>\n    </ion-item>\n\n    <ion-item >\n      <ion-label fixed>Telephone</ion-label>\n      <ion-input type="text" value="" [(ngModel)]="newuser.numtel"></ion-input>\n    </ion-item>\n  \n    <ion-item >\n      <ion-label fixed>Mot de pass</ion-label>\n      <ion-input type="text" value="" [(ngModel)]="newuser.motdepass"></ion-input>\n    </ion-item>\n\n    <ion-item >\n      <ion-label fixed>Description</ion-label>\n      <ion-input type="text" value="" [(ngModel)]="newuser.descrip"></ion-input>\n    </ion-item>\n\n    <div class="spacer" style="width:300px;height:17px;" id="alloDakar-spacer3"></div>\n    \n  </ion-list>\n  \n  <button id="creercompte" ion-button color="positive" block style="font-weight:500;font-style:italic;text-align:left;" on-click="inscription()">\n    inscription\n  </button>\n</ion-content>\n'/*ion-inline-end:"/Users/imac/Documents/DEV/ADApp/src/pages/inscription/inscription.html"*/,
+            selector: 'page-seet-voyage',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADAppli/src/pages/seet-voyage/seet-voyage.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-buttons start>\n      <button ion-button icon-only>\n        <ion-icon name="search"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>\n      Seet Voyage\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page4">\n    <div class="spacer" style="width:300px;height:17px;" id="alloDakar-spacer3"></div>\n  <form id="seetVoyage-form1">\n    <ion-item id="seetVoyage-select1">\n      <ion-label>\n        Depart\n      </ion-label>\n      <ion-select name="">\n        <ion-option>\n          Louga\n        </ion-option>\n        <ion-option>\n          Ziguinchor\n        </ion-option>\n        <ion-option>\n          Matam\n        </ion-option>\n        <ion-option>\n          Touba\n        </ion-option>\n        <ion-option>\n          Thies\n        </ion-option>\n        <ion-option>\n          St louis\n        </ion-option>\n        <ion-option>\n          Fatick\n        </ion-option>\n        <ion-option>\n          Diourbel\n        </ion-option>\n        <ion-option>\n          Kaolack\n        </ion-option>\n        <ion-option>\n          Dakar\n        </ion-option>\n        <ion-option>\n          Sédiou\n        </ion-option>\n        <ion-option>\n          Kafrine\n        </ion-option>\n        <ion-option>\n          Kédougou\n        </ion-option>\n      </ion-select>\n    </ion-item>\n    <ion-item id="proposerDamayTukki-select1">\n      <ion-label>\n        Destination\n      </ion-label>\n      <ion-select name="Destination">\n        <ion-option>\n          Louga\n        </ion-option>\n        <ion-option>\n          Ziguinchor\n        </ion-option>\n        <ion-option>\n          Matam\n        </ion-option>\n        <ion-option>\n          Touba\n        </ion-option>\n        <ion-option>\n          Thies\n        </ion-option>\n        <ion-option>\n          St louis\n        </ion-option>\n        <ion-option>\n          Fatick\n        </ion-option>\n        <ion-option>\n          Diourbel\n        </ion-option>\n        <ion-option>\n          Kaolack\n        </ion-option>\n        <ion-option>\n          Dakar\n        </ion-option>\n        <ion-option>\n          Sédiou\n        </ion-option>\n        <ion-option>\n          Kafrine\n        </ion-option>\n        <ion-option>\n          Kédougou\n        </ion-option>\n      </ion-select>\n    </ion-item>\n    <ion-item id="seetVoyage-input3">\n      <ion-label>\n        Date\n      </ion-label>\n      <ion-input type="date" placeholder=""></ion-input>\n    </ion-item>\n    <ion-item id="seetVoyage-input4">\n      <ion-label>\n        Heure\n      </ion-label>\n      <ion-input type="time" placeholder=""></ion-input>\n    </ion-item>\n    <ion-item id="seetVoyage-input5">\n      <ion-label>\n        Nombre de Place\n      </ion-label>\n      <ion-input type="number" placeholder=""></ion-input>\n    </ion-item>\n  </form>\n  <div class="spacer" style="width:250px;height:17px;" id="alloDakar-spacer3"></div>\n  \n  <ion-row center>  \n      <ion-col text-center>   \n          <button round id="seetVoyage-button3" style="width:300px;height:60px;"  ion-button color="positive" block>\n              Rechercher (Seet)\n            </button>          \n      </ion-col> \n     </ion-row>\n</ion-content>'/*ion-inline-end:"/Users/imac/Documents/DEV/ADAppli/src/pages/seet-voyage/seet-voyage.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_AlloDakarApi_service__["a" /* AlloDakarService */]])
-    ], InscriptionPage);
-    return InscriptionPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]])
+    ], SeetVoyagePage);
+    return SeetVoyagePage;
 }());
 
-//# sourceMappingURL=inscription.js.map
+//# sourceMappingURL=seet-voyage.js.map
 
 /***/ }),
 
-/***/ 83:
+/***/ 84:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProposerDamayTukkiPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_AlloDakarApi_service__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_AlloDakar_NewTrajet__ = __webpack_require__(262);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_AlloDakar_NewTrajet__ = __webpack_require__(265);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1167,7 +1359,7 @@ var ProposerDamayTukkiPage = /** @class */ (function () {
     };
     ProposerDamayTukkiPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-proposer-damay-tukki',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADApp/src/pages/proposer-damay-tukki/proposer-damay-tukki.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-buttons start>\n      <button ion-button >\n      </button>\n    </ion-buttons>\n    <ion-title>\n      Proposer (Damay Tukki)\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content class="" padding id="page5">\n  <form class="bg" id="proposerDamayTukki-form3">\n    <ion-item id="proposerselect1">\n      <ion-label>\n        Depart\n      </ion-label>\n      <ion-select [(ngModel)]="newTrajet.lieuDep" name="lieuDep">\n        <ion-option>Louga</ion-option>\n        <ion-option>Ziguinchor</ion-option>\n        <ion-option>Matam</ion-option>\n        <ion-option>Touba</ion-option>\n        <ion-option>Thies</ion-option>\n        <ion-option>St louis</ion-option>\n        <ion-option>Fatick</ion-option>\n        <ion-option>Diourbel </ion-option>\n        <ion-option>Kaolack</ion-option>\n        <ion-option>Dakar</ion-option>\n        <ion-option>Sédiou</ion-option>  \n        <ion-option>Kafrine</ion-option>\n        <ion-option>Kédougou</ion-option>\n      </ion-select>\n    </ion-item>\n    <ion-item id="proposerselect2">\n      <ion-label>\n        Destination\n      </ion-label>\n      <ion-select [(ngModel)]="newTrajet.lieuArr" name="lieuArr">\n        <ion-option>Louga</ion-option>\n        <ion-option>Ziguinchor</ion-option>\n        <ion-option>Matam</ion-option>\n        <ion-option>Touba</ion-option>\n        <ion-option>Thies</ion-option>\n        <ion-option>St louis</ion-option>\n        <ion-option>Fatick</ion-option>\n        <ion-option>Diourbel </ion-option>\n        <ion-option>Kaolack</ion-option>\n        <ion-option>Dakar</ion-option>\n        <ion-option>Sédiou</ion-option>  \n        <ion-option>Kafrine</ion-option>\n        <ion-option>Kédougou</ion-option>\n      </ion-select>\n    </ion-item>\n    <ion-item id="proposerinput9">\n      <ion-label> Date   <ion-icon name="calendar"></ion-icon>  </ion-label>\n          <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate" name="dateDep"> </ion-datetime>\n    </ion-item>\n    <ion-item id="proposerDamayTukki-input10">\n      <ion-label>\n        heure\n      </ion-label>\n     \n      <ion-datetime displayFormat="HH:mm" [(ngModel)]="myTime" name="dateDep"> </ion-datetime>\n    </ion-item>\n    <ion-item id="proposerDamayTukki-input11">\n      <ion-label>\n        Nombre de palace\n      </ion-label>\n      \n      <ion-select [(ngModel)]="newTrajet.nbplace" type="number" placeholder="" name ="nbplace">\n          <ion-option>1</ion-option>\n          <ion-option>2</ion-option>\n          <ion-option>3</ion-option>\n          <ion-option>4</ion-option>\n          <ion-option>5</ion-option>\n          <ion-option>6</ion-option>\n          <ion-option>7</ion-option>\n          <ion-option>8</ion-option>\n          <ion-option>9</ion-option>\n          <ion-option>10</ion-option>\n          <ion-option>11</ion-option>  \n          <ion-option>12</ion-option>\n          <ion-option>13</ion-option>\n        </ion-select>\n    </ion-item>\n  </form>\n  <form id="proposerDamayTukki-form8">\n    <ion-item id="proposerDamayTukki-textarea1">\n      <ion-label>\n        Prix\n      </ion-label>\n      <ion-textarea [(ngModel)]="newTrajet.tarifvoy" placeholder="Prix Par Place"  name ="tarifvoy">\n        10000\n      </ion-textarea>\n    </ion-item>\n  </form>\n  \n  <button id="proposerDamayTukki-button4" ion-button  round  color="positive" on-click="CreerTrajet()" block>\n    Enregistrer\n  </button>\n</ion-content>'/*ion-inline-end:"/Users/imac/Documents/DEV/ADApp/src/pages/proposer-damay-tukki/proposer-damay-tukki.html"*/
+            selector: 'page-proposer-damay-tukki',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADAppli/src/pages/proposer-damay-tukki/proposer-damay-tukki.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-buttons start>\n      <button ion-button >\n      </button>\n    </ion-buttons>\n    <ion-title>\n      Proposer (Damay Tukki)\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content class="" padding id="page5">\n  <form class="bg" id="proposerDamayTukki-form3">\n    <ion-item id="proposerselect1">\n      <ion-label>\n        Depart\n      </ion-label>\n      <ion-select [(ngModel)]="newTrajet.lieuDep" name="lieuDep">\n        <ion-option>Louga</ion-option>\n        <ion-option>Ziguinchor</ion-option>\n        <ion-option>Matam</ion-option>\n        <ion-option>Touba</ion-option>\n        <ion-option>Thies</ion-option>\n        <ion-option>St louis</ion-option>\n        <ion-option>Fatick</ion-option>\n        <ion-option>Diourbel </ion-option>\n        <ion-option>Kaolack</ion-option>\n        <ion-option>Dakar</ion-option>\n        <ion-option>Sédiou</ion-option>  \n        <ion-option>Kafrine</ion-option>\n        <ion-option>Kédougou</ion-option>\n      </ion-select>\n    </ion-item>\n    <ion-item id="proposerselect2">\n      <ion-label>\n        Destination\n      </ion-label>\n      <ion-select [(ngModel)]="newTrajet.lieuArr" name="lieuArr">\n        <ion-option>Louga</ion-option>\n        <ion-option>Ziguinchor</ion-option>\n        <ion-option>Matam</ion-option>\n        <ion-option>Touba</ion-option>\n        <ion-option>Thies</ion-option>\n        <ion-option>St louis</ion-option>\n        <ion-option>Fatick</ion-option>\n        <ion-option>Diourbel </ion-option>\n        <ion-option>Kaolack</ion-option>\n        <ion-option>Dakar</ion-option>\n        <ion-option>Sédiou</ion-option>  \n        <ion-option>Kafrine</ion-option>\n        <ion-option>Kédougou</ion-option>\n      </ion-select>\n    </ion-item>\n    <ion-item id="proposerinput9">\n      <ion-label> Date   <ion-icon name="calendar"></ion-icon>  </ion-label>\n          <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate" name="dateDep"> </ion-datetime>\n    </ion-item>\n    <ion-item id="proposerDamayTukki-input10">\n      <ion-label>\n        heure\n      </ion-label>\n     \n      <ion-datetime displayFormat="HH:mm" [(ngModel)]="myTime" name="dateDep"> </ion-datetime>\n    </ion-item>\n    <ion-item id="proposerDamayTukki-input11">\n      <ion-label>\n        Nombre de palace\n      </ion-label>\n      \n      <ion-select [(ngModel)]="newTrajet.nbplace" type="number" placeholder="" name ="nbplace">\n          <ion-option>1</ion-option>\n          <ion-option>2</ion-option>\n          <ion-option>3</ion-option>\n          <ion-option>4</ion-option>\n          <ion-option>5</ion-option>\n          <ion-option>6</ion-option>\n          <ion-option>7</ion-option>\n          <ion-option>8</ion-option>\n          <ion-option>9</ion-option>\n          <ion-option>10</ion-option>\n          <ion-option>11</ion-option>  \n          <ion-option>12</ion-option>\n          <ion-option>13</ion-option>\n        </ion-select>\n    </ion-item>\n  </form>\n  <form id="proposerDamayTukki-form8">\n    <ion-item id="proposerDamayTukki-textarea1">\n      <ion-label>\n        Prix\n      </ion-label>\n      <ion-textarea [(ngModel)]="newTrajet.tarifvoy" placeholder="Prix Par Place"  name ="tarifvoy">\n        10000\n      </ion-textarea>\n    </ion-item>\n  </form>\n  \n  <button id="proposerDamayTukki-button4" ion-button  round  color="positive" on-click="CreerTrajet()" block>\n    Enregistrer\n  </button>\n</ion-content>'/*ion-inline-end:"/Users/imac/Documents/DEV/ADAppli/src/pages/proposer-damay-tukki/proposer-damay-tukki.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_AlloDakarApi_service__["a" /* AlloDakarService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], ProposerDamayTukkiPage);
@@ -1178,5 +1370,5 @@ var ProposerDamayTukkiPage = /** @class */ (function () {
 
 /***/ })
 
-},[209]);
+},[212]);
 //# sourceMappingURL=main.js.map
