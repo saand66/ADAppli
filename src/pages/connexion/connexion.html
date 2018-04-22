@@ -25,8 +25,6 @@
      <div class="spacer" style="width:300px;height:20px;" id="alloDakar-spacer3"></div>
     <ion-list>
 
-         {{messageerreur}}
-
 
         <ion-item >
           <ion-label floating>Numero Tel</ion-label>
@@ -45,13 +43,16 @@
               Connexion
          </button>
        </ion-item>
-      
-
+       <ion-item> 
+        {{messageerreur}}
+       </ion-item>
       <div class="spacer" style="width:300px;height:17px;" id="alloDakar-spacer3"></div>
+
       <ion-item>
       <button id="newcompte" ion-button round color="positive" block style="width:300px;height:30px;"  on-click="Inscription()">
         Creer un compte
       </button>
+
     </ion-item>
 
 

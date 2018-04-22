@@ -20,6 +20,7 @@ export class InscriptionPage {
 
 
   newuser : NewUser = new NewUser();
+  message : string;
 
   constructor(public navCtrl: NavController, public alloDakarService: AlloDakarService) {
   }
@@ -31,9 +32,12 @@ export class InscriptionPage {
     this.alloDakarService.inscription(this.newuser)
     .then(data => {
       console.log(data);
-      if(data){
-      this.navCtrl.setRoot(ConnexionPage);
-      }
+       if(data && data.error){
+        this.message = data.error.error;
+       }else if (data){
+        this.message = "Votre compte a été crée avec succés";
+      };
+      
     });
   }
 }

@@ -44,8 +44,6 @@ export class ConnexionPage {
     this.alloDakarService.Connexion(this.login)
     .then(data => {
    
-      console.log( "mon erreur : " + data) ;
-
       if (data && data.token){
        localStorage.setItem("UserPrenom", data.UserPrenom);
        localStorage.setItem("UserNom", data.UserNom);
@@ -66,28 +64,23 @@ export class ConnexionPage {
 
         this.navCtrl.setRoot(AlloDakarPage);
 
-      }else if (data && data.error){
-
-       this.erreur = data.error;
+      }else if ( data && data.error){
+    
+         this.messageerreur  = data.error.error;
         console.log( "mon erreur : " + this.erreur) ;
-       let alert = this.alertCtrl.create({
+       
+       /* let alert = this.alertCtrl.create({
         title: 'Probleme',
         subTitle: this.erreur,
         buttons: ['OK']
       });
-      alert.present();
+      alert.present();*/
 
       }
-       }).catch(function(err){
-
-      
-      ///  return Response.status(500).json({ 'error':'impossible de verifier user'});
-  
-    });
+       }).catch(e => { console.log("test " +  e);  })
   }
   
  
-
 
 
   Inscription(params){

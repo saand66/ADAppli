@@ -55,7 +55,7 @@ export class AlloDakarService {
     return this.http.post(url, NewUser)
       .toPromise()
       .then(response => response)
-      .catch(error => console.log('une erreur est survenue ' + error))
+      .catch(error => error)
   }
 
 
@@ -64,7 +64,7 @@ export class AlloDakarService {
     return this.http.post(url, Login)
       .toPromise()
       .then(response => response)
-      .catch(error => error.json())
+      .catch(error => error)
     //.catch(error => console.log ('une erreur est survenue ' + error))
   }
 
@@ -81,7 +81,7 @@ export class AlloDakarService {
       //return this.http.post(url, NewTrajet, { headers: headers })
       .toPromise()
       .then(response => response)
-      .catch(error => error.json())
+      .catch(error => error.json() )
     //.catch(error => console.log ('une erreur est survenue ' + error))
   }
 
