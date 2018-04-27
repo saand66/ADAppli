@@ -1,5 +1,5 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
-import { Platform, Nav } from 'ionic-angular';
+import { Platform, Nav, Keyboard } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { CloudPage } from '../pages/cloud/cloud';
@@ -14,6 +14,7 @@ import { SeetVoyagePage } from '../pages/seet-voyage/seet-voyage';
 import { UsertrajetPage } from '../pages/usertrajet/usertrajet';
 import { UserprofilPage } from '../pages/userprofil/userprofil';
 import { UsermessagePage } from '../pages/usermessage/usermessage';
+import { EditProfilePage } from '../pages/edit-profile/edit-profile';
 
 @Component({
   templateUrl: 'app.html'
@@ -25,16 +26,19 @@ export class MyApp{
   userprenom : string;
   usernom : string;
   islogin : string;
+  usertel : string;
   usersInfosService: UsersInfosService;
   task : number;
   numberofresh: number = 1;
 
   
-  constructor(platform: Platform,
-      statusBar: StatusBar,
-      splashScreen: SplashScreen,
+  constructor(
       usersInfosService: UsersInfosService,
-      private nativeStorage: NativeStorage) {
+      private nativeStorage: NativeStorage,
+    public platform: Platform,
+    public statusBar: StatusBar,
+    public splashScreen: SplashScreen,
+    public keyboard: Keyboard) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -93,7 +97,8 @@ export class MyApp{
     console.log("mangui fi ")
     this.userprenom = localStorage.getItem("UserPrenom");
     this.usernom = localStorage.getItem("UserNom");
-    this.islogin = localStorage.getItem("islogin")
+    this.islogin = localStorage.getItem("islogin");
+    this.usertel = localStorage.getItem("UserTel");
     /*this.userprenom = this.nativeStorage.getItem("UserPrenom");
     this.usernom =  this.nativeStorage.getItem("UserNom");
     this.islogin =  this.nativeStorage.getItem("islogin")*/
@@ -123,6 +128,30 @@ export class MyApp{
   }
   
   
+  initializeApp() {
+    this.platform.ready().then(() => {
+      //*** Control Status Bar
+      this.statusBar.styleDefault();
+      this.statusBar.overlaysWebView(false);
+      //*** Control Keyboard
+     // this.keyboard.disableScroll(true);
+    });
+  }
+
+  openPage(page) {
+    // Reset the content nav to have just this page
+    // we wouldn't want the back button to show in this scenario
+    this.navCtrl.push(page.component);
+  }
+
+  logout() {
+    this.navCtrl.push('page-login');
+  }
+
+  editProfile() {
+    this.navCtrl.push(EditProfilePage);
+  }
+
  
   ionViewDidLoad() {
     // Put here the code you want to execute

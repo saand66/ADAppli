@@ -18,8 +18,14 @@ export class ProposerDamayTukkiPage {
   
 
   public CreerTrajet() {
-    this.newTrajet.dateDep = this.myDate.replace("/","");
-    this.newTrajet.heureDep = this.myTime.replace(":","");
+    console.log("myDate : " + this.myDate)
+    console.log("myTime : " + this.myTime);
+   
+    this.newTrajet.dateDep = this.myDate.slice(0,10)
+    this.newTrajet.heureDep = this.myTime.slice(11,16)
+
+    console.log("myDate : " + this.newTrajet.dateDep)
+    console.log("myTime : " + this.newTrajet.heureDep);
     this.alloDakarService.NewTrajet(this.newTrajet)
     .then(data => {
       if (data){

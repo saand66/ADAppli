@@ -4,56 +4,70 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<!-- -->
+<ion-content padding class="animated fadeIn login auth-page">
+  <div class="login-content">
 
-  <ion-navbar>
-    <ion-title>connexion</ion-title>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-  </ion-navbar>
+    <!-- Logo -->
+    <div padding-horizontal text-center class="animated fadeInDown">
+      <div class="logo"></div>
+      <h2 ion-text class="text-white" no-margin>
+        <strong>DamayDem</strong>.Com
+      </h2>
+    </div>
 
-</ion-header>
-
-
-   <ion-content padding   class="">
-     <ion-list> 
-
-        <img src="assets/img/mcv.jpg" style="display:block;width:50%;height:20%;margin-left:auto;margin-right:auto;" />
-
-     </ion-list>
-     <div class="spacer" style="width:300px;height:20px;" id="alloDakar-spacer3"></div>
-    <ion-list>
-
-
-        <ion-item >
-          <ion-label floating>Numero Tel</ion-label>
-          <ion-input type="text" value="" [(ngModel)]="login.numtel"></ion-input>
-        </ion-item>
-      
-        <ion-item>
-          <ion-label floating>Password</ion-label>
-          <ion-input type="password" [(ngModel)]="login.motdepass"></ion-input>
-        </ion-item>
-        
-      </ion-list>
-      <div class="spacer" style="width:300px;height:17px;" id="alloDakar-spacer3"></div>
+    <!-- Login form -->
+    <form [formGroup]="onLoginForm" class="list-form">
       <ion-item>
-          <button id="connexion" ion-button round color="positive" block style="width:300px;height:30px;"  on-click="Connexion()">
-              Connexion
-         </button>
-       </ion-item>
-       <ion-item> 
-        {{messageerreur}}
-       </ion-item>
-      <div class="spacer" style="width:300px;height:17px;" id="alloDakar-spacer3"></div>
+        <ion-label floating>
+          <ion-icon name="mail" item-start class="text-white"></ion-icon>
+          Numéro Tel
+        </ion-label>
+        <ion-input type="email" formControlName="email" value="" [(ngModel)]="login.numtel"></ion-input>
+      </ion-item>
+      <p ion-text color="danger" class="text-1x has-error" *ngIf="onLoginForm.get('email').touched && onLoginForm.get('email').hasError('required')">Ce champ est obligatoire</p>
 
       <ion-item>
-      <button id="newcompte" ion-button round color="positive" block style="width:300px;height:30px;"  on-click="Inscription()">
-        Creer un compte
+        <ion-label floating>
+          <ion-icon name="lock" item-start class="text-white"></ion-icon>
+          Mot de Pass
+        </ion-label>
+        <ion-input  type="password" [(ngModel)]="login.motdepass" formControlName="password"></ion-input>
+      </ion-item>
+      <p ion-text color="danger" class="text-1x has-error" *ngIf="onLoginForm.get('password').touched && onLoginForm.get('password').hasError('required')">Ce champ est obligatoire</p>
+    </form>
+
+    <p text-right ion-text color="light" tappable (click)="forgotPass()"><strong>Mot de Pass Oublié ?</strong></p>
+
+    <div>
+      <button ion-button icon-start outline block color="light" tappable (click)="Connexion()" [disabled]="!onLoginForm.valid">
+        <ion-icon name="log-in"></ion-icon>
+        CONNEXION
       </button>
 
-    </ion-item>
+      <p text-center ion-text color="light">Ou connectez vous avec:</p>
+
+      <ion-grid class="btn-group">
+        <ion-row>
+          <button ion-button icon-only block class="btn-facebook col col-4">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </button>
+          <button ion-button icon-only block class="btn-twitter col col-4">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </button>
+          <button ion-button icon-only block class="btn-gplus col col-4">
+            <ion-icon name="logo-googleplus"></ion-icon>
+          </button>
+        </ion-row>
+      </ion-grid>
+
+    </div>
 
 
+    <!-- Other links -->
+    <div text-center margin-top>
+      <span ion-text color="light" tappable (click)="Inscription()">Nouveau? <strong>Creer un compte</strong></span>
+    </div>
+
+  </div>
 </ion-content>

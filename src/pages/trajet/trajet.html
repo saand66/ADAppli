@@ -12,7 +12,7 @@
 
 </ion-header>
 
-<ion-content padding>
+<ion-content class="trips cars common-bg">
     
        
      <ion-card-header class = "card-title">
@@ -20,26 +20,28 @@
       </ion-card-header>
 
    
-    <ion-card *ngFor="let trajet of trajets" class="card-subtitle">
-     <ion-row> 
-      <ion-col> 
-      <ion-item>
-        <ion-avatar item-start>
-          <img src="../assets/img/laat.jpeg">
-        </ion-avatar>
-        <h4>{{trajet.User.prenom}} {{trajet.User.nom}}</h4>
-        <p>{{trajet.dateDep}}</p>
-      </ion-item>
-    </ion-col>
-      <ion-col> {{trajet.tarifvoy}}</ion-col>
-    </ion-row>
-        <ion-card-content>
-       
-            <div class="card-title" on-tap="GoToDetails(trajet)" > 
-            <ion-card-title class="card-title">
-              {{trajet.lieuDep + " - " + trajet.lieuArr}} 
-             </ion-card-title>
+      <ion-grid>
+        <ion-row>
+          <!--list of trips-->
+          <ion-col col-12 col-md-6 col-lg-6 col-xl-4 padding *ngFor="let trajet of trajets" tappable (click)="GoToDetails(trajet)">
+            <div class="trip car card">
+              <div class="background border-bottom" [ngStyle]="{'background-image': 'url(' + thumb + ')'}">
+                <div class="background-filter rlt">
+                  <div class="align-bottom" padding-left padding-right>
+                    <h6 class="pull-left text-white" ion-text> {{trajet.lieuDep + " - " + trajet.lieuArr}}</h6>
+                    <h6 class="pull-right text-white" ion-text>{{trajet.tarifvoy | currency }}</h6>
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="padding-sm secondary-bg">
+                <ion-icon name="time" class="text-white"></ion-icon>
+                <span ion-text  class="text-green bold">{{trajet.dateDep | slice:8:10}}/{{trajet.dateDep| slice:5:7}}/{{trajet.dateDep| slice:0:4}}</span>
+                <span class="pull-right" ion-text color="light"><strong>Posté par : </strong> {{trajet.User.prenom}} {{trajet.User.nom}} </span>
+              </div>
             </div>
-        </ion-card-content>
-      </ion-card> 
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      
 </ion-content>

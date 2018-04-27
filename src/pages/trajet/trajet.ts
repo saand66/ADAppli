@@ -23,7 +23,7 @@ export class TrajetPage {
 
  // trajets : Trajet = new Trajet();
   trajets : any;
-  
+  thumb : string = "../assets/img/dkren.jpg"
    constructor(public navCtrl: NavController, private alloDakarService: AlloDakarService, public navParams: NavParams) {
     
     this.getTrajet(null);

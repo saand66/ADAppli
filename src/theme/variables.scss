@@ -33,7 +33,7 @@ $app-direction: ltr;
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
 
-$colors: (
+/*$colors: (
  // primary:    #488aff,
   primary:    #9C27B0,
   secondary:  #32db64,
@@ -43,7 +43,22 @@ $colors: (
   yahoo:    #410093,
   filkr:   #ff0084,
  // indigo:    #6a00ff
+);*/
+
+$colors: (
+  primary: #563d7c,
+  secondary: #986cda,
+  danger: #f53d3d,
+  light: #D7D6E1,
+  dark: #412d61
 );
+
+
+
+$text-color: rgba(86, 61, 124, .75);
+$background-color: #fff;
+
+
 
 $toolbar-order-md : ( 
   ack-button: 0,

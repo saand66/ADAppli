@@ -19,8 +19,8 @@ import { Reservation } from '../models/Reservation';
 
 export class AlloDakarService {
 
-  private baseUrl: string = 'http://damaydem.com:49160/api/';
-  //private baseUrl : string ='/api/';
+ // private baseUrl: string = 'http://damaydem.com:49160/api/';
+  private baseUrl : string ='/api/';
   private serviceRegister: string = 'users/register';
   private serviceLogin: string = 'users/login';
   private newtrajetpath: string = 'trajets/new';
@@ -75,7 +75,7 @@ export class AlloDakarService {
     const headers = new HttpHeaders()
       .set("Content-Type", "application/json")
       .set("Authorization", 'Bearer ' + this.usersInfosService.getUserToken());
-    console.log("le token bey :", this.usersInfosService.getUserToken())
+      console.log("le token bey :", this.usersInfosService.getUserToken())
 
     return this.http.post(url, newTrajet, { headers: headers })
       //return this.http.post(url, NewTrajet, { headers: headers })

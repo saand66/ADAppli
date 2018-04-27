@@ -1,23 +1,52 @@
+
+<ion-split-pane when="lg">
 <ion-menu  [content]="mainContent" >
-  <ion-header  class="bar-balanced" >
-    <ion-toolbar color = "primary">
-      <ion-title >
-        Allo Dakar Menu 
-      </ion-title>
+  <ion-header>
+    <ion-toolbar class="user-profile nav-transparent" no-padding>
+
+      <ion-grid class="white-bg">
+        <ion-row>
+          <ion-col col-4>
+            <ion-avatar item-start>
+              <img class="user-avatar" src="/assets/img/laat.jpeg">
+            </ion-avatar>
+          </ion-col>
+          <ion-col col-8>
+            <h4 ion-text color="primary" class="bold" no-margin>{{userprenom}} {{usernom}}</h4>
+            <p ion-text color="secondary" no-margin>{{usertel}}</p>
+            <div padding-top>
+              <button ion-button icon-left small color="secondary" menuClose (click)="editProfile()">
+                <ion-icon name="contact"></ion-icon>
+                Editer Profil
+              </button>
+              <button ion-button icon-left small color="secondary" menuClose (click)="goToDeconnexion()">
+                <ion-icon name="log-out"></ion-icon>
+              </button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid no-padding>
+        <ion-row class="other-data">
+          <ion-col text-center class="column">
+            <span ion-text color="light" class="bold">Points</span>
+            <h5 ion-text no-margin class="text-1x text-white">1124</h5>
+          </ion-col>
+          <ion-col text-center class="column">
+            <span ion-text color="light" class="bold">Fingua Nekk</span>
+            <h5 ion-text no-margin class="text-1x text-white">Louga</h5>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
     </ion-toolbar>
   </ion-header>
+
+
+
   <ion-content id="side-menu21" on-click="goUserInfos()">
-    
-    <div class="spacer" style="width:268px;height:30px;" id="menu-list-item1"></div>
     <ion-list id="menu-list1">
-        <ion-item color="none" id="menu-list-item14">
-            <ion-avatar item-left>
-                <img src="assets/img/laat.jpeg">
-            </ion-avatar>
-            <h2>
-                {{userprenom}} {{usernom}}
-            </h2>
-          </ion-item>
       <ion-item color="positive" menuClose="" on-click="goToAcceuil()" id="menu-list-item1">
           <ion-icon color= "primary" name="home" item-left></ion-icon>
         Home
@@ -90,3 +119,4 @@
 </ion-footer>
 
 <ion-nav #mainContent [root]="rootPage" [class]="theme"></ion-nav>
+</ion-split-pane>

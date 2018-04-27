@@ -22,6 +22,7 @@ import { AcceuilPage } from '../pages/acceuil/acceuil';
 import { UserprofilPage } from '../pages/userprofil/userprofil';
 import { UsertrajetPage } from '../pages/usertrajet/usertrajet';
 import { UsermessagePage } from '../pages/usermessage/usermessage';
+import { EditProfilePage } from '../pages/edit-profile/edit-profile';
 @NgModule({
   declarations: [
     MyApp,
@@ -38,6 +39,7 @@ import { UsermessagePage } from '../pages/usermessage/usermessage';
     UserprofilPage,
     UsertrajetPage,
     UsermessagePage,
+    EditProfilePage
   ],
   imports: [
     HttpModule,
@@ -60,7 +62,8 @@ import { UsermessagePage } from '../pages/usermessage/usermessage';
     AcceuilPage,
     UserprofilPage,
     UsertrajetPage,
-    UsermessagePage
+    UsermessagePage,
+    EditProfilePage
   ],
   providers: [
     AlloDakarService,
