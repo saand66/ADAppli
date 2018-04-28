@@ -1,0 +1,19 @@
+id,nom,long,lat,img1,img2,img3
+1,Dakar,14.745019,-17.489868,1.jpg,Null,Null
+2,Pikine,14.751132,-17.390747,2.jpg,Null,Null
+3,Touba,14.863577,-15.876280,3.jpg,Null,Null
+4,Guédiawaye,14.775681,-17.403120,4.jpg,Null,Null
+5,Thiès,14.797691,-16.929158,5.jpg,Null,Null
+6,Kaolack,14.145936,-16.095572,6.jpg,Null,Null
+7,Mbour,14.426137,-16.971332,7.jpg,Null,Null
+8,Saint-Louis,16.021781,-16.492038,8.jpg,Null,Null
+9,Rufisque,14.715830,-17.270929,9.jpg,Null,Null
+10,Ziguinchor,12.569513,-16.276186,10.jpg,Null,Null
+11,Diourbel,14.650560,-16.253994,11.jpg,Null,Null
+12,Louga,15.624806,-16.225005,12.jpg,Null,Null
+13,Tambacounda,13.767229,-13.675312,13.jpg,Null,Null
+14,Matam,15.608231,-13.320505,14.jpg,Null,Null
+15,Kolda,12.891656,-14.940632,15.jpg,Null,Null
+16,Richard-Toll,16.464811, -15.692050,16.jpg,Null,Null
+17,Fatick,14.345015,-16.420462,17.jpg,Null,Null
+18,Tivaouane,14.951335,-16.813577,18.jpg,Null,Null
