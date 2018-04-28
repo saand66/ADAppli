@@ -21,7 +21,7 @@ export class TrajetDetailsPage {
    trajetstodetails : Trajet = new Trajet();
    newReservation : Reservation= new Reservation();
    nbplace : number;
-
+   thumb : string = "../assets/img/dkren.jpg"
   constructor(public navCtrl: NavController, public navParams: NavParams, private alloDakarService: AlloDakarService, public alertCtrl: AlertController) {
 
    console.log('le trajet : ' + this.navParams.get('letrajet'));
@@ -33,7 +33,26 @@ export class TrajetDetailsPage {
 
     console.log('ionViewDidLoad TrajetDetailsPage');
   }
+  
+  // minus adult when click minus button
+  minusAdult() {
+    this.nbplace--;
+  }
 
+  // plus adult when click plus button
+  plusAdult() {
+    this.nbplace++;
+  }
+
+  // minus children when click minus button
+  minusChildren() {
+    this.nbplace--;
+  }
+
+  // plus children when click plus button
+  plusChildren() {
+    this.nbplace++;
+  }
   goToReservation(trajet) {
 
     console.log(" trajet det" , trajet)
@@ -77,6 +96,15 @@ export class TrajetDetailsPage {
     alert.present();
 
     }
+
+  
+
+  // go to checkout page
+  /*checkout(trip) {
+    this.nav.push('page-checkout-trip', {
+      'id': trip.id
+    });
+  }*/
 
   }
 

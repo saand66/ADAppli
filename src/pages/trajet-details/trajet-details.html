@@ -4,119 +4,124 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
+
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>trajetDetails</ion-title>
+  <ion-navbar color="primary" class="thirds-op">
+    <ion-title><h3>{{trajetstodetails.lieuDep + " - " + trajetstodetails.lieuArr}}</h3> </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-    <ion-card>
+<ion-content class=" common-bg">
+  <!--slides-->
+  <!--<ion-slides class="to-top" pager>
+    <ion-slide *ngFor="let image of trip.images">
+   <img src="{{ thumb }}" alt="">
+    </ion-slide>
+  </ion-slides> -->
+  <ion-slides class="to-top" pager>
+    <ion-slide>
+   <img src="{{ thumb }}" alt="">
+    </ion-slide>
+  </ion-slides>
 
-        <ion-item>
-          <ion-avatar item-start>
-           
-          </ion-avatar>
-           <ion-card-title>
-              <h3> {{trajetstodetails.lieuDep + " - " + trajetstodetails.lieuArr}}</h3> 
-            </ion-card-title>
-          </ion-item> 
-        <ion-card-content>
+  <!--services-->
+  <ion-grid class="border-bottom detail-bg">
+    <ion-row>
+      <ion-col text-center>
+        <div class="text-sm">
+          <div>
+            <ion-icon name="time" color="primary" class="thirds-op"></ion-icon>
+            <span ion-text color="secondary">{{trajetstodetails.dateDep}}</span>
+            <ion-icon name="checkbox-outline" margin-left color="primary" class="thirds-op"></ion-icon>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-            <ion-item>  
-            
-                <p>
-                    <b>Arrivée :</b>   {{trajetstodetails.lieuArr}}
-                </p>
-           <p>
-               <b>Date de départ :</b> {{trajetstodetails.dateDep}}
-           </p>
-           <p>
-              <b>Heure :</b> {{trajetstodetails.heureDep}}
-           </p>
-           <p>
-               <b>Tarif :</b> {{trajetstodetails.tarifvoy}}
-           </p>
-           <p>
-               <b>Nombre de place : </b> {{trajetstodetails.nbplacedispo}}
-           </p>
-  
-           <p>
-               <b>Posté par : </b> {{trajetstodetails.User.prenom}}
-           </p>
-          </ion-item>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col col-12>
+        <!--high light-->
+        <div class="border-bottom" padding>
+          <span ion-text color="dark" class="bold">Détails Du Trajet</span>
+          <ul class="highlight">
+            <li>
+              <ion-icon name="checkmark" class="text-green"></ion-icon>
+              <span ion-text color="primary"> Arrivée : {{trajetstodetails.lieuArr}}</span>
+              <ion-icon name="checkmark" class="text-green"></ion-icon>
+              <span ion-text color="primary">Date de départ : {{trajetstodetails.dateDep}}</span>
+              <ion-icon name="checkmark" class="text-green"></ion-icon>
+              <span ion-text color="primary">Heure : {{trajetstodetails.heureDep}}</span>
+              <ion-icon name="checkmark" class="text-green"></ion-icon>
+              <span ion-text color="primary">Tarif :{{trajetstodetails.tarifvoy}}</span>
+              <ion-icon name="checkmark" class="text-green"></ion-icon>
+              <span ion-text color="primary">Posté par : {{trajetstodetails.User.prenom}}</span>
+            </li>
+          </ul>
+        </div>
 
-
-        </ion-card-content>
-        <ion-row>
-          <ion-col>
-            <button ion-button icon-left clear small>
-              <ion-icon name="text"></ion-icon>
-              <div>4 Comments</div>
+        <!--booking form-->
+        <div class="booking-form card round" margin>
+          <div class="border-bottom" padding>
+            <h5>{{trajetstodetails.lieuDep + " - " + trajetstodetails.lieuArr}}</h5>
+            <!--choose guest-->
+            <ion-grid class="filters" no-padding margin-top>
+              <ion-row>
+                <ion-col class="adult" width-70>
+                  <span ion-text color="primary"><strong>{{trajetstodetails.tarifvoy | currency }}</strong> Adults</span>
+                </ion-col>
+                <ion-col width-10 text-center>
+                  <ion-icon name="remove-circle" class="text-2x" tappable (click)="minusAdult()" [hidden]="nbplace < 2"
+                   color="secondary"></ion-icon>
+                </ion-col>
+                <ion-col width-10 text-center>{{ nbplace }}</ion-col>
+                <ion-col width-10 text-center>
+                  <ion-icon name="add-circle" class="text-2x" tappable (click)="plusAdult()" color="secondary"></ion-icon>
+                </ion-col>
+              </ion-row>
+              <ion-row margin-top>
+                <ion-col width-70>
+                  <span ion-text color="primary"><strong> {{0 | currency }}</strong> Enfants (0-12 years)</span>
+                </ion-col>
+                <ion-col width-10 text-center>
+                  <ion-icon name="remove-circle" class="text-2x" tappable (click)="minusChildren()" [hidden]="nbplace < 1"
+                            color="secondary"></ion-icon>
+                </ion-col>
+                <ion-col width-10 text-center>{{ nbplace }}</ion-col>
+                <ion-col width-10 text-center>
+                  <ion-icon name="add-circle" class="text-2x" tappable (click)="plusChildren()" color="secondary"></ion-icon>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+          <div padding class="form-bottom">
+      <!--       <span ion-text color="dark" class="bold">{{ adults }} Adults</span> -->
+            <!--booking button-->
+            <button ion-button class="pull-right" color="secondary" tappable (click)="goToReservation(trajetstodetails)">Reservez {{ adults * trajetstodetails.tarifvoy  +
+              children * 0 | currency }}
             </button>
-          </ion-col>
-          <ion-col center text-center>
-            <ion-note>
-              11h ago
-            </ion-note>
-          </ion-col>
-        </ion-row>
-      
-      </ion-card>
-      <ion-card>
+            <div class="clear"></div>
+          </div>
+        </div>
 
-        <ion-item>
-          <ion-avatar item-start>
-           
-          </ion-avatar>
-           <ion-card-title>
-            
-            </ion-card-title>
-          </ion-item> 
-          
-        <ion-card-content>
-            
-            <ion-item-group> 
-                  <ion-row center> 
-                <ion-item-divider color="primary"></ion-item-divider> 
-                <ion-col text-center>   
-                  <ion-item>
-                    <ion-label>J'accepte les Conditions Générales</ion-label>
-                    <ion-checkbox color="dark" checked="true"></ion-checkbox>
-                    </ion-item>
-                 </ion-col> 
-                </ion-row>
-                <ion-item-divider color="primary"></ion-item-divider> 
-                <ion-row center>  
-                    <ion-col text-center>   
-                    <ion-item>
-                        <ion-label>Nombre de place</ion-label>
-                      <ion-select [(ngModel)]="nbplace" name="nbplace">
-                        <ion-option>1</ion-option>
-                        <ion-option>2</ion-option>
-                        <ion-option>3</ion-option>
-                        <ion-option>4</ion-option>
-                        <ion-option>5</ion-option>
-                        <ion-option>6</ion-option>
-                      </ion-select>
-                    </ion-item>
-                   </ion-col> 
-                  </ion-row>
-                  <ion-item-divider color="primary"></ion-item-divider> 
-                  <ion-row center>  
-                   <ion-col text-center>   
-                    <button  ion-button  style="width:300px;height:60px;" round id="alloDakar-button3"  on-click="goToReservation(trajetstodetails)">
-                        Reserver
-                      </button>
-                   </ion-col> 
-                  </ion-row>
-                </ion-item-group>
-        </ion-card-content>
-        
-      
-      </ion-card>
+        <!--description-->
+        <div class="border-bottom" padding>
+          <span ion-text color="primary" class="bold">DESCRIPTION</span>
+          <p ion-text>Le Sénégal, en forme longue la République du Sénégal, est un pays d'Afrique de l'Ouest. Il est bordé par l'océan Atlantique à l'ouest, la Mauritanie au nord, à l'est par le Mali, la Guinée et la Guinée-Bissau au sud. La Gambie forme une quasi-enclave dans le Sénégal, pénétrant à plus de 300 km à l'intérieur des terres. Les îles du Cap-Vert sont situées à 560 km de la côte sénégalaise. Le pays doit son nom au fleuve qui le borde à l'est et au nord et qui prend sa source dans le Fouta Djallon en Guinée. Le climat est tropical et sec avec deux saisons : la saison sèche et la saison des pluies.</p>
+        </div>
 
+        <!--address-->
+        <div class="border-bottom" padding>
+          <span ion-text color="primary" class="bold">LOCATION</span>
+          <p ion-text>Buntu Pikine </p>
+          <p ion-text>Camberene </p>
+        </div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
