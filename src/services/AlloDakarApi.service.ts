@@ -72,11 +72,10 @@ export class AlloDakarService {
 
   public NewTrajet(newTrajet: NewTrajet) {
     const url = `${this.baseUrl}${this.newtrajetpath}`;
+    console.log("le token bey :", this.usersInfosService.getUserToken())
     const headers = new HttpHeaders()
       .set("Content-Type", "application/json")
       .set("Authorization", 'Bearer ' + this.usersInfosService.getUserToken());
-      console.log("le token bey :", this.usersInfosService.getUserToken())
-
     return this.http.post(url, newTrajet, { headers: headers })
       //return this.http.post(url, NewTrajet, { headers: headers })
       .toPromise()

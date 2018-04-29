@@ -52,15 +52,24 @@
             <li>
               <ion-icon name="checkmark" class="text-green"></ion-icon>
               <span ion-text color="primary"> Arrivée : {{trajetstodetails.lieuArr}}</span>
-              <ion-icon name="checkmark" class="text-green"></ion-icon>
+            </li>
+            <li>
+            <ion-icon name="checkmark" class="text-green"></ion-icon>
               <span ion-text color="primary">Date de départ : {{trajetstodetails.dateDep}}</span>
+            </li>
+            <li>
               <ion-icon name="checkmark" class="text-green"></ion-icon>
               <span ion-text color="primary">Heure : {{trajetstodetails.heureDep}}</span>
+            </li>
+             <li>
               <ion-icon name="checkmark" class="text-green"></ion-icon>
               <span ion-text color="primary">Tarif :{{trajetstodetails.tarifvoy}}</span>
-              <ion-icon name="checkmark" class="text-green"></ion-icon>
-              <span ion-text color="primary">Posté par : {{trajetstodetails.User.prenom}}</span>
-            </li>
+             </li>
+              <li>
+                <ion-icon name="checkmark" class="text-green"></ion-icon>
+                <span ion-text color="primary">Posté par : {{trajetstodetails.User.prenom}}</span>
+              </li>
+              
           </ul>
         </div>
 
@@ -72,7 +81,7 @@
             <ion-grid class="filters" no-padding margin-top>
               <ion-row>
                 <ion-col class="adult" width-70>
-                  <span ion-text color="primary"><strong>{{trajetstodetails.tarifvoy | currency }}</strong> Adults</span>
+                  <span ion-text color="primary"><strong>{{trajetstodetails.tarifvoy | currency }}</strong> Par place</span>
                 </ion-col>
                 <ion-col width-10 text-center>
                   <ion-icon name="remove-circle" class="text-2x" tappable (click)="minusAdult()" [hidden]="nbplace < 2"
@@ -83,26 +92,13 @@
                   <ion-icon name="add-circle" class="text-2x" tappable (click)="plusAdult()" color="secondary"></ion-icon>
                 </ion-col>
               </ion-row>
-              <ion-row margin-top>
-                <ion-col width-70>
-                  <span ion-text color="primary"><strong> {{0 | currency }}</strong> Enfants (0-12 years)</span>
-                </ion-col>
-                <ion-col width-10 text-center>
-                  <ion-icon name="remove-circle" class="text-2x" tappable (click)="minusChildren()" [hidden]="nbplace < 1"
-                            color="secondary"></ion-icon>
-                </ion-col>
-                <ion-col width-10 text-center>{{ nbplace }}</ion-col>
-                <ion-col width-10 text-center>
-                  <ion-icon name="add-circle" class="text-2x" tappable (click)="plusChildren()" color="secondary"></ion-icon>
-                </ion-col>
-              </ion-row>
+              
             </ion-grid>
           </div>
           <div padding class="form-bottom">
       <!--       <span ion-text color="dark" class="bold">{{ adults }} Adults</span> -->
             <!--booking button-->
-            <button ion-button class="pull-right" color="secondary" tappable (click)="goToReservation(trajetstodetails)">Reservez {{ adults * trajetstodetails.tarifvoy  +
-              children * 0 | currency }}
+            <button ion-button class="pull-right" color="secondary" tappable (click)="goToReservation(trajetstodetails)">Reservez <span ion-text  class="text-green bold"> {{ nbplace * trajetstodetails.tarifvoy }}</span>
             </button>
             <div class="clear"></div>
           </div>

@@ -20,7 +20,7 @@ export class TrajetDetailsPage {
    
    trajetstodetails : Trajet = new Trajet();
    newReservation : Reservation= new Reservation();
-   nbplace : number;
+   public nbplace : number = 1;
    thumb : string = "../assets/img/dkren.jpg"
   constructor(public navCtrl: NavController, public navParams: NavParams, private alloDakarService: AlloDakarService, public alertCtrl: AlertController) {
 
@@ -42,6 +42,7 @@ export class TrajetDetailsPage {
   // plus adult when click plus button
   plusAdult() {
     this.nbplace++;
+    console.log("Nbpalce", this.nbplace)
   }
 
   // minus children when click minus button
