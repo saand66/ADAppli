@@ -33,7 +33,7 @@ var TrajetPage = /** @class */ (function () {
         this.navCtrl = navCtrl;
         this.alloDakarService = alloDakarService;
         this.navParams = navParams;
-        this.thumb = "../assets/img/dkren.jpg";
+        this.pathcovoit = "www.damaydem.com/images/damaydem/covoit/dest/";
         this.getTrajet(null);
     }
     // Chargement des trajets
@@ -57,7 +57,7 @@ var TrajetPage = /** @class */ (function () {
     };
     TrajetPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-trajet',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADAppli/src/pages/trajet/trajet.html"*/'<!--\n  Generated template for the TrajetPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Trajet</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content class="trips cars common-bg">\n    \n       \n     <ion-card-header class = "card-title">\n        Trajets diponible\n      </ion-card-header>\n\n   \n      <ion-grid>\n        <ion-row>\n          <!--list of trips-->\n          <ion-col col-12 col-md-6 col-lg-6 col-xl-4 padding *ngFor="let trajet of trajets" tappable (click)="GoToDetails(trajet)">\n            <div class="trip car card">\n              <div class="background border-bottom" [ngStyle]="{\'background-image\': \'url(\' + thumb + \')\'}">\n                <div class="background-filter rlt">\n                  <div class="align-bottom" padding-left padding-right>\n                    <h6 class="pull-left text-white" ion-text> {{trajet.lieuDep + " - " + trajet.lieuArr}}</h6>\n                    <h6 class="pull-right text-white" ion-text>{{trajet.tarifvoy | currency }}</h6>\n                    <div class="clear"></div>\n                  </div>\n                </div>\n              </div>\n              <div class="padding-sm secondary-bg">\n                <ion-icon name="time" class="text-white"></ion-icon>\n                <span ion-text  class="text-green bold">{{trajet.dateDep | slice:8:10}}/{{trajet.dateDep| slice:5:7}}/{{trajet.dateDep| slice:0:4}}</span>\n                <span class="pull-right" ion-text color="light"><strong>Posté par : </strong> {{trajet.User.prenom}} {{trajet.User.nom}} </span>\n              </div>\n            </div>\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n      \n</ion-content>\n'/*ion-inline-end:"/Users/imac/Documents/DEV/ADAppli/src/pages/trajet/trajet.html"*/,
+            selector: 'page-trajet',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADAppli/src/pages/trajet/trajet.html"*/'<!--\n  Generated template for the TrajetPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Trajet</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content class="trips cars common-bg">\n    \n       \n     <ion-card-header class = "card-title">\n        Trajets diponible\n      </ion-card-header>\n\n   \n      <ion-grid>\n        <ion-row>\n          <!--list of trips-->\n          <ion-col col-12 col-md-6 col-lg-6 col-xl-4 padding *ngFor="let trajet of trajets" tappable (click)="GoToDetails(trajet)">\n            <div class="trip car card">\n              <div class="background border-bottom" [ngStyle]="{\'background-image\': \'url(\' + pathcovoit + trajet.VilleArr.img1 +\')\'}">\n                <div class="background-filter rlt">\n                  <div class="align-bottom" padding-left padding-right>\n                    <h6 class="pull-left text-white" ion-text> {{trajet.VilleDep.nom + " - " + trajet.VilleArr.nom}}</h6>\n                    <h6 class="pull-right text-white" ion-text>{{trajet.tarifvoy | currency }}</h6>\n                    <div class="clear"></div>\n                  </div>\n                </div>\n              </div>\n              <div class="padding-sm secondary-bg">\n                <ion-icon name="time" class="text-white"></ion-icon>\n                <span ion-text  class="text-green bold">{{trajet.dateDep | slice:8:10}}/{{trajet.dateDep| slice:5:7}}/{{trajet.dateDep| slice:0:4}}</span>\n                <span class="pull-right" ion-text color="light"><strong>Posté par : </strong> {{trajet.User.prenom}} {{trajet.User.nom}} </span>\n              </div>\n            </div>\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n      \n</ion-content>\n'/*ion-inline-end:"/Users/imac/Documents/DEV/ADAppli/src/pages/trajet/trajet.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_AlloDakarApi_service__["a" /* AlloDakarService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
     ], TrajetPage);
@@ -370,6 +370,51 @@ var ConnexionPage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UsermessagePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the UsermessagePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var UsermessagePage = /** @class */ (function () {
+    function UsermessagePage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    UsermessagePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad UsermessagePage');
+    };
+    UsermessagePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-usermessage',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADAppli/src/pages/usermessage/usermessage.html"*/'<!--\n  Generated template for the UsermessagePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Mes Messages</ion-title>\n  </ion-navbar>\n\n</ion-header>\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/imac/Documents/DEV/ADAppli/src/pages/usermessage/usermessage.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
+    ], UsermessagePage);
+    return UsermessagePage;
+}());
+
+//# sourceMappingURL=usermessage.js.map
+
+/***/ }),
+
+/***/ 114:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserprofilPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
@@ -411,7 +456,7 @@ var UserprofilPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 114:
+/***/ 115:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -456,51 +501,6 @@ var UsertrajetPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 115:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UsermessagePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the UsermessagePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var UsermessagePage = /** @class */ (function () {
-    function UsermessagePage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-    }
-    UsermessagePage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad UsermessagePage');
-    };
-    UsermessagePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-usermessage',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADAppli/src/pages/usermessage/usermessage.html"*/'<!--\n  Generated template for the UsermessagePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Mes Messages</ion-title>\n  </ion-navbar>\n\n</ion-header>\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/imac/Documents/DEV/ADAppli/src/pages/usermessage/usermessage.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
-    ], UsermessagePage);
-    return UsermessagePage;
-}());
-
-//# sourceMappingURL=usermessage.js.map
-
-/***/ }),
-
 /***/ 127:
 /***/ (function(module, exports) {
 
@@ -527,7 +527,7 @@ var map = {
 		8
 	],
 	"../pages/connexion/connexion.module": [
-		304,
+		302,
 		7
 	],
 	"../pages/edit-profile/edit-profile.module": [
@@ -535,11 +535,11 @@ var map = {
 		6
 	],
 	"../pages/inscription/inscription.module": [
-		303,
+		306,
 		5
 	],
 	"../pages/trajet-details/trajet-details.module": [
-		302,
+		303,
 		4
 	],
 	"../pages/trajet/trajet.module": [
@@ -547,15 +547,15 @@ var map = {
 		3
 	],
 	"../pages/usermessage/usermessage.module": [
-		308,
+		304,
 		2
 	],
 	"../pages/userprofil/userprofil.module": [
-		306,
+		307,
 		1
 	],
 	"../pages/usertrajet/usertrajet.module": [
-		307,
+		308,
 		0
 	]
 };
@@ -630,9 +630,9 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_UsersInfosService__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_native_native_storage__ = __webpack_require__(85);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_acceuil_acceuil__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_userprofil_userprofil__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_usertrajet_usertrajet__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_usermessage_usermessage__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_userprofil_userprofil__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_usertrajet_usertrajet__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_usermessage_usermessage__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_edit_profile_edit_profile__ = __webpack_require__(111);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -695,13 +695,13 @@ var AppModule = /** @class */ (function () {
                     links: [
                         { loadChildren: '../pages/acceuil/acceuil.module#AcceuilPageModule', name: 'AcceuilPage', segment: 'acceuil', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/edit-profile/edit-profile.module#EditProfilePageModule', name: 'page-edit-profile', segment: 'edit-profile', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/trajet-details/trajet-details.module#TrajetDetailsPageModule', name: 'TrajetDetailsPage', segment: 'trajet-details', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/inscription/inscription.module#InscriptionPageModule', name: 'InscriptionPage', segment: 'inscription', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/connexion/connexion.module#ConnexionPageModule', name: 'ConnexionPage', segment: 'connexion', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/trajet-details/trajet-details.module#TrajetDetailsPageModule', name: 'TrajetDetailsPage', segment: 'trajet-details', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/usermessage/usermessage.module#UsermessagePageModule', name: 'UsermessagePage', segment: 'usermessage', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/trajet/trajet.module#TrajetPageModule', name: 'TrajetPage', segment: 'trajet', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/inscription/inscription.module#InscriptionPageModule', name: 'InscriptionPage', segment: 'inscription', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/userprofil/userprofil.module#UserprofilPageModule', name: 'UserprofilPage', segment: 'userprofil', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/usertrajet/usertrajet.module#UsertrajetPageModule', name: 'UsertrajetPage', segment: 'usertrajet', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/usermessage/usermessage.module#UsermessagePageModule', name: 'UsermessagePage', segment: 'usermessage', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/usertrajet/usertrajet.module#UsertrajetPageModule', name: 'UsertrajetPage', segment: 'usertrajet', priority: 'low', defaultHistory: [] }
                     ]
                 })
             ],
@@ -821,7 +821,7 @@ var HomePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 270:
+/***/ 278:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -853,9 +853,9 @@ var NewUser = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_native_storage__ = __webpack_require__(85);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_acceuil_acceuil__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_seet_voyage_seet_voyage__ = __webpack_require__(83);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_usertrajet_usertrajet__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_userprofil_userprofil__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_usermessage_usermessage__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_usertrajet_usertrajet__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_userprofil_userprofil__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_usermessage_usermessage__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_edit_profile_edit_profile__ = __webpack_require__(111);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1326,7 +1326,7 @@ var AcceuilPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_AlloDakarApi_service__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_AlloDakar_NewUser__ = __webpack_require__(270);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_AlloDakar_NewUser__ = __webpack_require__(278);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);

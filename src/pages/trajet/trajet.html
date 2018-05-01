@@ -25,10 +25,10 @@
           <!--list of trips-->
           <ion-col col-12 col-md-6 col-lg-6 col-xl-4 padding *ngFor="let trajet of trajets" tappable (click)="GoToDetails(trajet)">
             <div class="trip car card">
-              <div class="background border-bottom" [ngStyle]="{'background-image': 'url(' + thumb + ')'}">
+              <div class="background border-bottom" [ngStyle]="{'background-image': 'url(' + pathcovoit + trajet.VilleArr.img1 +')'}">
                 <div class="background-filter rlt">
                   <div class="align-bottom" padding-left padding-right>
-                    <h6 class="pull-left text-white" ion-text> {{trajet.lieuDep + " - " + trajet.lieuArr}}</h6>
+                    <h6 class="pull-left text-white" ion-text> {{trajet.VilleDep.nom + " - " + trajet.VilleArr.nom}}</h6>
                     <h6 class="pull-right text-white" ion-text>{{trajet.tarifvoy | currency }}</h6>
                     <div class="clear"></div>
                   </div>
