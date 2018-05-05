@@ -8,7 +8,7 @@
 <ion-header>
 
   <ion-navbar color="primary" class="thirds-op">
-    <ion-title><h3>{{trajetstodetails.lieuDep + " - " + trajetstodetails.lieuArr}}</h3> </ion-title>
+    <ion-title><h3>{{trajetstodetails.VilleDep.nom + " - " + trajetstodetails.VilleArr.nom}}</h3> </ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -23,7 +23,7 @@
   </ion-slides> -->
   <ion-slides class="to-top" pager>
     <ion-slide>
-   <img src="{{ thumb }}" alt="">
+   <img src="{{ pathcovoit  + trajetstodetails.VilleArr.img1 }}" alt="">
     </ion-slide>
   </ion-slides>
 
@@ -76,13 +76,14 @@
         <!--booking form-->
         <div class="booking-form card round" margin>
           <div class="border-bottom" padding>
-            <h5>{{trajetstodetails.lieuDep + " - " + trajetstodetails.lieuArr}}</h5>
+            <h5>{{trajetstodetails.VilleDep.nom + " - " + trajetstodetails.VilleArr.nom}}</h5>
             <!--choose guest-->
             <ion-grid class="filters" no-padding margin-top>
               <ion-row>
                 <ion-col class="adult" width-70>
-                  <span ion-text color="primary"><strong>{{trajetstodetails.tarifvoy | currency }}</strong> Par place</span>
+                  <span ion-text color="primary"><strong>{{trajetstodetails.tarifvoy}} CFA</strong> Par place</span>
                 </ion-col>
+
                 <ion-col width-10 text-center>
                   <ion-icon name="remove-circle" class="text-2x" tappable (click)="minusAdult()" [hidden]="nbplace < 2"
                    color="secondary"></ion-icon>
@@ -98,7 +99,7 @@
           <div padding class="form-bottom">
       <!--       <span ion-text color="dark" class="bold">{{ adults }} Adults</span> -->
             <!--booking button-->
-            <button ion-button class="pull-right" color="secondary" tappable (click)="goToReservation(trajetstodetails)">Reservez <span ion-text  class="text-green bold"> {{ nbplace * trajetstodetails.tarifvoy }}</span>
+            <button ion-button class="pull-right" color="secondary" tappable (click)="goToReservation(trajetstodetails)">Reservez &nbsp;&nbsp;&nbsp; <span ion-text  class="text-green bold"> {{ nbplace * trajetstodetails.tarifvoy }}</span>
             </button>
             <div class="clear"></div>
           </div>

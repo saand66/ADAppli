@@ -19,7 +19,7 @@ import { Reservation } from '../models/Reservation';
 
 export class AlloDakarService {
 
- // private baseUrl: string = 'http://damaydem.com:49160/api/';
+ //private baseUrl: string = 'http://damaydem.com:49160/api/';
   private baseUrl : string ='/api/';
   private serviceRegister: string = 'users/register';
   private serviceLogin: string = 'users/login';

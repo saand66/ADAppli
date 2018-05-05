@@ -21,7 +21,7 @@ export class TrajetDetailsPage {
    trajetstodetails : Trajet = new Trajet();
    newReservation : Reservation= new Reservation();
    public nbplace : number = 1;
-   thumb : string = "../assets/img/dkren.jpg"
+   pathcovoit : string = "http://damaydem.com/images/damaydem/covoit/dest/" ;
   constructor(public navCtrl: NavController, public navParams: NavParams, private alloDakarService: AlloDakarService, public alertCtrl: AlertController) {
 
    console.log('le trajet : ' + this.navParams.get('letrajet'));
