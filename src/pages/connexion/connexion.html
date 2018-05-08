@@ -36,17 +36,24 @@
       </ion-item>
       <p ion-text color="danger" class="text-1x has-error" *ngIf="onLoginForm.get('password').touched && onLoginForm.get('password').hasError('required')">Ce champ est obligatoire</p>
     </form>
-
+    <p ion-text color="danger" >{{messageerreur}}</p>
+     
     <p text-right ion-text color="light" tappable (click)="forgotPass()"><strong>Mot de Pass Oublié ?</strong></p>
 
     <div>
-      <button ion-button icon-start outline block color="light" tappable (click)="Connexion()" [disabled]="!onLoginForm.valid">
+      <button ion-button icon-start outline block color="light" tappable (click)="Connexion()">
         <ion-icon name="log-in"></ion-icon>
         CONNEXION
       </button>
+      <span></span>
+      <button ion-button icon-start outline block color="light" tappable (click)="Inscription()">
+          <ion-icon name="log-in"></ion-icon>
+          CREER UN COMPTE
+        </button>
 
-      <p text-center ion-text color="light">Ou connectez vous avec:</p>
+      <p text-center ion-text color="light">Ou Continuer en tant qu'invité</p>
 
+      <p text-center ion-text color="light">Suivez nous sur </p>
       <ion-grid class="btn-group">
         <ion-row>
           <button ion-button icon-only block class="btn-facebook col col-4">
@@ -63,11 +70,7 @@
 
     </div>
 
-
-    <!-- Other links -->
-    <div text-center margin-top>
-      <span ion-text color="light" tappable (click)="Inscription()">Nouveau? <strong>Creer un compte</strong></span>
-    </div>
+  
 
   </div>
 </ion-content>

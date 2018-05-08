@@ -86,6 +86,7 @@ ngOnInit() {
 
         this.navCtrl.setRoot(AcceuilPage);
 
+
       }else if ( data && data.error){
     
          this.messageerreur  = data.error.error;

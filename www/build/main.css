@@ -26266,33 +26266,251 @@ ion-icon[ng-reflect-disabled="true"] {
   }
 }
 
-page-acceuil .message, page-acceuil .success, page-acceuil .error, page-acceuil .warning {
-  border: 1px solid #ccc;
-  padding: 10px;
-  color: #333;
+page-acceuil .home .icon-title {
+  width: 28px;
+  height: 28px;
+  display: inline-block;
+  vertical-align: sub;
+  background: url("../assets/img/ionbooking-ico.png") no-repeat;
+  background-size: 100%;
 }
 
-page-acceuil .success {
-  border-color: green;
+page-acceuil .home .booking-card {
+  padding: 16px;
+  border-top: 5rem solid rgba(86, 61, 124, 0.85);
 }
 
-page-acceuil .error {
-  border-color: red;
+page-acceuil .home .booking-card .br {
+  border-right: 1px solid rgba(86, 61, 124, 0.1);
 }
 
-page-acceuil .warning {
-  border-color: yellow;
+page-acceuil .home .booking-card .bb {
+  border-bottom: 1px solid rgba(86, 61, 124, 0.1);
 }
 
-page-acceuil .background {
-  font: 100% Helvetica, sans-serif;
-  color: #ff5700;
+page-acceuil .home .booking-card .datetime-btn {
+  background-color: rgba(86, 61, 124, 0.06);
 }
 
-page-acceuil .bg {
-  background: -webkit-gradient(linear, left top, right top, from(#2948ff), to(#396afc));
-  background: linear-gradient(to right, #2948ff, #396afc);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+page-acceuil .home .booking-card .datetime-btn .icon {
+  color: #563d7c;
+}
+
+page-acceuil .home .booking-card .searchbar {
+  z-index: 1000;
+}
+
+page-acceuil .home .booking-card .searchbar-results {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  padding-top: 12px;
+  -webkit-box-shadow: 0 0 1px rgba(86, 61, 124, 0.06), 0 2px 4px rgba(86, 61, 124, 0.1), 0 0 100rem rgba(0, 0, 0, 0.85);
+  box-shadow: 0 0 1px rgba(86, 61, 124, 0.06), 0 2px 4px rgba(86, 61, 124, 0.1), 0 0 100rem rgba(0, 0, 0, 0.85);
+}
+
+page-acceuil .home .booking-card .searchbar-results .item {
+  color: rgba(86, 61, 124, 0.85);
+}
+
+page-acceuil .home .booking-card .guests {
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-bottom-color: transparent;
+}
+
+page-acceuil .home .booking-card .guests .item {
+  font-size: 1.25rem;
+  padding-left: 0;
+  border: 0;
+}
+
+page-acceuil .home .booking-card .guests .item .item-inner {
+  padding: 0;
+}
+
+page-acceuil .home .booking-card .guests .item .label {
+  color: rgba(86, 61, 124, 0.85);
+  margin-right: 0;
+}
+
+page-acceuil .home .booking-card .guests .item .select {
+  font-weight: 600;
+  color: rgba(86, 61, 124, 0.85);
+  padding-left: 4px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+page-acceuil .home .booking-card .guests .item .select.select-md .select-icon, page-acceuil .home .booking-card .guests .item .select.select-ios .select-icon {
+  width: 4px;
+}
+
+page-acceuil .home .booking-card .guests .item .select.select-md .select-icon .select-icon-inner, page-acceuil .home .booking-card .guests .item .select.select-ios .select-icon .select-icon-inner {
+  left: 0;
+}
+
+page-acceuil .home .booking-card ion-grid {
+  margin-top: -5rem;
+  background-color: #fff;
+  padding: 0;
+}
+
+page-acceuil .home .booking-card ion-grid ion-row:first-child ion-col {
+  border-bottom: 1px solid #D7D6E1;
+}
+
+page-acceuil .home .booking-card ion-grid ion-row ion-col {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+}
+
+page-acceuil .home .booking-card ion-grid ion-row ion-col:first-child {
+  margin-left: 0;
+}
+
+page-acceuil .home .booking-card ion-grid ion-row ion-col ion-icon {
+  margin-right: 1rem;
+  font-size: 2.5rem;
+  width: 2.5rem;
+}
+
+page-acceuil .home .booking-card ion-grid .searchbar {
+  padding: 0;
+}
+
+page-acceuil .home .booking-card ion-grid .searchbar.searchbar-ios {
+  background-color: transparent;
+  border: 0;
+  -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+}
+
+page-acceuil .home .booking-card ion-grid .searchbar.searchbar-ios .searchbar-search-icon {
+  top: 14px;
+}
+
+page-acceuil .home .booking-card ion-grid .searchbar.searchbar-ios .searchbar-input {
+  height: 4rem;
+}
+
+page-acceuil .home .booking-card ion-grid .searchbar .searchbar-input {
+  color: rgba(86, 61, 124, 0.85);
+  border-radius: 1rem;
+}
+
+page-acceuil .home .booking-card ion-grid .searchbar.searchbar-md .searchbar-input, page-acceuil .home .booking-card ion-grid .searchbar.searchbar-ios .searchbar-input {
+  -webkit-box-shadow: inset 0 0 8px rgba(86, 61, 124, 0.25), 0 6px 0 #563d7c;
+  box-shadow: inset 0 0 8px rgba(86, 61, 124, 0.25), 0 6px 0 #563d7c;
+}
+
+page-acceuil .home .booking-card ion-grid .datetime.datetime-md, page-acceuil .home .booking-card ion-grid .datetime.datetime-ios {
+  padding: 0;
+}
+
+page-acceuil .home .home-card {
+  width: calc(100% - 12px);
+  margin: 16px 6px 32px;
+}
+
+page-acceuil .home .home-card .list button.item:first-child {
+  border-bottom: 1px solid rgba(86, 61, 124, 0.85);
+}
+
+page-acceuil .home .home-card ion-grid {
+  padding: 0;
+}
+
+page-acceuil .home .home-card ion-grid ion-row {
+  padding: 8px;
+}
+
+page-acceuil .home .home-card ion-grid ion-row ion-col {
+  padding: 8px;
+}
+
+page-acceuil .home .home-widget .item {
+  padding: 0;
+}
+
+page-acceuil .home .home-widget .item.item-divider {
+  padding: 8px 16px;
+}
+
+page-acceuil .home .home-widget .item .item-inner {
+  padding: 0;
+}
+
+page-acceuil .home .home-widget .item .item-inner .label {
+  margin: 0;
+}
+
+page-acceuil .home ion-grid.list-hotels ion-row {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+page-acceuil .home ion-grid.list-hotels ion-row ion-col {
+  padding: 0.5rem;
+}
+
+page-acceuil .home ion-grid.list-hotels ion-row ion-col .rating-label {
+  display: none;
+}
+
+page-acceuil .home ion-grid.list-hotels ion-row ion-col h5 {
+  font-size: 1.5rem;
+}
+
+page-acceuil .home ion-grid.list-hotels ion-row ion-col .hide-sm {
+  display: none;
+}
+
+page-acceuil-location .trips .card {
+  border-radius: 1rem;
+}
+
+page-acceuil-location .trips .trip {
+  overflow: hidden;
+}
+
+page-acceuil-location .trips .trip .background {
+  background-size: 100% auto;
+  background-position: center;
+}
+
+page-acceuil-location .trips .trip .background .background-filter {
+  height: 16rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.65)));
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.65));
+}
+
+page-acceuil-location .trips .trip .background .background-filter .align-bottom {
+  width: 100%;
+}
+
+page-acceuil-location .trips .trip .background .background-filter .align-bottom h6 {
+  margin-top: 0;
+}
+
+page-acceuil-location Button {
+  Position: fixed;
 }
 
 page-allo-dakar .message, page-allo-dakar .success, page-allo-dakar .error, page-allo-dakar .warning {

@@ -39,6 +39,7 @@ export class MyApp{
     public statusBar: StatusBar,
     public splashScreen: SplashScreen,
     public keyboard: Keyboard) {
+    this.initializeApp();
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -60,6 +61,15 @@ export class MyApp{
     
   }
 
+  initializeApp() {
+    this.platform.ready().then(() => {
+      //*** Control Status Bar
+      this.statusBar.styleDefault();
+      this.statusBar.overlaysWebView(false);
+      //*** Control Keyboard
+     // this.keyboard .disableScroll(true);
+    });
+  }
 
 
   goToAcceuil(){
@@ -128,15 +138,7 @@ export class MyApp{
   }
   
   
-  initializeApp() {
-    this.platform.ready().then(() => {
-      //*** Control Status Bar
-      this.statusBar.styleDefault();
-      this.statusBar.overlaysWebView(false);
-      //*** Control Keyboard
-     // this.keyboard.disableScroll(true);
-    });
-  }
+
 
   openPage(page) {
     // Reset the content nav to have just this page

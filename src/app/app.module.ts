@@ -23,6 +23,7 @@ import { UserprofilPage } from '../pages/userprofil/userprofil';
 import { UsertrajetPage } from '../pages/usertrajet/usertrajet';
 import { UsermessagePage } from '../pages/usermessage/usermessage';
 import { EditProfilePage } from '../pages/edit-profile/edit-profile';
+import { AcceuilLocationPage } from '../pages/acceuil-location/acceuil-location';
 @NgModule({
   declarations: [
     MyApp,
@@ -39,7 +40,8 @@ import { EditProfilePage } from '../pages/edit-profile/edit-profile';
     UserprofilPage,
     UsertrajetPage,
     UsermessagePage,
-    EditProfilePage
+    EditProfilePage,
+    AcceuilLocationPage
   ],
   imports: [
     HttpModule,
@@ -63,7 +65,8 @@ import { EditProfilePage } from '../pages/edit-profile/edit-profile';
     UserprofilPage,
     UsertrajetPage,
     UsermessagePage,
-    EditProfilePage
+    EditProfilePage,
+    AcceuilLocationPage
   ],
   providers: [
     AlloDakarService,

@@ -15,19 +15,28 @@ import { NewTrajet } from '../models/AlloDakar-NewTrajet';
 import { ConnexionPage } from '../pages/connexion/connexion'
 import { UsersInfosService } from './UsersInfosService';
 import { Reservation } from '../models/Reservation';
+import {OffreVente} from '../models/OffreVente'
 @Injectable()
 
 export class AlloDakarService {
 
+  //Global
  //private baseUrl: string = 'http://damaydem.com:49160/api/';
   private baseUrl : string ='/api/';
+
+    //users
   private serviceRegister: string = 'users/register';
   private serviceLogin: string = 'users/login';
   private newtrajetpath: string = 'trajets/new';
+
+    //trajets
   private serviceList: string = 'trajets';
   private serviceReser: string = 'reservation/new';
   private serviceModifResev: string = 'reservation/modif';
   private serviceAnnulResev: string = 'reservation/annul';
+
+  //Offreventes
+  private servicelistoffreventes: string = 'offreVentes';
 
 
 
@@ -115,5 +124,19 @@ export class AlloDakarService {
       .catch(error => error.json())
     //.catch(error => console.log ('une erreur est survenue ' + error))
   }
+
+
+
+  // Offres Ventes 
+  
+  public getOffreVente() {
+    const url = `${this.baseUrl}${this.servicelistoffreventes}`;
+    // const url = this.baseUrl;
+    return this.http.get(url)
+      .toPromise()
+      .then(response => response as OffreVente)
+      .catch(error => console.log('une erreur est survenue ' + error))
+  }
+
 
 }

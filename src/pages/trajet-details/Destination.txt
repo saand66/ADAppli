@@ -17,3 +17,5 @@ id,nom,long,lat,img1,img2,img3
 16,Richard-Toll,16.464811, -15.692050,16.jpg,Null,Null
 17,Fatick,14.345015,-16.420462,17.jpg,Null,Null
 18,Tivaouane,14.951335,-16.813577,18.jpg,Null,Null
+
+

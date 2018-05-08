@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlloDakarPage } from '../allo-dakar/allo-dakar';
+import { AcceuilLocationPage } from '../acceuil-location/acceuil-location';
 
 /**
  * Generated class for the AcceuilPage page.
@@ -23,6 +24,12 @@ export class AcceuilPage {
   goToCovoit() {
     this.navCtrl.setRoot(AlloDakarPage);
   }
+
+  goToJaayauto() {
+    this.navCtrl.setRoot(AcceuilLocationPage);
+  }
+
+  
   
   ionViewDidLoad() {
     console.log('ionViewDidLoad AcceuilPage');
