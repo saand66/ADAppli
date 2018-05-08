@@ -26509,8 +26509,10 @@ page-acceuil-location .trips .trip .background .background-filter .align-bottom 
   margin-top: 0;
 }
 
-page-acceuil-location Button {
-  Position: fixed;
+page-acceuil-location Button Position:fixed,
+page-acceuil-location Button $fab-size {
+  width: 300px;
+  height: 300 px;
 }
 
 page-allo-dakar .message, page-allo-dakar .success, page-allo-dakar .error, page-allo-dakar .warning {

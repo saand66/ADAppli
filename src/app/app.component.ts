@@ -22,7 +22,7 @@ import { EditProfilePage } from '../pages/edit-profile/edit-profile';
 export class MyApp{
   @ViewChild(Nav) navCtrl: Nav;
   theme:String = 'facebook-messenger-theme';
-    rootPage:any = AcceuilPage;
+    rootPage:any = ConnexionPage;
   userprenom : string;
   usernom : string;
   islogin : string;

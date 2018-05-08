@@ -111,6 +111,11 @@ ngOnInit() {
     this.navCtrl.push(InscriptionPage);
   }
 
+  goToAcceuil(params){
+    if (!params) params = {};
+    this.navCtrl.setRoot(AlloDakarPage);
+  }
+
   }
 
 
