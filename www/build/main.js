@@ -1,4 +1,4 @@
-webpackJsonp([10],{
+webpackJsonp([11],{
 
 /***/ 109:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -249,6 +249,69 @@ var TrajetDetailsPage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditProfilePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(270);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var EditProfilePage = /** @class */ (function () {
+    function EditProfilePage(navCtrl, loadingCtrl, toastCtrl) {
+        this.navCtrl = navCtrl;
+        this.loadingCtrl = loadingCtrl;
+        this.toastCtrl = toastCtrl;
+        this.profiledata = true;
+    }
+    // process send button
+    EditProfilePage.prototype.sendData = function () {
+        var _this = this;
+        // send booking info
+        var loader = this.loadingCtrl.create({
+            content: "Please wait..."
+        });
+        // show message
+        var toast = this.toastCtrl.create({
+            showCloseButton: true,
+            cssClass: 'profile-bg',
+            message: 'Your Data was Edited!',
+            duration: 3000,
+            position: 'bottom'
+        });
+        loader.present();
+        setTimeout(function () {
+            loader.dismiss();
+            toast.present();
+            // back to home page
+            _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */]);
+        }, 3000);
+    };
+    EditProfilePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-edit-profile',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADAppli/src/pages/edit-profile/edit-profile.html"*/'<ion-header>\n    <ion-navbar color="primary" class="thirds-op">\n        <button ion-button menuToggle>\n            <ion-icon name="menu"></ion-icon>\n        </button>\n        <ion-title>\n            <span ion-text>Modifier Compte</span>\n        </ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content class="profile common-bg">\n\n    <ion-card>\n      <ion-card-content class="profile-bg">\n          <img src="assets/img/laat.jpeg">\n          <h2 class="fw500">João Firmino</h2>\n          <h3 ion-text color="light">Customer</h3>\n          <button ion-button icon-start margin-top color="secondary">\n            <ion-icon name="photos"></ion-icon>\n            Edit / Insert Avatar\n          </button>\n      </ion-card-content>\n\n      <ion-grid fixed>\n        <ion-row>\n          <ion-col col-12 margin-bottom padding>\n\n  	        <ion-item>\n  	          <ion-label color="dark" stacked>Full Name:</ion-label>\n  	          <ion-input type="text" placeholder="Ex..: Joe Doe" value="João Firmino"></ion-input>\n  	        </ion-item>\n\n  	        <ion-item>\n  	          <ion-label color="dark" stacked>Email:</ion-label>\n  	          <ion-input type="email" placeholder="Ex.: joe@doe.com" value="firminoata@gmail.com"></ion-input>\n  	        </ion-item>\n\n  	        <ion-item>\n  	          <ion-label color="dark" stacked>Address:</ion-label>\n  	          <ion-input type="text" placeholder="Ex.: Abey Road 5"></ion-input>\n  	        </ion-item>\n\n  				  <ion-item>\n  				    <ion-label color="dark">City</ion-label>\n  				    <ion-select>\n  				      <ion-option value="nes">New York</ion-option>\n  				      <ion-option value="n64">Los Angeles</ion-option>\n  				      <ion-option value="ps">London</ion-option>\n  				      <ion-option value="genesis">Paris</ion-option>\n  				      <ion-option value="saturn">São Paulo</ion-option>\n  				      <ion-option value="snes">Tokyo</ion-option>\n  				      <ion-option value="snes">New Delhi</ion-option>\n  				    </ion-select>\n  				  </ion-item>\n\n  				  <ion-item>\n  				    <ion-label color="dark">State</ion-label>\n  				    <ion-select>\n  				      <ion-option value="nes">NY</ion-option>\n  				      <ion-option value="n64">CA</ion-option>\n  				      <ion-option value="ps">Greater London</ion-option>\n  				      <ion-option value="genesis">Paris</ion-option>\n  				      <ion-option value="saturn">SP</ion-option>\n  				      <ion-option value="snes">Kantō</ion-option>\n  				      <ion-option value="snes">Delhi</ion-option>\n  				    </ion-select>\n  				  </ion-item>\n\n  					<div radio-group margin-top margin-bottom>\n  					  <ion-list-header no-margin no-padding>\n  					    <span ion-text color="dark" class="fw500">User Type</span>\n  					  </ion-list-header>\n\n  					  <ion-item>\n  					    <ion-label color="dark">Customer</ion-label>\n  					    <ion-radio checked="true" value="customer"></ion-radio>\n  					  </ion-item>\n\n  					  <ion-item>\n  					    <ion-label color="dark">Travel Agent</ion-label>\n  					    <ion-radio value="agent"></ion-radio>\n  					  </ion-item>\n  					</div>\n\n            <ion-item>\n            	<ion-label class="text-1x">Available to chat w/ Travel Agents?</ion-label>\n            	<ion-checkbox></ion-checkbox>\n          	</ion-item>\n\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n\n			<button ion-button large full color="dark" (click)="sendData()">Edit</button>\n    </ion-card>\n\n    <div padding>\n      <p ion-text color="dark" no-margin>\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum odio placeat incidunt nesciunt atque ratione quisquam, fugit omnis maxime adipisci excepturi dignissimos aliquam asperiores itaque unde sequi? Minus, quia, dolore?\n      </p>\n    </div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/imac/Documents/DEV/ADAppli/src/pages/edit-profile/edit-profile.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */]])
+    ], EditProfilePage);
+    return EditProfilePage;
+}());
+
+//# sourceMappingURL=edit-profile.js.map
+
+/***/ }),
+
+/***/ 113:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConnexionPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic_native_native_storage__ = __webpack_require__(85);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
@@ -374,69 +437,6 @@ var ConnexionPage = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=connexion.js.map
-
-/***/ }),
-
-/***/ 113:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditProfilePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(279);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var EditProfilePage = /** @class */ (function () {
-    function EditProfilePage(navCtrl, loadingCtrl, toastCtrl) {
-        this.navCtrl = navCtrl;
-        this.loadingCtrl = loadingCtrl;
-        this.toastCtrl = toastCtrl;
-        this.profiledata = true;
-    }
-    // process send button
-    EditProfilePage.prototype.sendData = function () {
-        var _this = this;
-        // send booking info
-        var loader = this.loadingCtrl.create({
-            content: "Please wait..."
-        });
-        // show message
-        var toast = this.toastCtrl.create({
-            showCloseButton: true,
-            cssClass: 'profile-bg',
-            message: 'Your Data was Edited!',
-            duration: 3000,
-            position: 'bottom'
-        });
-        loader.present();
-        setTimeout(function () {
-            loader.dismiss();
-            toast.present();
-            // back to home page
-            _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */]);
-        }, 3000);
-    };
-    EditProfilePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-edit-profile',template:/*ion-inline-start:"/Users/imac/Documents/DEV/ADAppli/src/pages/edit-profile/edit-profile.html"*/'<ion-header>\n    <ion-navbar color="primary" class="thirds-op">\n        <button ion-button menuToggle>\n            <ion-icon name="menu"></ion-icon>\n        </button>\n        <ion-title>\n            <span ion-text>Modifier Compte</span>\n        </ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content class="profile common-bg">\n\n    <ion-card>\n      <ion-card-content class="profile-bg">\n          <img src="assets/img/laat.jpeg">\n          <h2 class="fw500">João Firmino</h2>\n          <h3 ion-text color="light">Customer</h3>\n          <button ion-button icon-start margin-top color="secondary">\n            <ion-icon name="photos"></ion-icon>\n            Edit / Insert Avatar\n          </button>\n      </ion-card-content>\n\n      <ion-grid fixed>\n        <ion-row>\n          <ion-col col-12 margin-bottom padding>\n\n  	        <ion-item>\n  	          <ion-label color="dark" stacked>Full Name:</ion-label>\n  	          <ion-input type="text" placeholder="Ex..: Joe Doe" value="João Firmino"></ion-input>\n  	        </ion-item>\n\n  	        <ion-item>\n  	          <ion-label color="dark" stacked>Email:</ion-label>\n  	          <ion-input type="email" placeholder="Ex.: joe@doe.com" value="firminoata@gmail.com"></ion-input>\n  	        </ion-item>\n\n  	        <ion-item>\n  	          <ion-label color="dark" stacked>Address:</ion-label>\n  	          <ion-input type="text" placeholder="Ex.: Abey Road 5"></ion-input>\n  	        </ion-item>\n\n  				  <ion-item>\n  				    <ion-label color="dark">City</ion-label>\n  				    <ion-select>\n  				      <ion-option value="nes">New York</ion-option>\n  				      <ion-option value="n64">Los Angeles</ion-option>\n  				      <ion-option value="ps">London</ion-option>\n  				      <ion-option value="genesis">Paris</ion-option>\n  				      <ion-option value="saturn">São Paulo</ion-option>\n  				      <ion-option value="snes">Tokyo</ion-option>\n  				      <ion-option value="snes">New Delhi</ion-option>\n  				    </ion-select>\n  				  </ion-item>\n\n  				  <ion-item>\n  				    <ion-label color="dark">State</ion-label>\n  				    <ion-select>\n  				      <ion-option value="nes">NY</ion-option>\n  				      <ion-option value="n64">CA</ion-option>\n  				      <ion-option value="ps">Greater London</ion-option>\n  				      <ion-option value="genesis">Paris</ion-option>\n  				      <ion-option value="saturn">SP</ion-option>\n  				      <ion-option value="snes">Kantō</ion-option>\n  				      <ion-option value="snes">Delhi</ion-option>\n  				    </ion-select>\n  				  </ion-item>\n\n  					<div radio-group margin-top margin-bottom>\n  					  <ion-list-header no-margin no-padding>\n  					    <span ion-text color="dark" class="fw500">User Type</span>\n  					  </ion-list-header>\n\n  					  <ion-item>\n  					    <ion-label color="dark">Customer</ion-label>\n  					    <ion-radio checked="true" value="customer"></ion-radio>\n  					  </ion-item>\n\n  					  <ion-item>\n  					    <ion-label color="dark">Travel Agent</ion-label>\n  					    <ion-radio value="agent"></ion-radio>\n  					  </ion-item>\n  					</div>\n\n            <ion-item>\n            	<ion-label class="text-1x">Available to chat w/ Travel Agents?</ion-label>\n            	<ion-checkbox></ion-checkbox>\n          	</ion-item>\n\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n\n			<button ion-button large full color="dark" (click)="sendData()">Edit</button>\n    </ion-card>\n\n    <div padding>\n      <p ion-text color="dark" no-margin>\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum odio placeat incidunt nesciunt atque ratione quisquam, fugit omnis maxime adipisci excepturi dignissimos aliquam asperiores itaque unde sequi? Minus, quia, dolore?\n      </p>\n    </div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/imac/Documents/DEV/ADAppli/src/pages/edit-profile/edit-profile.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */]])
-    ], EditProfilePage);
-    return EditProfilePage;
-}());
-
-//# sourceMappingURL=edit-profile.js.map
 
 /***/ }),
 
@@ -598,43 +598,47 @@ webpackEmptyAsyncContext.id = 128;
 var map = {
 	"../pages/acceuil-location/acceuil-location.module": [
 		301,
-		9
+		10
 	],
 	"../pages/acceuil/acceuil.module": [
 		302,
-		8
+		9
 	],
 	"../pages/connexion/connexion.module": [
+		304,
+		8
+	],
+	"../pages/edit-profile/edit-profile.module": [
 		303,
 		7
 	],
-	"../pages/edit-profile/edit-profile.module": [
-		304,
+	"../pages/inscription/inscription.module": [
+		307,
 		6
 	],
-	"../pages/inscription/inscription.module": [
+	"../pages/seet-offe-vente/seet-offe-vente.module": [
 		308,
-		5
+		0
 	],
 	"../pages/trajet-details/trajet-details.module": [
 		305,
-		4
+		5
 	],
 	"../pages/trajet/trajet.module": [
 		306,
-		3
+		4
 	],
 	"../pages/usermessage/usermessage.module": [
-		307,
-		2
+		309,
+		3
 	],
 	"../pages/userprofil/userprofil.module": [
-		309,
-		1
+		310,
+		2
 	],
 	"../pages/usertrajet/usertrajet.module": [
-		310,
-		0
+		311,
+		1
 	]
 };
 function webpackAsyncContext(req) {
@@ -696,7 +700,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_cloud_cloud__ = __webpack_require__(299);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_seet_voyage_seet_voyage__ = __webpack_require__(83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_trajet_trajet__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_connexion_connexion__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_connexion_connexion__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_inscription_inscription__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_proposer_damay_tukki_proposer_damay_tukki__ = __webpack_require__(84);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_http__ = __webpack_require__(300);
@@ -711,7 +715,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_userprofil_userprofil__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_usertrajet_usertrajet__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_usermessage_usermessage__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_edit_profile_edit_profile__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_edit_profile_edit_profile__ = __webpack_require__(112);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_acceuil_location_acceuil_location__ = __webpack_require__(109);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -776,12 +780,13 @@ var AppModule = /** @class */ (function () {
                     links: [
                         { loadChildren: '../pages/acceuil-location/acceuil-location.module#AcceuilLocationPageModule', name: 'AcceuilLocationPage', segment: 'acceuil-location', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/acceuil/acceuil.module#AcceuilPageModule', name: 'AcceuilPage', segment: 'acceuil', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/connexion/connexion.module#ConnexionPageModule', name: 'ConnexionPage', segment: 'connexion', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/edit-profile/edit-profile.module#EditProfilePageModule', name: 'page-edit-profile', segment: 'edit-profile', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/connexion/connexion.module#ConnexionPageModule', name: 'ConnexionPage', segment: 'connexion', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/trajet-details/trajet-details.module#TrajetDetailsPageModule', name: 'TrajetDetailsPage', segment: 'trajet-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/trajet/trajet.module#TrajetPageModule', name: 'TrajetPage', segment: 'trajet', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/usermessage/usermessage.module#UsermessagePageModule', name: 'UsermessagePage', segment: 'usermessage', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/inscription/inscription.module#InscriptionPageModule', name: 'InscriptionPage', segment: 'inscription', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/seet-offe-vente/seet-offe-vente.module#SeetOffeVentePageModule', name: 'SeetOffeVentePage', segment: 'seet-offe-vente', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/usermessage/usermessage.module#UsermessagePageModule', name: 'UsermessagePage', segment: 'usermessage', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/userprofil/userprofil.module#UserprofilPageModule', name: 'UserprofilPage', segment: 'userprofil', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/usertrajet/usertrajet.module#UsertrajetPageModule', name: 'UsertrajetPage', segment: 'usertrajet', priority: 'low', defaultHistory: [] }
                     ]
@@ -869,22 +874,7 @@ var Reservation = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 278:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewUser; });
-var NewUser = /** @class */ (function () {
-    function NewUser() {
-    }
-    return NewUser;
-}());
-
-//# sourceMappingURL=AlloDakar-NewUser.js.map
-
-/***/ }),
-
-/***/ 279:
+/***/ 270:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -919,6 +909,21 @@ var HomePage = /** @class */ (function () {
 
 /***/ }),
 
+/***/ 279:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewUser; });
+var NewUser = /** @class */ (function () {
+    function NewUser() {
+    }
+    return NewUser;
+}());
+
+//# sourceMappingURL=AlloDakar-NewUser.js.map
+
+/***/ }),
+
 /***/ 297:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -928,7 +933,7 @@ var HomePage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(212);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(213);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_connexion_connexion__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_connexion_connexion__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_allo_dakar_allo_dakar__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_inscription_inscription__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_proposer_damay_tukki_proposer_damay_tukki__ = __webpack_require__(84);
@@ -939,7 +944,7 @@ var HomePage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_usertrajet_usertrajet__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_userprofil_userprofil__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_usermessage_usermessage__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_edit_profile_edit_profile__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_edit_profile_edit_profile__ = __webpack_require__(112);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1487,7 +1492,7 @@ var AcceuilPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_AlloDakarApi_service__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_AlloDakar_NewUser__ = __webpack_require__(278);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_AlloDakar_NewUser__ = __webpack_require__(279);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
