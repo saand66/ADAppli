@@ -4,15 +4,149 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<ion-header class="animated fadeIn no-shadow">
 
-  <ion-navbar>
-    <ion-title>seetOffeVente</ion-title>
+  <ion-navbar class="no-border thirds-op" color="primary">
+    <ion-title>
+      <strong>DamayDem</strong><sup><ion-badge color="light" class="text-sm text-primary">.com</ion-badge></sup>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button tappable (click)="presentNotifications($event)">
+        <ion-icon name="notifications"></ion-icon>
+      </button>
+      <button ion-button tappable (click)="goToAccount()">
+        <ion-icon name="cog"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
+ <!--list menu on the top-->
+ <div class="booking-card marginB-16px">
+    <ion-grid class="card" fixed>
+       <ion-row>
+        <ion-col col-12 col-md-12>
+          Bilahi
+            <div class="guests bb">
+            <ion-tabs>
+                <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>
+                <ion-tab [root]="tab2Root" tabTitle="About" tabIcon="information-circle"></ion-tab>
+                <ion-tab [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>
+                <ion-tab [root]="tab4Root" tabTitle="List" tabIcon="contacts"></ion-tab>
+              </ion-tabs>
+            </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid class="card" fixed>
+      <ion-row>
+        <ion-col col-12 col-md-8 class="no-paddingT no-paddingB">
+          <div class="guests bb">
+            <ion-item>
+              <ion-label>Marque</ion-label>
+              <ion-select [(ngModel)]="rooms" cancelText="Annuler" okText="OK">
+                <ion-option value="1" selected="true">Renault</ion-option>
+                <ion-option value="2">Mercedes</ion-option>
+              </ion-select>
+            </ion-item>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12 col-md-8 class="no-paddingT no-paddingB">
+          <div class="guests bb">
+            <ion-item>
+              <ion-label>Modele</ion-label>
+              <ion-select [(ngModel)]="children" cancelText="Cancel" okText="OK" (ngModelChange)="childrenArr($event)">
+                <ion-option value="0" selected="true">407</ion-option>
+                <ion-option value="1">308</ion-option>
+                <ion-option value="2">2</ion-option>
+              </ion-select>
+            </ion-item>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+          <ion-col col-12 col-md-8 class="no-paddingT no-paddingB">
+            <div class="guests bb">
+              <ion-item>
+                <ion-label>Prix</ion-label>
+                <ion-select [(ngModel)]="children" cancelText="Cancel" okText="OK" (ngModelChange)="childrenArr($event)">
+                  <ion-option value="0" selected="false">11500000</ion-option>
+                  <ion-option value="1">4000000</ion-option>
+                </ion-select>
+              </ion-item>
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col col-12 col-md-8 class="no-paddingT no-paddingB">
+              <div class="guests bb">
+                <ion-item>
+                  <ion-label>Année</ion-label>
+                  <ion-select [(ngModel)]="children" cancelText="Cancel" okText="OK" (ngModelChange)="childrenArr($event)">
+                    <ion-option value="0" selected="false">11500000</ion-option>
+                    <ion-option value="1">4000000</ion-option>
+                  </ion-select>
+                </ion-item>
+              </div>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+              <ion-col col-12 col-md-8 class="no-paddingT no-paddingB">
+                <div class="guests bb">
+                  <ion-item>
+                    <ion-label>Kilomètre</ion-label>
+                    <ion-select [(ngModel)]="children" cancelText="Cancel" okText="OK" (ngModelChange)="childrenArr($event)">
+                      <ion-option value="0" selected="false">11500000</ion-option>
+                      <ion-option value="1">4000000</ion-option>
+                    </ion-select>
+                  </ion-item>
+                </div>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col col-12 col-md-8 class="no-paddingT no-paddingB">
+                  <div class="guests bb">
+                    <ion-item>
+                      <ion-label>Carburant</ion-label>
+                      <ion-select [(ngModel)]="children" cancelText="Cancel" okText="OK" (ngModelChange)="childrenArr($event)">
+                        <ion-option value="0" selected="true">Diesel</ion-option>
+                        <ion-option value="1">Essence</ion-option>
+                      </ion-select>
+                    </ion-item>
+                  </div>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                  <ion-col col-12 col-md-8 class="no-paddingT no-paddingB">
+                    <div class="guests bb">
+                      <ion-item>
+                        <ion-label>Boite de Vitesse</ion-label>
+                        <ion-select [(ngModel)]="children" cancelText="Cancel" okText="OK" (ngModelChange)="childrenArr($event)">
+                          <ion-option value="0" selected="true">Diesel</ion-option>
+                          <ion-option value="1">Essence</ion-option>
+                        </ion-select>
+                      </ion-item>
+                    </div>
+                  </ion-col>
+                </ion-row>
+      <ion-row>
+        <ion-col>
+          <button ion-button block color="primary" class="round thirds-op" tappable (click)="viewHotels()">
+            <ion-icon name="search"></ion-icon> &nbsp;&nbsp;
+            Rechercher 
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 
 </ion-content>

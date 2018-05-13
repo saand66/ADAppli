@@ -42,7 +42,7 @@ export class ConnexionPage implements OnInit {
       private nativeStorage: NativeStorage,
       private _fb: FormBuilder,
       public menu: MenuController, 
-      public toastCtrl: ToastController
+      public toastCtrl: ToastController,
       ) {
         this.menu.swipeEnable(false);
         this.menu.enable(false);
@@ -113,7 +113,8 @@ ngOnInit() {
 
   goToAcceuil(params){
     if (!params) params = {};
-    this.navCtrl.setRoot(AlloDakarPage);
+    //this.navCtrl.setRoot(AcceuilPage);
+    this.navCtrl.setRoot(AcceuilPage);
   }
 
   }

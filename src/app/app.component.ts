@@ -1,5 +1,6 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
-import { Platform, Nav, Keyboard } from 'ionic-angular';
+import { Platform, Nav } from 'ionic-angular';
+import { Keyboard } from '@ionic-native/keyboard';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { CloudPage } from '../pages/cloud/cloud';
@@ -19,10 +20,14 @@ import { EditProfilePage } from '../pages/edit-profile/edit-profile';
 @Component({
   templateUrl: 'app.html'
 })
-export class MyApp{
+export class MyApp implements OnInit{
+ 
   @ViewChild(Nav) navCtrl: Nav;
-  theme:String = 'facebook-messenger-theme';
+  
     rootPage:any = ConnexionPage;
+   // rootPage:any = AcceuilPage;
+    showMenu: boolean = true;
+
   userprenom : string;
   usernom : string;
   islogin : string;
@@ -31,14 +36,17 @@ export class MyApp{
   task : number;
   numberofresh: number = 1;
 
-  
+  ngOnInit(): void {
+   console.log("oninit APP")
+  }
+
   constructor(
       usersInfosService: UsersInfosService,
       private nativeStorage: NativeStorage,
-    public platform: Platform,
-    public statusBar: StatusBar,
-    public splashScreen: SplashScreen,
-    public keyboard: Keyboard) {
+      public platform: Platform,
+      public statusBar: StatusBar,
+      public splashScreen: SplashScreen,
+      public keyboard: Keyboard) {
     this.initializeApp();
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -49,9 +57,7 @@ export class MyApp{
     usersInfosService.setNumberofrefresh(this.numberofresh );
     this.numberofresh = usersInfosService.getNumberofrefresh();
     console.log(" numberofresh : ", this.numberofresh )
-    /* this.userprenom = usersInfosService.getUserPrenom();
-     this.usernom =  usersInfosService.getUserNom();
-     this.islogin =  usersInfosService.getUserIsLogin();*/
+
     this.goUserInfos();
      //this.task  = setInterval(this.goUserInfos.bind(this), 1000)
     /*if (!this.usernom){
@@ -67,7 +73,7 @@ export class MyApp{
       this.statusBar.styleDefault();
       this.statusBar.overlaysWebView(false);
       //*** Control Keyboard
-     // this.keyboard .disableScroll(true);
+      this.keyboard.disableScroll(true);
     });
   }
 

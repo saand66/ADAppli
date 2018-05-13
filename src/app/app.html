@@ -1,6 +1,6 @@
 
 <ion-split-pane when="lg">
-<ion-menu  [content]="mainContent" >
+<ion-menu  [content]="content" [persistent]="true" enable-menu-with-back-views="true">
   <ion-header>
     <ion-toolbar class="user-profile nav-transparent" no-padding>
 
@@ -82,7 +82,7 @@
     </ion-list>
   </ion-content>
 </ion-menu>
-
+<ion-nav [root]="rootPage" main #content swipeBackEnabled="false"></ion-nav>
 <ion-footer  style="width:100%;height:45px;">
   <ion-toolbar color = "primary">
     <ion-segment [(ngModel)]="icons" color="dark">
@@ -118,5 +118,5 @@
   
 </ion-footer>
 
-<ion-nav #mainContent [root]="rootPage" [class]="theme"></ion-nav>
+
 </ion-split-pane>

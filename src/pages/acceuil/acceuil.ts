@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { AlloDakarPage } from '../allo-dakar/allo-dakar';
 import { AcceuilLocationPage } from '../acceuil-location/acceuil-location';
+import { AcceuilVentePage } from '../acceuil-vente/acceuil-vente';
 
 /**
  * Generated class for the AcceuilPage page.
@@ -17,7 +18,8 @@ import { AcceuilLocationPage } from '../acceuil-location/acceuil-location';
 })
 export class AcceuilPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,  public menu: MenuController, ) {
+    this.menu.enable(true);
   }
 
  
@@ -26,7 +28,7 @@ export class AcceuilPage {
   }
 
   goToJaayauto() {
-    this.navCtrl.setRoot(AcceuilLocationPage);
+    this.navCtrl.setRoot(AcceuilVentePage);
   }
 
   

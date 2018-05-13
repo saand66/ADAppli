@@ -28,7 +28,7 @@ export class AcceuilLocationPage implements OnInit{
     console.log('ionViewDidLoad AcceuilLocationPage');
   }
 
-   // Chargement des trajets
+   // Chargement des offreventes
    public getOffreVente(refresher) {
    
     this.alloDakarService.getOffreVente()

@@ -1,6 +1,7 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { Keyboard } from '@ionic-native/keyboard';
 import { MyApp } from './app.component';
 import { AlloDakarPage } from '../pages/allo-dakar/allo-dakar';
 import { CartPage } from '../pages/cart/cart';
@@ -24,6 +25,8 @@ import { UsertrajetPage } from '../pages/usertrajet/usertrajet';
 import { UsermessagePage } from '../pages/usermessage/usermessage';
 import { EditProfilePage } from '../pages/edit-profile/edit-profile';
 import { AcceuilLocationPage } from '../pages/acceuil-location/acceuil-location';
+import { AcceuilVentePage } from '../pages/acceuil-vente/acceuil-vente';
+import { SeetOffeVentePage } from '../pages/seet-offe-vente/seet-offe-vente';
 @NgModule({
   declarations: [
     MyApp,
@@ -41,7 +44,10 @@ import { AcceuilLocationPage } from '../pages/acceuil-location/acceuil-location'
     UsertrajetPage,
     UsermessagePage,
     EditProfilePage,
-    AcceuilLocationPage
+    AcceuilLocationPage,
+    AcceuilVentePage,
+    SeetOffeVentePage,
+    
   ],
   imports: [
     HttpModule,
@@ -66,7 +72,9 @@ import { AcceuilLocationPage } from '../pages/acceuil-location/acceuil-location'
     UsertrajetPage,
     UsermessagePage,
     EditProfilePage,
-    AcceuilLocationPage
+    AcceuilLocationPage,
+    AcceuilVentePage,
+    SeetOffeVentePage
   ],
   providers: [
     AlloDakarService,
@@ -74,6 +82,7 @@ import { AcceuilLocationPage } from '../pages/acceuil-location/acceuil-location'
     SplashScreen,
     UsersInfosService,
     NativeStorage,
+    Keyboard,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

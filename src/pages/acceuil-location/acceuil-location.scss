@@ -31,8 +31,15 @@ page-acceuil-location {
              $fab-size{
               width: 300px;
               height: 300 px ;
-            };
             }
+          
+            }
+            .ion-fab {
+              position: relative;
+              z-index: 999;
+              float: right;
+          } 
+              
            
 }
         
