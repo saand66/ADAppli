@@ -1,14 +1,14 @@
 webpackJsonp([8],{
 
-/***/ 308:
+/***/ 333:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ConnexionPageModule", function() { return ConnexionPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RecherchecamionPageModule", function() { return RecherchecamionPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__connexion__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__recherchecamion__ = __webpack_require__(117);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ConnexionPageModule = /** @class */ (function () {
-    function ConnexionPageModule() {
+var RecherchecamionPageModule = /** @class */ (function () {
+    function RecherchecamionPageModule() {
     }
-    ConnexionPageModule = __decorate([
+    RecherchecamionPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__connexion__["a" /* ConnexionPage */],
+                __WEBPACK_IMPORTED_MODULE_2__recherchecamion__["a" /* RecherchecamionPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__connexion__["a" /* ConnexionPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__recherchecamion__["a" /* RecherchecamionPage */]),
             ],
         })
-    ], ConnexionPageModule);
-    return ConnexionPageModule;
+    ], RecherchecamionPageModule);
+    return RecherchecamionPageModule;
 }());
 
-//# sourceMappingURL=connexion.module.js.map
+//# sourceMappingURL=recherchecamion.module.js.map
 
 /***/ })
 
