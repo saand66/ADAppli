@@ -5,13 +5,13 @@
   Ionic pages and navigation.
 -->
 <!-- -->
-<ion-header class="animated fadeIn no-shadow">
+ <!-- <ion-header class="animated fadeIn no-shadow">
     <ion-navbar class="no-border thirds-op" color="primary">
       <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
       </button>
       </ion-navbar>
-    </ion-header>
+    </ion-header> -->
 <ion-content padding class="animated fadeIn login auth-page">
   <div class="login-content">
 
@@ -42,8 +42,9 @@
         <ion-input  type="password" [(ngModel)]="login.motdepass" formControlName="password"></ion-input>
       </ion-item>
       <p ion-text color="danger" class="text-1x has-error" *ngIf="onLoginForm.get('password').touched && onLoginForm.get('password').hasError('required')">Ce champ est obligatoire</p>
+      <p ion-text color="danger" >{{messageerreur}}</p>
     </form>
-    <p ion-text color="danger" >{{messageerreur}}</p>
+    
      
     <p text-right ion-text color="light" tappable (click)="forgotPass()"><strong>Mot de Pass Oublié ?</strong></p>
 
@@ -52,12 +53,10 @@
         <ion-icon name="log-in"></ion-icon>
         CONNEXION
       </button>
-      <span></span>
       <button ion-button icon-start outline block color="light" tappable (click)="Inscription()">
           <ion-icon name="log-in"></ion-icon>
           CREER UN COMPTE
         </button>
-
       <p text-center ion-text tappable (click)="goToAcceuil()" color="light">Ou Continuer en tant qu'invité </p>
     
       <p text-center ion-text color="light">Suivez nous sur </p>
@@ -74,10 +73,7 @@
           </button>
         </ion-row>
       </ion-grid>
-
     </div>
-
-  
 
   </div>
 </ion-content>

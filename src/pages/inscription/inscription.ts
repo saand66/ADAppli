@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {AlloDakarService} from '../../services/AlloDakarApi.service';
 import { NewUser } from '../../models/AlloDakar-NewUser';
 import { ConnexionPage } from '../../pages/connexion/connexion';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 /**
  * Generated class for the InscriptionPage page.
@@ -16,16 +17,33 @@ import { ConnexionPage } from '../../pages/connexion/connexion';
   selector: 'page-inscription',
   templateUrl: 'inscription.html',
 })
-export class InscriptionPage {
+export class InscriptionPage implements OnInit {
+
 
 
   newuser : NewUser = new NewUser();
   message : string;
+  public onInscriptionForm: FormGroup;
 
-  constructor(public navCtrl: NavController, public alloDakarService: AlloDakarService) {
+  constructor(public navCtrl: NavController, public alloDakarService: AlloDakarService, private _fb: FormBuilder,) {
   }
 
-
+  ngOnInit() {
+    this.onInscriptionForm = this._fb.group({
+      nom: ['', Validators.compose([
+        Validators.required
+      ])],
+      tel: ['', Validators.compose([
+        Validators.required
+      ])],
+      motdepass: ['', Validators.compose([
+        Validators.required
+      ])],
+      prenom: ['', Validators.compose([
+        Validators.required
+      ])]
+    });
+  }
    // connexion 
    public inscription() {
     console.log(this.newuser);

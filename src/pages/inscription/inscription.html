@@ -1,57 +1,89 @@
-<!--
-  Generated template for the InscriptionPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
+<ion-header class="animated fadeIn no-shadow">
 
-  <ion-navbar>
-    <ion-title>inscription</ion-title>
+  <ion-navbar class="no-border thirds-op" color="primary">
+    <ion-title>
+      <strong>DamayDem</strong><sup><ion-badge color="light" class="text-sm text-primary">.com</ion-badge></sup>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button tappable (click)="presentNotifications($event)">
+        <ion-icon name="notifications"></ion-icon>
+      </button>
+      <button ion-button tappable (click)="goToAccount()">
+        <ion-icon name="cog"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
-
 </ion-header>
-
-
 <ion-content padding>
-  <ion-list>
-
-    <ion-item >
-      <ion-label  fixed>Prénom</ion-label>
-      <ion-input id="rounded" type="text" value="" [(ngModel)]="newuser.prenom"></ion-input>
-    </ion-item>
-
-    <ion-item >
-      <ion-label fixed>Nom</ion-label>
-      <ion-input type="text" value="" [(ngModel)]="newuser.nom"></ion-input>
-    </ion-item>
-
-    <ion-item >
-      <ion-label fixed>Telephone</ion-label>
-      <ion-input type="text" value="" [(ngModel)]="newuser.numtel"></ion-input>
-    </ion-item>
+  <!--list menu on the top-->
   
-    <ion-item >
-      <ion-label fixed>Mot de pass</ion-label>
-      <ion-input type="text" value="" [(ngModel)]="newuser.motdepass"></ion-input>
-    </ion-item>
+  <div class="booking-card marginB-16px">
+     <ion-grid class="card" fixed>
+       <ion-row>
+         <ion-col col-12 col-md-8 class="no-paddingT no-paddingB">
+           <div class="guests bb">
+            <ion-item >
+              <ion-label  fixed>Prénom</ion-label>
+              <ion-input  type="text" value="" [(ngModel)]="newuser.prenom"></ion-input>
+            </ion-item>
+           </div>
+         </ion-col>
+       </ion-row>
+       <ion-row>
+         <ion-col col-12 col-md-8 class="no-paddingT no-paddingB">
+           <div class="guests bb">
+            <ion-item >
+              <ion-label fixed>Nom</ion-label>
+              <ion-input type="text" value="" [(ngModel)]="newuser.nom"></ion-input>
+            </ion-item>
+           </div>
+         </ion-col>
+       </ion-row>
+       <ion-row>
+           <ion-col col-12 col-md-8 class="no-paddingT no-paddingB">
+             <div class="guests bb">
+              <ion-item >
+                <ion-label fixed>Telephone</ion-label>
+                <ion-input type="text" value="" [(ngModel)]="newuser.numtel"></ion-input>
+              </ion-item>
+             </div>
+           </ion-col>
+         </ion-row>
+ 
+         <ion-row>
+             <ion-col col-12 col-md-8 class="no-paddingT no-paddingB">
+               <div class="guests bb">
+                <ion-item >
+                  <ion-label fixed>Mot de pass</ion-label>
+                  <ion-input type="text" value="" [(ngModel)]="newuser.motdepass"></ion-input>
+                </ion-item>
+               </div>
+             </ion-col>
+           </ion-row>
+ 
+           <ion-row>
+               <ion-col col-12 col-md-8 class="no-paddingT no-paddingB">
+                 <div class="guests bb">
+                  <ion-item >
+                    <ion-label fixed>Description</ion-label>
+                    <ion-input type="text" value="" [(ngModel)]="newuser.descrip"></ion-input>
+                  </ion-item>
+                 </div>
+               </ion-col>
+             </ion-row>
+ 
+       <ion-row>
+         <ion-col>
+           <button ion-button block color="primary" class="round thirds-op" tappable (click)="inscription()">
+             <ion-icon name="log-in"></ion-icon> &nbsp;&nbsp;
+             Inscription 
+           </button>
+         </ion-col>
+       </ion-row>
+     </ion-grid>
+   </div>
+ 
 
-    <ion-item >
-      <ion-label fixed>Description</ion-label>
-      <ion-input type="text" value="" [(ngModel)]="newuser.descrip"></ion-input>
-    </ion-item>
-
-    <div class="spacer" style="width:300px;height:17px;" id="alloDakar-spacer3"></div>
-    
-  </ion-list>
-  
-  <button id="creercompte" ion-button round color="positive" block style="font-weight:500;font-style:italic;text-align:left;" on-click="inscription()">
-    inscription
-  </button>
-
-   <ion-item>
-    {{message}}
-    </ion-item>
-
-
-</ion-content>
+ </ion-content>
+ 
