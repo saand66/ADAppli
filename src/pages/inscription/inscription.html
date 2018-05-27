@@ -1,9 +1,11 @@
-
 <ion-header class="animated fadeIn no-shadow">
 
   <ion-navbar class="no-border thirds-op" color="primary">
     <ion-title>
-      <strong>DamayDem</strong><sup><ion-badge color="light" class="text-sm text-primary">.com</ion-badge></sup>
+      <strong>DamayDem</strong>
+      <sup>
+        <ion-badge color="light" class="text-sm text-primary">.com</ion-badge>
+      </sup>
     </ion-title>
     <ion-buttons end>
       <button ion-button tappable (click)="presentNotifications($event)">
@@ -15,75 +17,79 @@
     </ion-buttons>
   </ion-navbar>
 </ion-header>
-<ion-content padding>
+<ion-content class="insc-page" padding>
   <!--list menu on the top-->
-  
-  <div class="booking-card marginB-16px">
-     <ion-grid class="card" fixed>
-       <ion-row>
-         <ion-col col-12 col-md-8 class="no-paddingT no-paddingB">
-           <div class="guests bb">
-            <ion-item >
-              <ion-label  fixed>Prénom</ion-label>
-              <ion-input  type="text" value="" [(ngModel)]="newuser.prenom"></ion-input>
-            </ion-item>
-           </div>
-         </ion-col>
-       </ion-row>
-       <ion-row>
-         <ion-col col-12 col-md-8 class="no-paddingT no-paddingB">
-           <div class="guests bb">
-            <ion-item >
-              <ion-label fixed>Nom</ion-label>
-              <ion-input type="text" value="" [(ngModel)]="newuser.nom"></ion-input>
-            </ion-item>
-           </div>
-         </ion-col>
-       </ion-row>
-       <ion-row>
-           <ion-col col-12 col-md-8 class="no-paddingT no-paddingB">
-             <div class="guests bb">
-              <ion-item >
-                <ion-label fixed>Telephone</ion-label>
-                <ion-input type="text" value="" [(ngModel)]="newuser.numtel"></ion-input>
-              </ion-item>
-             </div>
-           </ion-col>
-         </ion-row>
- 
-         <ion-row>
-             <ion-col col-12 col-md-8 class="no-paddingT no-paddingB">
-               <div class="guests bb">
-                <ion-item >
-                  <ion-label fixed>Mot de pass</ion-label>
-                  <ion-input type="text" value="" [(ngModel)]="newuser.motdepass"></ion-input>
-                </ion-item>
-               </div>
-             </ion-col>
-           </ion-row>
- 
-           <ion-row>
-               <ion-col col-12 col-md-8 class="no-paddingT no-paddingB">
-                 <div class="guests bb">
-                  <ion-item >
-                    <ion-label fixed>Description</ion-label>
-                    <ion-input type="text" value="" [(ngModel)]="newuser.descrip"></ion-input>
-                  </ion-item>
-                 </div>
-               </ion-col>
-             </ion-row>
- 
-       <ion-row>
-         <ion-col>
-           <button ion-button block color="primary" class="round thirds-op" tappable (click)="inscription()">
-             <ion-icon name="log-in"></ion-icon> &nbsp;&nbsp;
-             Inscription 
-           </button>
-         </ion-col>
-       </ion-row>
-     </ion-grid>
-   </div>
- 
 
- </ion-content>
- 
+  <div class="booking-card marginB-16px" style="padding-top: 10%">
+    <ion-grid class="cardInscription" fixed>
+      <span style="color: beige; font-size: 24px;text-align: center">Inscription</span>
+      <p ion-text *ngIf="message" color="danger" style="text-align: center">{{message}}</p>
+
+      <form [formGroup]="onInscriptionForm">
+        <ion-row>
+          <ion-col class="col-lg-12 col-md-8 col-sm-20 col-xs-12 no-paddingT no-paddingB">
+            <div class="guests bb">
+              <ion-item>
+<!--                 <ion-label fixed>Prénom</ion-label>
+ -->                <ion-input type="text" placeholder="Prénom" class="form-control" formControlName="prenom" value="" [(ngModel)]="newuser.prenom"></ion-input>
+              </ion-item>
+              <p ion-text color="danger" class="text-1x has-error" *ngIf="onInscriptionForm.get('prenom').touched && onInscriptionForm.get('prenom').hasError('required')">Prénom est obligatoire</p>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="col-lg-12 col-md-8 col-sm-20 col-xs-12 no-paddingT no-paddingB">
+            <div class="guests bb">
+              <ion-item>
+                <ion-input type="text"  placeholder="Nom"formControlName="nom" value="" [(ngModel)]="newuser.nom"></ion-input>
+              </ion-item>
+              <p ion-text color="danger" class="text-1x has-error" *ngIf="onInscriptionForm.get('nom').touched && onInscriptionForm.get('nom').hasError('required')">Nom est obligatoire</p>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="col-lg-12 col-md-8 col-sm-20 col-xs-12 no-paddingT no-paddingB">
+            <div class="guests bb">
+              <ion-item>
+                 <ion-input type="text" placeholder="Téléphone" formControlName="tel" value="" [(ngModel)]="newuser.numtel"></ion-input>
+              </ion-item>
+              <p ion-text color="danger" class="text-1x has-error" *ngIf="onInscriptionForm.get('tel').touched && onInscriptionForm.get('tel').hasError('required')">Téléphone est obligatoire</p>
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col style="padding-bottom: 12px" class="col-lg-12 col-md-8 col-sm-20 col-xs-12 no-paddingT no-paddingB">
+            <div class="guests bb">
+              <ion-item>
+                 <ion-input type="password" placeholder="Mot de passe" formControlName="motDePasse" value="" [(ngModel)]="newuser.motdepass"></ion-input>
+              </ion-item>
+              <p ion-text color="danger" class="text-1x has-error" *ngIf="onInscriptionForm.get('motDePasse').touched && onInscriptionForm.get('motDePasse').hasError('required')">Ce champ est obligatoire</p>
+            </div>
+          </ion-col>
+        </ion-row>
+        <br/>
+        <ion-row>
+          <ion-col>
+            <button ion-button block color="primary" class="round thirds-op" tappable (click)="inscription()">
+              <ion-icon name="log-in"></ion-icon> &nbsp;&nbsp; Inscription
+            </button>
+          </ion-col>
+        </ion-row>
+      </form>
+      <!--       <ion-row>
+        <ion-col col-12 col-md-8 class="no-paddingT no-paddingB">
+          <div class="guests bb">
+            <ion-item>
+              <ion-label fixed>Description</ion-label>
+              <ion-input type="text" value="" [(ngModel)]="newuser.descrip"></ion-input>
+            </ion-item>
+          </div>
+        </ion-col>
+      </ion-row> -->
+
+
+    </ion-grid>
+  </div>
+
+</ion-content>

@@ -2,16 +2,16 @@
 
 import { NativeStorage } from '@ionic-native/native-storage';
 
-import {Component, OnInit} from "@angular/core";
-import {FormGroup, Validators, FormBuilder} from '@angular/forms';
-import {IonicPage, NavController, AlertController, ToastController, MenuController,NavParams} from "ionic-angular";
+import { Component, OnInit } from "@angular/core";
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { IonicPage, NavController, AlertController, ToastController, MenuController, NavParams } from "ionic-angular";
 
 
-import {AlloDakarService} from '../../services/AlloDakarApi.service';
-import {Login} from '../../models/AlloDakar-Login';
+import { AlloDakarService } from '../../services/AlloDakarApi.service';
+import { Login } from '../../models/AlloDakar-Login';
 import { TrajetPage } from '../trajet/trajet';
 import { AlloDakarPage } from '../allo-dakar/allo-dakar';
-import { InscriptionPage} from '../inscription/inscription';
+import { InscriptionPage } from '../inscription/inscription';
 import { UsersInfosService } from '../../services/UsersInfosService';
 import { AcceuilPage } from '../acceuil/acceuil';
 /**
@@ -29,29 +29,29 @@ import { AcceuilPage } from '../acceuil/acceuil';
 export class ConnexionPage implements OnInit {
   public onLoginForm: FormGroup;
 
-    login : Login = new Login();
-    erreur : string;
-    messageerreur : string;
+  login: Login = new Login();
+  erreur: string;
+  messageerreur: string;
 
-   
-   
+
+
   constructor(public navCtrl: NavController,
-      private alloDakarService: AlloDakarService,
-      private usersInfosService: UsersInfosService ,    
-      public alertCtrl: AlertController,
-      private nativeStorage: NativeStorage,
-      private _fb: FormBuilder,
-      public menu: MenuController, 
-      public toastCtrl: ToastController,
-      ) {
-        this.menu.swipeEnable(false);
-        this.menu.enable(false);
-   // this.Connexion();
+    private alloDakarService: AlloDakarService,
+    private usersInfosService: UsersInfosService,
+    public alertCtrl: AlertController,
+    private nativeStorage: NativeStorage,
+    private _fb: FormBuilder,
+    public menu: MenuController,
+    public toastCtrl: ToastController,
+  ) {
+    this.menu.swipeEnable(false);
+    this.menu.enable(false);
+    // this.Connexion();
   }
 
-ngOnInit() {
+  ngOnInit() {
     this.onLoginForm = this._fb.group({
-      email: ['', Validators.compose([
+      telephone: ['', Validators.compose([
         Validators.required
       ])],
       password: ['', Validators.compose([
@@ -59,65 +59,46 @@ ngOnInit() {
       ])]
     });
   }
-   // connexion 
-   public Connexion() {
-    console.log(this.login);
-    this.alloDakarService.Connexion(this.login)
-    .then(data => {
-   
-      if (data && data.token){
-       localStorage.setItem("UserPrenom", data.UserPrenom);
-       localStorage.setItem("UserNom", data.UserNom);
-       localStorage.setItem("UserTel", data.UserTel);
-       localStorage.setItem("Token", data.token);
-       localStorage.setItem("islogin","true");
-       this.usersInfosService.setUserToken(data.token);
-        this.usersInfosService.setUserPreNom(data.UserPrenom);
-        this.usersInfosService.setUserNom(data.UserNom);
-        this.usersInfosService.setUserIsLogin(true);
-       /* this.nativeStorage.setItem("UserPrenom", data.UserPrenom);
-        this.nativeStorage.setItem("UserNom", data.UserNom);
-        this.nativeStorage.setItem("Token", data.token);
-        this.nativeStorage.setItem("islogin",true);*/
+  // connexion 
+  public Connexion() {
+    this.alloDakarService.connexion(this.login)
+      .then(data => {
 
-       // this.alloDakarService.userNom = data.UserNom;
-      //  this.alloDakarService.userToken = data.token;
-      //  this.alloDakarService.userIsLogin = "true";
+        if (data && data.token) {
+          localStorage.setItem("UserPrenom", data.UserPrenom);
+          localStorage.setItem("UserNom", data.UserNom);
+          localStorage.setItem("UserTel", data.UserTel);
+          localStorage.setItem("Token", data.token);
+          localStorage.setItem("islogin", "true");
+          this.usersInfosService.setUserToken(data.token);
+          this.usersInfosService.setUserPreNom(data.UserPrenom);
+          this.usersInfosService.setUserNom(data.UserNom);
+          this.usersInfosService.setUserIsLogin(true);
+          this.navCtrl.setRoot(AcceuilPage);
+        } else if (data && data.error) {
 
-        this.navCtrl.setRoot(AcceuilPage);
+          this.messageerreur = data.error.error;
+          console.log("mon erreur : " + this.erreur);
 
-
-      }else if ( data && data.error){
-    
-         this.messageerreur  = data.error.error;
-        console.log( "mon erreur : " + this.erreur) ;
-       
-       /* let alert = this.alertCtrl.create({
-        title: 'Probleme',
-        subTitle: this.erreur,
-        buttons: ['OK']
-      });
-      alert.present();*/
-
-      }
-       }).catch(e => { console.log("test " +  e);  })
+        }
+      }).catch(e => { console.log("test " + e); })
   }
-  
- 
 
 
-  Inscription(params){
+
+
+  Inscription(params) {
     if (!params) params = {};
     this.navCtrl.push(InscriptionPage);
   }
 
-  goToAcceuil(params){
+  goToAcceuil(params) {
     if (!params) params = {};
     //this.navCtrl.setRoot(AcceuilPage);
     this.navCtrl.setRoot(AcceuilPage);
   }
 
-  }
+}
 
 
 

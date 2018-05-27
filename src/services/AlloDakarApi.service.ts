@@ -68,7 +68,7 @@ export class AlloDakarService {
   }
 
 
-  public Connexion(Login) {
+  public connexion(Login) {
     const url = `${this.baseUrl}${this.serviceLogin}`;
     return this.http.post(url, Login)
       .toPromise()

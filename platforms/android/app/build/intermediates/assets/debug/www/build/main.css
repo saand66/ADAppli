@@ -5544,7 +5544,7 @@ ion-app.ios {
 }
 
 ion-app.md {
-  font-family: "Roboto", "Helvetica Neue", sans-serif;
+   font-family: "Cambria, Cochin, Georgia, Times, 'Times New Roman", sans-serif;
   font-size: 1.4rem;
   background-color: #fff;
 }
@@ -8759,7 +8759,7 @@ ion-app.ios [margin-horizontal] .scroll-content {
 
 .content-md {
   color: rgba(86, 61, 124, 0.75);
-  background-color: #fff;
+  background-color: currentColor;
 }
 
 .content-md hr {
