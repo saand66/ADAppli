@@ -6,6 +6,7 @@ export class OffreVente {
     prix: number;
     kilometrage: number;
     boitevit:  string;
+    carburant : string;
     couleur: string;
     douane: boolean;
     isurgent:boolean;

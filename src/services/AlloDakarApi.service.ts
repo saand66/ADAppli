@@ -16,6 +16,8 @@ import { ConnexionPage } from '../pages/connexion/connexion'
 import { UsersInfosService } from './UsersInfosService';
 import { Reservation } from '../models/Reservation';
 import {OffreVente} from '../models/OffreVente'
+import { Marque } from '../models/Marque';
+import { ModeleVoit } from '../models/ModeleVoit';
 @Injectable()
 
 export class AlloDakarService {
@@ -37,8 +39,12 @@ export class AlloDakarService {
 
   //Offreventes
   private servicelistoffreventes: string = 'offreVentes';
+  private servicelistoffreventesbycritere: string = 'offreVentes/filtre';
 
-
+// Marques  
+  private servicelistmarque: string = 'marques';
+  private servicelistmodelbymarque: string = 'marques/modeles';
+  
 
   constructor(private http: HttpClient, private usersInfosService: UsersInfosService) {
 
@@ -137,6 +143,40 @@ export class AlloDakarService {
       .then(response => response as OffreVente)
       .catch(error => console.log('une erreur est survenue ' + error))
   }
+
+  public getOffreVentebycritere(critere) {
+    const url = `${this.baseUrl}${this.servicelistoffreventesbycritere}`;
+    // const url = this.baseUrl;
+    return this.http.post(url,critere)
+      .toPromise()
+      .then(response => response as ModeleVoit)
+      .catch(error => console.log('une erreur est survenue ' + error))
+  }
+
+
+
+  // Marques 
+  
+  public getAllMarque() {
+    const url = `${this.baseUrl}${this.servicelistmarque}`;
+    // const url = this.baseUrl;
+    return this.http.get(url)
+      .toPromise()
+      .then(response => response as Marque)
+      .catch(error => console.log('une erreur est survenue ' + error))
+  }
+
+  public getModelsbyMarque(id) {
+   let mymarque = new Marque();
+    const url = `${this.baseUrl}${this.servicelistmodelbymarque}`;
+    // const url = this.baseUrl;
+    mymarque.id = id;
+    return this.http.post(url, mymarque)
+      .toPromise()
+      .then(response => response as ModeleVoit)
+      .catch(error => console.log('une erreur est survenue ' + error))
+  }
+
 
 
 }

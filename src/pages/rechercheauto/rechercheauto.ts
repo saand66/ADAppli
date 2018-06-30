@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AlloDakarService } from '../../services/AlloDakarApi.service';
+import { Marque } from '../../models/marque';
+import { OffreVente } from '../../models/OffreVente';
 
 /**
  * Generated class for the RechercheautoPage page.
@@ -15,11 +18,61 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RechercheautoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  allmarques : any;
+  allmodeles  : any;
+  marque : any;
+  model : any
+  annee : any;
+  kilometre : any
+  boitvit : any;
+  prix : any;
+  carburant : any
+
+  objectCritere = new  OffreVente();
+  alloffretrouves: any;
+  alloffrefound: any;
+
+  ngOnInit(): void {
+    this.getAllMarque(null);    
+    }
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,private alloDakarService: AlloDakarService) {
+    this.getAllMarque(null);
+    //console.log('list des marques : ' + this.allmarques);
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RechercheautoPage');
+
+
+  getAllMarque (refresher){
+    this.alloDakarService.getAllMarque()
+    .then(newsFetched => {
+      this.allmarques = newsFetched ;
+      // Si la variable refresher est null alors on ne fait rien
+      (refresher) ? refresher.complete() : null;
+    });
+  }
+ 
+
+  getModelsbyMarque (marque){
+    this.alloDakarService.getModelsbyMarque(marque.id)
+    .then(newsFetched => {
+      this.allmodeles = newsFetched ;
+      // Si la variable refresher est null alors on ne fait rien
+      console.log('allmarques :', this.allmodeles);
+      console.log('newsFetched :', newsFetched);
+      console.log('Données récupérées depuis le serveur !');
+    });
   }
 
+  getoffrebycritre (objectCritere){
+    console.log('marque' , objectCritere);
+    this.alloDakarService.getOffreVentebycritere(objectCritere)
+    .then(newsFetched => {
+      this.alloffrefound = newsFetched ;
+      console.log('alloffrefound' , this.alloffrefound);
+      // Si la variable refresher est null alors on ne fait rien
+    
+    });
+  }
+  
 }

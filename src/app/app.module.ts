@@ -15,7 +15,7 @@ import { HttpModule } from '@angular/http';
 import { AlloDakarService } from '../services/AlloDakarApi.service';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { TrajetDetailsPage } from '../pages/trajet-details/trajet-details';
 import { UsersInfosService } from '../services/UsersInfosService';
 import { NativeStorage } from '@ionic-native/native-storage';
@@ -32,7 +32,7 @@ import { RechercheautoPage } from '../pages/rechercheauto/rechercheauto';
 import { RecherchemotoPage } from '../pages/recherchemoto/recherchemoto';
 import { RecherchecamionPage } from '../pages/recherchecamion/recherchecamion';
 import { SuperTabsModule } from 'ionic2-super-tabs';
-import { SeetOffeVentePageModule } from '../pages/seet-offe-vente/seet-offe-vente.module';
+import { OffreventeDetailsPage } from '../pages/offrevente-details/offrevente-details';
 @NgModule({
   declarations: [
     MyApp,
@@ -56,7 +56,8 @@ import { SeetOffeVentePageModule } from '../pages/seet-offe-vente/seet-offe-vent
     RechercheautoPage,
     RecherchemotoPage,
     RechercheutilPage,
-    RecherchecamionPage
+    RecherchecamionPage,
+    OffreventeDetailsPage
     
   ],
   imports: [
@@ -89,7 +90,8 @@ import { SeetOffeVentePageModule } from '../pages/seet-offe-vente/seet-offe-vent
     RechercheautoPage,
     RecherchemotoPage,
     RechercheutilPage,
-    RecherchecamionPage
+    RecherchecamionPage,
+    OffreventeDetailsPage
   ],
   providers: [
     AlloDakarService,

@@ -14,6 +14,7 @@ import { AlloDakarPage } from '../allo-dakar/allo-dakar';
 import { InscriptionPage } from '../inscription/inscription';
 import { UsersInfosService } from '../../services/UsersInfosService';
 import { AcceuilPage } from '../acceuil/acceuil';
+import { AcceuilVentePage } from '../acceuil-vente/acceuil-vente';
 /**
  * Generated class for the ConnexionPage page.
  *
@@ -74,7 +75,7 @@ export class ConnexionPage implements OnInit {
           this.usersInfosService.setUserPreNom(data.UserPrenom);
           this.usersInfosService.setUserNom(data.UserNom);
           this.usersInfosService.setUserIsLogin(true);
-          this.navCtrl.setRoot(AcceuilPage);
+          this.navCtrl.setRoot(AcceuilVentePage);
         } else if (data && data.error) {
 
           this.messageerreur = data.error.error;
@@ -91,6 +92,12 @@ export class ConnexionPage implements OnInit {
     if (!params) params = {};
     this.navCtrl.push(InscriptionPage);
   }
+
+  goToJaayauto(params) {
+    if (!params) params = {};
+    this.navCtrl.setRoot(AcceuilVentePage);
+  }
+
 
   goToAcceuil(params) {
     if (!params) params = {};

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { AlloDakarService } from '../../services/AlloDakarApi.service';
 import { SeetOffeVentePage } from '../seet-offe-vente/seet-offe-vente';
+import { OffreventeDetailsPage } from '../offrevente-details/offrevente-details';
 
 /**
  * Generated class for the AcceuilVentePage page.
@@ -20,14 +21,14 @@ export class AcceuilVentePage {
     this.getOffreVente(null);    
     }
     offreVentes : any;
-    pathoffrevente :string =  "http://damaydem.com/images/damaydem/offreventes/"
+    pathoffrevente :string = "http://damaydem.com/images/damaydem/offreventes/"
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private alloDakarService: AlloDakarService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private alloDakarService: AlloDakarService,public menu: MenuController,) {
+    this.menu.enable(true);
+    this.getOffreVente(null);
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AcceuilVentePage');
-  }
+  
 
     // Chargement des offreventes
     public getOffreVente(refresher) {
@@ -46,6 +47,21 @@ export class AcceuilVentePage {
     goToSeetOffreVentes(params){
       if (!params) params = {};
       this.navCtrl.push(SeetOffeVentePage);
+     
     }
 
+
+    goToOffreVenteDetails(offre){
+      //this.navParams.data = trajet ;
+     // this.navCtrl.push(trajet, {status: true})
+     console.log('offre à afficher' + offre );
+      this.navCtrl.push(OffreventeDetailsPage, {loffre : offre});
+  
+     // let modal = this.modalCtrl.create(TrajetDetailsPage);
+    //  modal.present();
+    }
+
+
+   
+    
 }

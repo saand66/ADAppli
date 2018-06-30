@@ -1,0 +1,115 @@
+<!--
+  Generated template for the OffreventeDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary" class="thirds-op">
+    <ion-title><h3> infos</h3> </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class=" common-bg">
+  <!--slides-->
+  <!--<ion-slides class="to-top" pager>
+    <ion-slide *ngFor="let image of trip.images">
+   <img src="{{ thumb }}" alt="">
+    </ion-slide>
+  </ion-slides> -->
+  <ion-slides class="to-top" pager>
+    <ion-slide>
+   <img src="{{ pathoffrevente  + offredetails.img1 }}" alt="">
+    </ion-slide>
+  </ion-slides>
+
+  <!--services-->
+  <ion-grid class="border-bottom detail-bg">
+    <ion-row>
+      <ion-col text-center>
+        <div class="text-sm">
+          <div>
+            <ion-icon name="time" color="primary" class="thirds-op"></ion-icon>
+            <span ion-text color="secondary">{{offredetails.marque}}</span>
+            <ion-icon name="checkbox-outline" margin-left color="primary" class="thirds-op"></ion-icon>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col col-12>
+        <!--high light-->
+        <div class="border-bottom" padding>
+          <span ion-text color="dark" class="bold">Détails Du l'offre</span>
+          <ul class="highlight">
+            <li>
+              <ion-icon name="checkmark" class="text-green"></ion-icon>
+              <span ion-text color="primary"> Modele : {{offredetails.model}}</span>
+            </li>
+            <li>
+            <ion-icon name="checkmark" class="text-green"></ion-icon>
+              <span ion-text color="primary">Annee : {{offredetails.annee}}</span>
+            </li>
+            <li>
+              <ion-icon name="checkmark" class="text-green"></ion-icon>
+              <span ion-text color="primary">Kilometre : {{offredetails.kilometrage}}</span>
+            </li>
+             <li>
+              <ion-icon name="checkmark" class="text-green"></ion-icon>
+              <span ion-text color="primary">Prix :{{ offredetails.prix }}</span>
+             </li>
+              <li>
+                <ion-icon name="checkmark" class="text-green"></ion-icon>
+                <span ion-text color="primary">Posté par : {{ offredetails.User.prenom }}</span>
+              </li>
+              
+          </ul>
+        </div>
+
+        <!--booking form-->
+        <div class="booking-form card round" margin>
+          <div class="border-bottom" padding>
+            <h5>{{offredetails.marque+ " - " + offredetails.model}</h5>
+            <!--choose guest-->
+            <ion-grid class="filters" no-padding margin-top>
+              <ion-row>
+                <ion-col class="adult" width-70>
+                  <span ion-text color="primary"><strong>{{offredetails.prix}} CFA</strong> </span>
+                </ion-col>
+              </ion-row>
+              
+            </ion-grid>
+          </div>
+          <div padding class="form-bottom">
+      <!--       <span ion-text color="dark" class="bold">{{ adults }} Adults</span> -->
+            <!--booking button-->
+            <button ion-button class="pull-right" color="secondary" tappable (click)="goToReservation(offre)">Reservez &nbsp;&nbsp;&nbsp; <span ion-text  class="text-green bold"> {{ nbplace * offredetails.prix }}</span>
+            </button>
+            <div class="clear"></div>
+          </div>
+        </div>
+
+        <!--description-->
+        <div class="border-bottom" padding>
+          <span ion-text color="primary" class="bold">DESCRIPTION</span>
+          <p ion-text>Le Sénégal, en forme longue la République du Sénégal, est un pays d'Afrique de l'Ouest. Il est bordé par l'océan Atlantique à l'ouest, la Mauritanie au nord, à l'est par le Mali, la Guinée et la Guinée-Bissau au sud. La Gambie forme une quasi-enclave dans le Sénégal, pénétrant à plus de 300 km à l'intérieur des terres. Les îles du Cap-Vert sont situées à 560 km de la côte sénégalaise. Le pays doit son nom au fleuve qui le borde à l'est et au nord et qui prend sa source dans le Fouta Djallon en Guinée. Le climat est tropical et sec avec deux saisons : la saison sèche et la saison des pluies.</p>
+        </div>
+
+        <!--address-->
+        <div class="border-bottom" padding>
+          <span ion-text color="primary" class="bold">LOCATION</span>
+          <p ion-text>Buntu Pikine </p>
+          <p ion-text>Camberene </p>
+        </div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
