@@ -1,9 +1,11 @@
 export class OffreVente {
     
     marque: string;
-    model: string;
+    modele: string;
     annee: string;
     prix: number;
+    prixMin: number;
+    prixMax: number;
     kilometrage: number;
     boitevit:  string;
     carburant : string;

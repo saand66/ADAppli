@@ -16,6 +16,7 @@ import { UsertrajetPage } from '../pages/usertrajet/usertrajet';
 import { UserprofilPage } from '../pages/userprofil/userprofil';
 import { UsermessagePage } from '../pages/usermessage/usermessage';
 import { EditProfilePage } from '../pages/edit-profile/edit-profile';
+import { SeetOffeVentePage } from '../pages/seet-offe-vente/seet-offe-vente';
 
 @Component({
   templateUrl: 'app.html'
@@ -23,8 +24,8 @@ import { EditProfilePage } from '../pages/edit-profile/edit-profile';
 export class MyApp implements OnInit{
  
   @ViewChild(Nav) navCtrl: Nav;
-  
-    rootPage:any = ConnexionPage;
+    //page par defaut
+    rootPage:any = SeetOffeVentePage;
    // rootPage:any = AcceuilPage;
     showMenu: boolean = true;
 

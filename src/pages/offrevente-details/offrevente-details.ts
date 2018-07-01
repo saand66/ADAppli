@@ -22,7 +22,6 @@ export class OffreventeDetailsPage {
   pathoffrevente :string =  "http://damaydem.com/images/damaydem/offreventes/"
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private alloDakarService: AlloDakarService, public alertCtrl: AlertController) {
-    console.log('le offre : ' + this.navParams.get('loffre'));
     this.offredetails = this.navParams.get('loffre');
   }
 

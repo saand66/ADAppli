@@ -23,7 +23,7 @@ import { ModeleVoit } from '../models/ModeleVoit';
 export class AlloDakarService {
 
   //Global
- //private baseUrl: string = 'http://damaydem.com:49160/api/';
+   //private baseUrl: string = 'http://damaydem.com:49160/api/';
   private baseUrl : string ='/api/';
 
     //users
@@ -144,7 +144,7 @@ export class AlloDakarService {
       .catch(error => console.log('une erreur est survenue ' + error))
   }
 
-  public getOffreVentebycritere(critere) {
+  public getOffreVentebycritere(critere){
     const url = `${this.baseUrl}${this.servicelistoffreventesbycritere}`;
     // const url = this.baseUrl;
     return this.http.post(url,critere)

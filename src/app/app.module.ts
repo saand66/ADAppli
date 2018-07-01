@@ -33,6 +33,7 @@ import { RecherchemotoPage } from '../pages/recherchemoto/recherchemoto';
 import { RecherchecamionPage } from '../pages/recherchecamion/recherchecamion';
 import { SuperTabsModule } from 'ionic2-super-tabs';
 import { OffreventeDetailsPage } from '../pages/offrevente-details/offrevente-details';
+import { OffreventefoundPage } from '../pages/offreventefound/offreventefound';
 @NgModule({
   declarations: [
     MyApp,
@@ -57,7 +58,8 @@ import { OffreventeDetailsPage } from '../pages/offrevente-details/offrevente-de
     RecherchemotoPage,
     RechercheutilPage,
     RecherchecamionPage,
-    OffreventeDetailsPage
+    OffreventeDetailsPage,
+    OffreventefoundPage
     
   ],
   imports: [
@@ -91,7 +93,8 @@ import { OffreventeDetailsPage } from '../pages/offrevente-details/offrevente-de
     RecherchemotoPage,
     RechercheutilPage,
     RecherchecamionPage,
-    OffreventeDetailsPage
+    OffreventeDetailsPage,
+    OffreventefoundPage
   ],
   providers: [
     AlloDakarService,

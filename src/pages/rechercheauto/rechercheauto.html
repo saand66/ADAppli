@@ -7,7 +7,8 @@
 
 <ion-content padding>
  <!--list menu on the top-->
- 
+
+
  <div class="booking-card marginB-16px">
     <ion-grid class="card" fixed>
       <ion-row>
@@ -15,7 +16,6 @@
           <div class="guests bb">
             <ion-item>
               <ion-label>Marque</ion-label>
-        
               <ion-select [(ngModel)]="objectCritere.marque" cancelText="Annuler" okText="OK" (ngModelChange) ="getModelsbyMarque($event)">
                  <ion-option *ngFor="let marque of allmarques" [value]="marque">{{marque.marque}}</ion-option>    
               </ion-select>
@@ -28,7 +28,7 @@
           <div class="guests bb">
             <ion-item>
               <ion-label>Modele</ion-label>
-              <ion-select [(ngModel)]="objectCritere.modele" cancelText="Annuler" okText="OK">
+              <ion-select [(ngModel)]="objectCritere.modele" cancelText="Annuler" okText="OK" (ngModelChange) ="getNbOffreByCritre(objectCritere)">
                 <ion-option *ngFor="let modele of allmodeles" [value]="modele">{{modele.modele}}</ion-option> 
               </ion-select>
             </ion-item>
@@ -39,8 +39,31 @@
           <ion-col col-12 col-md-8 class="no-paddingT no-paddingB">
             <div class="guests bb">
               <ion-item>
-                <ion-label>Prix</ion-label>
-                <ion-select [(ngModel)]="objectCritere.prix" cancelText="Annuler" okText="OK">
+                <ion-label>Prix Min</ion-label>
+                <ion-select [(ngModel)]="objectCritere.prixMin" cancelText="Annuler" okText="OK" (ngModelChange) ="getNbOffreByCritre(objectCritere)">
+                  <ion-option value="500000" selected="false">500 000</ion-option>
+                  <ion-option value="1000000" selected="false">1 000 000</ion-option>
+                  <ion-option value="1500000">1 500 000</ion-option>
+                  <ion-option value="2000000">2 000 000</ion-option>
+                  <ion-option value="2500000">2 500 000</ion-option>
+                  <ion-option value="3000000">3 000 000</ion-option>
+                  <ion-option value="3500000">3 500 000</ion-option>
+                  <ion-option value="4000000">4 000 000</ion-option>
+                  <ion-option value="4500000">4 500 000</ion-option>
+                  <ion-option value="5000000">5 000 000</ion-option>
+                </ion-select>
+              </ion-item>
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col col-12 col-md-8 class="no-paddingT no-paddingB">
+            <div class="guests bb">
+              <ion-item>
+                <ion-label>Prix Max</ion-label>
+                <ion-select [(ngModel)]="objectCritere.prixMax" cancelText="Annuler" okText="OK" (ngModelChange) ="getNbOffreByCritre(objectCritere)">
+                  <ion-option value="500000" selected="false">500 000</ion-option>
                   <ion-option value="1000000" selected="false">1 000 000</ion-option>
                   <ion-option value="1500000">1 500 000</ion-option>
                   <ion-option value="2000000">2 000 000</ion-option>
@@ -61,7 +84,7 @@
               <div class="guests bb">
                 <ion-item>
                   <ion-label>Année</ion-label>
-                  <ion-select [(ngModel)]="objectCritere.annee" cancelText="Annuler" okText="OK">
+                  <ion-select [(ngModel)]="objectCritere.annee" cancelText="Annuler" okText="OK"(ngModelChange) ="getNbOffreByCritre(objectCritere)">
                     <ion-option value="0" selected="false">2000</ion-option>
                     <ion-option value="2001">2001</ion-option>
                     <ion-option value="2002">2002</ion-option>
@@ -89,8 +112,8 @@
                 <div class="guests bb">
                   <ion-item>
                     <ion-label>Kilomètre</ion-label>
-                    <ion-select [(ngModel)]="objectCritere.kilometrage" cancelText="Annuler" okText="OK" >
-                      <ion-option value="25000" selected="false">25 0000</ion-option>
+                    <ion-select [(ngModel)]="objectCritere.kilometrage" cancelText="Annuler" okText="OK" (ngModelChange) ="getNbOffreByCritre(objectCritere)">
+                      <ion-option value="25000" selected="false">25 000</ion-option>
                       <ion-option value="50000">50 000</ion-option>
                       <ion-option value="100000">100 000</ion-option>
                       <ion-option value="125000">125 000</ion-option>
@@ -107,7 +130,7 @@
                   <div class="guests bb">
                     <ion-item>
                       <ion-label>Carburant</ion-label>
-                      <ion-select [(ngModel)]="objectCritere.carburant" cancelText="Annuler" okText="OK" >
+                      <ion-select [(ngModel)]="objectCritere.carburant" cancelText="Annuler" okText="OK" (ngModelChange) ="getNbOffreByCritre(objectCritere)">
                         <ion-option value="Diesel" selected="false">Diesel</ion-option>
                         <ion-option value="Essence">Essence</ion-option>
                       </ion-select>
@@ -121,7 +144,8 @@
                     <div class="guests bb">
                       <ion-item>
                         <ion-label>Boite de Vitesse</ion-label>
-                        <ion-select [(ngModel)]="objectCritere.boitevit" cancelText="Annuler" okText="OK">
+                        <ion-select [(ngModel)]="objectCritere.boitevit" cancelText="Annuler" okText="OK" (ngModelChange) ="getNbOffreByCritre(objectCritere)">
+                          <ion-option value="" selected="true"></ion-option>
                           <ion-option value="Manuel" selected="false">Manuel</ion-option>
                           <ion-option value="automatique">Automatique</ion-option>
                         </ion-select>
@@ -131,13 +155,12 @@
                 </ion-row>
       <ion-row>
         <ion-col>
-          <button ion-button block color="primary" class="round thirds-op" tappable (click)="getoffrebycritre(objectCritere)">
+          <button ion-button block color="primary" [disabled]= "nbOffre==0" class="round thirds-op" tappable (click)="getoffrebycritre(objectCritere)">
             <ion-icon name="search"></ion-icon> &nbsp;&nbsp;
-            Rechercher 
+             {{nbOffre}} Resultats
           </button>
         </ion-col>
       </ion-row>
     </ion-grid>
   </div>
-
 </ion-content>

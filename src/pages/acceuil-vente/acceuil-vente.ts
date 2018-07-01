@@ -52,13 +52,8 @@ export class AcceuilVentePage {
 
 
     goToOffreVenteDetails(offre){
-      //this.navParams.data = trajet ;
-     // this.navCtrl.push(trajet, {status: true})
      console.log('offre à afficher' + offre );
       this.navCtrl.push(OffreventeDetailsPage, {loffre : offre});
-  
-     // let modal = this.modalCtrl.create(TrajetDetailsPage);
-    //  modal.present();
     }
 
 
