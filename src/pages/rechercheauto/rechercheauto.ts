@@ -78,8 +78,10 @@ export class RechercheautoPage {
     .then(newsFetched => {
      this.alloffrefound = newsFetched;
      console.log('alloffrefound nb' , this.alloffrefound);
-     this.nbOffre =   this.alloffrefound.length;
-    
+     if (this.alloffrefound){
+      this.nbOffre =   this.alloffrefound.length;
+     }
+
     });
   }
 
