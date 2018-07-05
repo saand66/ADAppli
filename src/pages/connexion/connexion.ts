@@ -15,6 +15,7 @@ import { InscriptionPage } from '../inscription/inscription';
 import { UsersInfosService } from '../../services/UsersInfosService';
 import { AcceuilPage } from '../acceuil/acceuil';
 import { AcceuilVentePage } from '../acceuil-vente/acceuil-vente';
+import { SeetOffeVentePage } from '../seet-offe-vente/seet-offe-vente';
 /**
  * Generated class for the ConnexionPage page.
  *
@@ -75,7 +76,7 @@ export class ConnexionPage implements OnInit {
           this.usersInfosService.setUserPreNom(data.UserPrenom);
           this.usersInfosService.setUserNom(data.UserNom);
           this.usersInfosService.setUserIsLogin(true);
-          this.navCtrl.setRoot(AcceuilVentePage);
+          this.navCtrl.setRoot(SeetOffeVentePage);
         } else if (data && data.error) {
 
           this.messageerreur = data.error.error;
@@ -104,6 +105,12 @@ export class ConnexionPage implements OnInit {
     //this.navCtrl.setRoot(AcceuilPage);
     this.navCtrl.setRoot(AcceuilPage);
   }
+
+  goToSeetOffreVente(params){
+    if (!params) params = {};
+    this.navCtrl.push(SeetOffeVentePage);
+  }
+  
 
 }
 

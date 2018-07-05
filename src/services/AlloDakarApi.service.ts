@@ -23,8 +23,8 @@ import { ModeleVoit } from '../models/ModeleVoit';
 export class AlloDakarService {
 
   //Global
-   //private baseUrl: string = 'http://damaydem.com:49160/api/';
-  private baseUrl : string ='/api/';
+ private baseUrl: string = 'http://damaydem.com:49160/api/';
+// private baseUrl : string ='/api/';
 
     //users
   private serviceRegister: string = 'users/register';
@@ -40,6 +40,7 @@ export class AlloDakarService {
   //Offreventes
   private servicelistoffreventes: string = 'offreVentes';
   private servicelistoffreventesbycritere: string = 'offreVentes/filtre';
+  private servicecreateOffreVente: string = 'offreVentes/new';
 
 // Marques  
   private servicelistmarque: string = 'marques';
@@ -177,6 +178,22 @@ export class AlloDakarService {
       .catch(error => console.log('une erreur est survenue ' + error))
   }
 
+  public createOffreVente(objectoffre){
+
+    const url = `${this.baseUrl}${this.servicecreateOffreVente}`;
+    console.log("le token bey :", this.usersInfosService.getUserToken())
+    const headers = new HttpHeaders()
+      .set("Content-Type", "application/json")
+      .set("Authorization", 'Bearer ' + this.usersInfosService.getUserToken());
+    return this.http.post(url, objectoffre, { headers: headers })
+      //return this.http.post(url, NewTrajet, { headers: headers })
+      .toPromise()
+      .then(response => response)
+      .catch(error => error.json() )
+    //.catch(error => console.log ('une erreur est survenue ' + error))
+
+    
+  }
 
 
 }

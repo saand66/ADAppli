@@ -12,8 +12,8 @@
 
 <ion-content no-bounce>
    <super-tabs id="mainTabs" [config]="{ sideMenu: 'left' }" scrollTabs toolbarColor="light" toolbarBackground="dark" indicatorColor="yellow" badgeColor="yellow" (tabSelect)="onTabSelect($event)">
-    <super-tab [swipeBackEnabled]="false" [root]="rechercheauto" title="Auto" icon="ios-car" id="rechecheauto"></super-tab>
-     <super-tab [root]="recherchemoto" badge="5" title="moto" icon="bicycle" id="recherchemoto"></super-tab>
+    <super-tab [swipeBackEnabled]="false" [root]="rechercheauto" title="Auto" icon="ios-car" badge = "{{nbOffre}}" id="rechecheauto"></super-tab>
+     <super-tab [root]="recherchemoto" title="moto" icon="bicycle" id="recherchemoto"></super-tab>
     <super-tab [root]="rechercheutil" title="utilitaire" icon="bus" id="rechercheutil"></super-tab>
     <super-tab [root]="recherchecamion" title= "Camion" icon="bus" id="recherchecamion"></super-tab>
   </super-tabs>

@@ -17,6 +17,7 @@ import { UserprofilPage } from '../pages/userprofil/userprofil';
 import { UsermessagePage } from '../pages/usermessage/usermessage';
 import { EditProfilePage } from '../pages/edit-profile/edit-profile';
 import { SeetOffeVentePage } from '../pages/seet-offe-vente/seet-offe-vente';
+import { ProposerOffreVentePage } from '../pages/proposer-offre-vente/proposer-offre-vente';
 
 @Component({
   templateUrl: 'app.html'
@@ -146,8 +147,15 @@ export class MyApp implements OnInit{
   }
   
   
-
-
+  goToProposerOffre(params){
+    if (!params) params = {};
+    this.navCtrl.push(ProposerOffreVentePage);
+  }
+  goToSeetOffreVente(params){
+    if (!params) params = {};
+    this.navCtrl.push(SeetOffeVentePage);
+  }
+  
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario

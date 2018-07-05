@@ -9,6 +9,7 @@ import { SuperTabsController } from 'ionic2-super-tabs';
 import { SuperTabsModule } from 'ionic2-super-tabs';
 import { SuperTabs } from 'ionic2-super-tabs';
 import { UsersInfosService } from '../../services/UsersInfosService';
+import { AlloDakarService } from '../../services/AlloDakarApi.service';
 /**
  * Generated class for the SeetOffeVentePage page.
  *
@@ -33,15 +34,20 @@ export class SeetOffeVentePage {
   recherchecamion: any = RecherchecamionPage;
   rechercheutil: any = RechercheutilPage;
 
+  alloffrefound: any;
+  nbOffre: any;
+
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     private usersInfosService: UsersInfosService,
     public menu: MenuController,
-    private superTabsCtrl: SuperTabsController) {
+    private superTabsCtrl: SuperTabsController,
+    private alloDakarService: AlloDakarService) {
     console.log(usersInfosService.getUserNom());
     this.menu.swipeEnable(true);
     this.menu.enable(true);
+    this.getNbOffreByCritre(null);
   }
 
   ngAfterViewInit() {
@@ -55,4 +61,15 @@ export class SeetOffeVentePage {
   onTabSelect(tab: { index: number; id: string; }) {
     console.log(`Selected tab: `, tab);
   }
+
+  getNbOffreByCritre (objectCritere) {
+    console.log('objectCritere', objectCritere);
+     this.alloDakarService.getOffreVentebycritere(objectCritere)
+     .then(newsFetched => {
+      this.alloffrefound = newsFetched;
+      console.log('alloffrefound nb' , this.alloffrefound);
+      this.nbOffre =   this.alloffrefound.length;
+     
+     });
+   }
 }

@@ -1,0 +1,156 @@
+<!--
+  Generated template for the SeetOffeVentePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="animated fadeIn no-shadow">
+  <ion-navbar class="no-border thirds-op" color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Proposer Offre</ion-title>
+    </ion-navbar>
+  </ion-header>
+<ion-content padding>
+  <!--list menu on the top-->
+ 
+ 
+  <div class="booking-card marginB-16px">
+     <ion-grid class="card" fixed>
+       <ion-row>
+         <ion-col col-12 col-md-8 class="no-paddingT no-paddingB">
+           <div class="guests bb">
+             <ion-item>
+               <ion-label>Marque</ion-label>
+               <ion-select [(ngModel)]="objectOffre.marque" cancelText="Annuler" (ngModelChange) ="getModelsbyMarque($event)"> 
+                  <ion-option *ngFor="let marque of allmarques" [value]="marque">{{marque.marque}}</ion-option>    
+               </ion-select>
+             </ion-item>
+           </div>
+         </ion-col>
+       </ion-row>
+       <ion-row>
+         <ion-col col-12 col-md-8 class="no-paddingT no-paddingB">
+           <div class="guests bb">
+             <ion-item>
+               <ion-label>Modele</ion-label>
+               <ion-select [(ngModel)]="objectOffre.modele" cancelText="Annuler" okText="OK">
+                 <ion-option *ngFor="let modele of allmodeles" [value]="modele">{{modele.modele}}</ion-option> 
+               </ion-select>
+             </ion-item>
+           </div>
+         </ion-col>
+       </ion-row>
+       <ion-row>
+           <ion-col col-12 col-md-8 class="no-paddingT no-paddingB">
+             <div class="guests bb">
+               <ion-item>
+                 <ion-label>Prix</ion-label>
+                 <ion-input [(ngModel)]="objectOffre.prix" type="number" value=""></ion-input>
+               </ion-item>
+             </div>
+           </ion-col>
+         </ion-row>
+         <ion-row>
+             <ion-col col-12 col-md-8 class="no-paddingT no-paddingB">
+               <div class="guests bb">
+                 <ion-item>
+                   <ion-label>Année</ion-label>
+                   <ion-select [(ngModel)]="objectOffre.annee" cancelText="Annuler" okText="OK">
+                     <ion-option value="2000" selected="false">2000</ion-option>
+                     <ion-option value="2001">2001</ion-option>
+                     <ion-option value="2002">2002</ion-option>
+                     <ion-option value="2003">2003</ion-option>
+                     <ion-option value="2004">2004</ion-option>
+                     <ion-option value="2005">2005</ion-option>
+                     <ion-option value="2006">2006</ion-option>
+                     <ion-option value="2007">2007</ion-option>
+                     <ion-option value="2008">2008</ion-option>
+                     <ion-option value="2009">2009</ion-option>
+                     <ion-option value="2010">2010</ion-option>
+                     <ion-option value="2011">2011</ion-option>
+                     <ion-option value="2012">2012</ion-option>
+                     <ion-option value="2013">2013</ion-option>
+                     <ion-option value="2014">2014</ion-option>
+                     <ion-option value="2015">2015</ion-option>
+                   </ion-select>
+                 </ion-item>
+               </div>
+             </ion-col>
+           </ion-row>
+ 
+           <ion-row>
+               <ion-col col-12 col-md-8 class="no-paddingT no-paddingB">
+                 <div class="guests bb">
+                   <ion-item>
+                     <ion-label>Kilomètre</ion-label>
+                     <ion-input [(ngModel)]="objectOffre.kilometrage" type="number" value=""></ion-input>
+                   </ion-item>
+                 </div>
+               </ion-col>
+             </ion-row>
+             <ion-row>
+                 <ion-col col-12 col-md-8 class="no-paddingT no-paddingB">
+                   <div class="guests bb">
+                     <ion-item>
+                       <ion-label>Carburant</ion-label>
+                       <ion-select [(ngModel)]="objectOffre.carburant" cancelText="Annuler" okText="OK">
+                         <ion-option value="Diesel" selected="false">Diesel</ion-option>
+                         <ion-option value="Essence">Essence</ion-option>
+                       </ion-select>
+                     </ion-item>
+                   </div>
+                 </ion-col>
+               </ion-row>
+ 
+               <ion-row>
+                   <ion-col col-12 col-md-8 class="no-paddingT no-paddingB">
+                     <div class="guests bb">
+                       <ion-item>
+                         <ion-label>Boite de Vitesse</ion-label>
+                         <ion-select [(ngModel)]="objectOffre.boitevit" cancelText="Annuler" okText="OK">
+                           <ion-option value="" selected="true"></ion-option>
+                           <ion-option value="Manuel" selected="false">Manuel</ion-option>
+                           <ion-option value="automatique">Automatique</ion-option>
+                         </ion-select>
+                       </ion-item>
+                     </div>
+                   </ion-col>
+                 </ion-row>
+
+                 <ion-row>
+                  <ion-col col-12 col-md-8 class="no-paddingT no-paddingB">
+                    <div class="guests bb">
+                      <ion-item>
+                        <ion-label>Description</ion-label>
+                        <ion-textarea [(ngModel)]="objectOffre.description"></ion-textarea>
+                      </ion-item>
+                    </div>
+                  </ion-col>
+                </ion-row>
+
+
+                <ion-row>
+                  <ion-col col-12 col-md-8 class="no-paddingT no-paddingB">
+                    <div class="guests bb">
+                      <ion-item>
+                       <ion-label>Image 1  <ion-icon name="photos"></ion-icon> </ion-label>
+                       <ion-input type="file" placeholder="Parcourir" (change)="fileUpload($event)" id="file-input" style="opacity: 2" #fileInp>></ion-input>
+                      </ion-item>
+                    </div>
+                  </ion-col>
+                </ion-row>
+             
+       <ion-row>
+         <ion-col>
+           <button ion-button block color="primary" class="round thirds-op" tappable (click)="createOffreVente(objectOffre)">
+             <ion-icon name="search"></ion-icon> &nbsp;&nbsp;
+              Enregistrer
+           </button>
+         </ion-col>
+       </ion-row>
+     </ion-grid>
+   </div>
+ </ion-content>
+ 
