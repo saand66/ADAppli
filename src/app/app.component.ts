@@ -20,6 +20,7 @@ import { SeetOffeVentePage } from '../pages/seet-offe-vente/seet-offe-vente';
 import { ProposerOffreVentePage } from '../pages/proposer-offre-vente/proposer-offre-vente';
 
 @Component({
+  selector: "page-app",
   templateUrl: 'app.html'
 })
 export class MyApp implements OnInit{
@@ -34,8 +35,8 @@ export class MyApp implements OnInit{
   usernom : string;
   islogin : string;
   usertel : string;
-  usersInfosService: UsersInfosService;
-  task : number;
+/*   usersInfosService: UsersInfosService;
+ */  task : number;
   numberofresh: number = 1;
 
   ngOnInit(): void {
@@ -43,9 +44,8 @@ export class MyApp implements OnInit{
   }
 
   constructor(
-      usersInfosService: UsersInfosService,
-      private nativeStorage: NativeStorage,
-      public platform: Platform,
+      public usersInfosService: UsersInfosService,
+       public platform: Platform,
       public statusBar: StatusBar,
       public splashScreen: SplashScreen,
       public keyboard: Keyboard) {
@@ -98,7 +98,7 @@ export class MyApp implements OnInit{
     //this.usersInfosService.setUserIsLogin(false);
     this.islogin = "false";
     localStorage.clear();
-    this.navCtrl.setRoot(AlloDakarPage);
+    this.navCtrl.setRoot(SeetOffeVentePage);
   }
   
   goToInscription(params){
@@ -113,61 +113,60 @@ export class MyApp implements OnInit{
 
   goUserInfos() {
     // Put here the code you want to execute
-    console.log("mangui fi ")
     this.userprenom = localStorage.getItem("UserPrenom");
     this.usernom = localStorage.getItem("UserNom");
     this.islogin = localStorage.getItem("islogin");
     this.usertel = localStorage.getItem("UserTel");
-    /*this.userprenom = this.nativeStorage.getItem("UserPrenom");
-    this.usernom =  this.nativeStorage.getItem("UserNom");
-    this.islogin =  this.nativeStorage.getItem("islogin")*/
-    console.log(" this.userprenom " , this.userprenom);
 
-    console.log("  this.islogin " ,  this.islogin );
-  
+    console.log(this.userprenom);
+    console.log(this.islogin);
   }
 
+
+  isConnected() {
+    return this.usersInfosService.getUserIsLogin();
+  }
   goToSeetVoyage(params){
     if (!params) params = {};
-    this.navCtrl.push(SeetVoyagePage);
+    this.navCtrl.setRoot(SeetVoyagePage);
   }
 
   goToUsertrajet(params){
     if (!params) params = {};
-    this.navCtrl.push(UsertrajetPage);
+    this.navCtrl.setRoot(UsertrajetPage);
   }
 
   goToUserprofil(params){
     if (!params) params = {};
-    this.navCtrl.push(UserprofilPage);
+    this.navCtrl.setRoot(UserprofilPage);
   }
   goToUsermessage(params){
     if (!params) params = {};
-    this.navCtrl.push(UsermessagePage);
+    this.navCtrl.setRoot(UsermessagePage);
   }
   
   
   goToProposerOffre(params){
     if (!params) params = {};
-    this.navCtrl.push(ProposerOffreVentePage);
+    this.navCtrl.setRoot(ProposerOffreVentePage);
   }
   goToSeetOffreVente(params){
     if (!params) params = {};
-    this.navCtrl.push(SeetOffeVentePage);
+    this.navCtrl.setRoot(SeetOffeVentePage);
   }
   
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.navCtrl.push(page.component);
+    this.navCtrl.setRoot(page.component);
   }
 
   logout() {
-    this.navCtrl.push('page-login');
+    this.navCtrl.setRoot('page-login');
   }
 
   editProfile() {
-    this.navCtrl.push(EditProfilePage);
+    this.navCtrl.setRoot(EditProfilePage);
   }
 
  

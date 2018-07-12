@@ -30,7 +30,9 @@ page-inscription {
  }
  .content-md {
     color: rgba(86, 61, 124, 0.75);
-    background-color : rgba(86, 61, 124, 0.75);
+    background-image:linear-gradient(135deg, rgba(129, 96, 179, 0.75) 0%, #321d52 100%);
+ 
+  //  background-color : #503b71;
 }
 ion-item {
     position: relative;

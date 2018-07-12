@@ -1,90 +1,86 @@
+<ion-split-pane when="lg" (click)="goUserInfos()">
+  <ion-menu [content]="content" [persistent]="true" enable-menu-with-back-views="true"  >
+    <ion-header>
+      <ion-toolbar class="user-profile nav-transparent" no-padding>
 
-<ion-split-pane when="lg">
-<ion-menu  [content]="content" [persistent]="true" enable-menu-with-back-views="true">
-  <ion-header>
-    <ion-toolbar class="user-profile nav-transparent" no-padding>
+        <ion-grid class="white-bg">
+          <ion-row>
+            <ion-col col-4>
+              <ion-avatar item-start>
+                <img class="user-avatar" src="/assets/img/laat.jpeg">
+              </ion-avatar>
+            </ion-col>
+            <ion-col col-8>
+                <div padding-top>
+                  <h5 ion-text color="primary" class="bold" no-margin>{{userprenom}} {{usernom}}</h5>
+                  <hr />
+                  <h6 ion-text color="primary" class="normal" no-margin>Vous avez 0 offre</h6>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
 
-      <ion-grid class="white-bg">
-        <ion-row>
-          <ion-col col-4>
-            <ion-avatar item-start>
-              <img class="user-avatar" src="/assets/img/laat.jpeg">
-            </ion-avatar>
-          </ion-col>
-          <ion-col col-8>
-            <h4 ion-text color="primary" class="bold" no-margin>{{userprenom}} {{usernom}}</h4>
-            <p ion-text color="secondary" no-margin>{{usertel}}</p>
-            <div padding-top>
-              <button ion-button icon-left small color="secondary" menuClose (click)="editProfile()">
-                <ion-icon name="contact"></ion-icon>
-                Editer Profil
-              </button>
-              <button ion-button icon-left small color="secondary" menuClose (click)="goToDeconnexion()">
-                <ion-icon name="log-out"></ion-icon>
-              </button>
-            </div>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-
-      <ion-grid no-padding>
-        <ion-row class="other-data">
-          <ion-col text-center class="column">
-            <span ion-text color="light" class="bold">Points</span>
-            <h5 ion-text no-margin class="text-1x text-white">1124</h5>
-          </ion-col>
-          <ion-col text-center class="column">
-            <span ion-text color="light" class="bold">Fingua Nekk</span>
-            <h5 ion-text no-margin class="text-1x text-white">Louga</h5>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-
-    </ion-toolbar>
-  </ion-header>
+        <ion-grid no-padding>
+          <ion-row class="other-data">
+            <ion-col text-center class="column">
+              <span ion-text color="light" class="bold">DamayDem</span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-toolbar>
+    </ion-header>
 
 
 
-  <ion-content id="side-menu21" on-click="goUserInfos()">
-    <ion-list id="menu-list1">
-      <ion-item color="positive" menuClose="" on-click="goToAcceuil()" id="menu-list-item1">
+    <ion-content id="side-menu21" style="background-color: white">
+      <ion-list id="menu-list1">
+        <!-- <ion-item color="positive" menuClose="" on-click="goToAcceuil()" id="menu-list-item1">
           <ion-icon color= "primary" name="home" item-left></ion-icon>
         Home
-      </ion-item>
-      <ion-item color="positive" menuClose="" on-click="goToSeetOffreVente()" id="menu-list-item2">
-          <ion-icon color= "primary" name="search" item-left></ion-icon>
-        Rechercher
-      </ion-item>
-      <ion-item color="positive" menuClose="" on-click="goToProposerOffre()" id="menu-list-item3">
-          <ion-icon color= "primary" name="car" item-left></ion-icon>
-        Proposer
-      </ion-item>
-      <ion-item color="positive" menuClose="" on-click="goToInscription()" id="menu-list-item4">
-          <ion-icon color= "primary" color= "primary" name="create" item-left></ion-icon>
-        Inscription
-      </ion-item>
-      <ion-item *ngIf ="islogin=='false' || !islogin " color="positive" menuClose="" on-click="goToConnexion()" id="menu-list-item5">
-          <ion-icon color= "primary" color= "primary" name="log-in" item-left></ion-icon>
-        Connexion
-      </ion-item>
-      <ion-item *ngIf="islogin=='true'" color="positive" menuClose="" on-click="goToDeconnexion()" id="menu-list-item5">
-        <ion-icon color= "primary" name="log-out" item-left></ion-icon>
-         Deconnexion
-    </ion-item>
-      <ion-item color="positive" menuClose="" on-click="goToCloud()" id="menu-list-item6">
-          <ion-icon color= "primary" name="help-circle" item-left></ion-icon>
-        Aide
-      </ion-item>
-      <ion-item color="none" menuClose="" on-click="goToCart()" id="menu-list-item7">
-          <ion-icon color= "primary" name="information-circle" item-left></ion-icon>
-        A propos
-      </ion-item>
-    </ion-list>
-  </ion-content>
-</ion-menu>
+      </ion-item> -->
+        <ion-item color="positive" menuClose="" on-click="goToSeetOffreVente()" id="menu-list-item2">
+          <ion-icon color="primary" name="search" item-left></ion-icon>
+          Rechercher
+        </ion-item>
+        <ion-item color="positive" menuClose="" on-click="goToProposerOffre()" id="menu-list-item3">
+          <ion-icon color="primary" name="car" item-left></ion-icon>
+          Vendre
+        </ion-item>
+        <div *ngIf="!islogin">
+          <ion-item  color="positive" menuClose="" on-click="goToConnexion()" id="menu-list-item5">
+            <ion-icon color="primary" color="primary" name="log-in" item-left></ion-icon>
+            Connexion
+          </ion-item>
+
+          <ion-item color="positive" menuClose="" on-click="goToInscription()" id="menu-list-item4">
+            <ion-icon color="primary" color="primary" name="create" item-left></ion-icon>
+            Inscription
+          </ion-item>
+        </div>
+        <div *ngIf="islogin">
+          <ion-item  color="positive" menuClose="" (click)="editProfile()" id="menu-list-item5">
+            <ion-icon color="primary" color="primary" name="contact" item-left></ion-icon>
+            Mon compte
+          </ion-item>
+          <ion-item color="positive" menuClose="" on-click="goToDeconnexion()" id="menu-list-item5">
+            <ion-icon color="primary" name="log-out" item-left></ion-icon>
+            Deconnexion
+          </ion-item>
+        </div>
+        <ion-item color="positive" menuClose="" on-click="goToCloud()" id="menu-list-item6">
+          <ion-icon color="primary" name="help-circle" item-left></ion-icon>
+          Aide
+        </ion-item>
+        <ion-item color="none" menuClose="" on-click="goToCart()" id="menu-list-item7">
+          <ion-icon color="primary" name="information-circle" item-left></ion-icon>
+          A propos
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
   <ion-nav [root]="rootPage" main #content swipeBackEnabled="false"></ion-nav>
-  
-<!-- <ion-footer  style="width:100%;height:45px;">
+
+  <!-- <ion-footer  style="width:100%;height:45px;">
   <ion-toolbar color = "primary">
     <ion-segment [(ngModel)]="icons" color="dark">
 

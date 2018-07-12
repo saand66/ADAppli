@@ -6,8 +6,6 @@
 -->
 
 <ion-content padding>
- <!--list menu on the top-->
-
 
  <div class="booking-card marginB-16px">
     <ion-grid class="card" fixed>
@@ -16,10 +14,10 @@
           <div class="guests bb">
             <ion-item>
               <ion-label>Marque</ion-label>
-              <ion-select [(ngModel)]="objectCritere.marque" cancelText="Annuler" okText="OK" (ngModelChange) ="getModelsbyMarque($event)">
-                 <ion-option *ngFor="let marque of allmarques" [value]="marque">{{marque.marque}}</ion-option>    
+              <ion-select [(ngModel)]="objectCritere.marque" name="marque"  cancelText="Annuler" okText="OK" (ngModelChange) ="getModelsbyMarque($event)">
+                <ion-option *ngFor="let marque of allmarques" [value]="marque">{{marque.marque}}</ion-option>    
               </ion-select>
-            </ion-item>
+            </ion-item>  
           </div>
         </ion-col>
       </ion-row>
@@ -145,7 +143,6 @@
                       <ion-item>
                         <ion-label>Boite de Vitesse</ion-label>
                         <ion-select [(ngModel)]="objectCritere.boitevit" cancelText="Annuler" okText="OK" (ngModelChange) ="getNbOffreByCritre(objectCritere)">
-                          <ion-option value="" selected="true"></ion-option>
                           <ion-option value="Manuel" selected="false">Manuel</ion-option>
                           <ion-option value="automatique">Automatique</ion-option>
                         </ion-select>
@@ -157,7 +154,8 @@
         <ion-col>
           <button ion-button block color="primary" [disabled]= "nbOffre==0" class="round thirds-op" tappable (click)="getoffrebycritre(objectCritere)">
             <ion-icon name="search"></ion-icon> &nbsp;&nbsp;
-             {{nbOffre}} Resultats
+              <span *ngIf="nbOffre">  {{nbOffre}} Résultats </span>
+              <span *ngIf="!nbOffre">  Pas de Résultats </span>
           </button>
         </ion-col>
       </ion-row>

@@ -1,15 +1,17 @@
-import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
-import { AcceuilPage } from '../acceuil/acceuil';
-import { RechercheutilPage } from '../rechercheutil/rechercheutil';
-import { RecherchemotoPage } from '../recherchemoto/recherchemoto';
-import { RechercheautoPage } from '../rechercheauto/rechercheauto';
-import { RecherchecamionPage } from '../recherchecamion/recherchecamion';
-import { SuperTabsController } from 'ionic2-super-tabs';
-import { SuperTabsModule } from 'ionic2-super-tabs';
-import { SuperTabs } from 'ionic2-super-tabs';
-import { UsersInfosService } from '../../services/UsersInfosService';
-import { AlloDakarService } from '../../services/AlloDakarApi.service';
+import { Component, ViewChild, OnInit, Output, EventEmitter } from "@angular/core";
+import {
+  IonicPage,
+  NavController,
+  NavParams,
+  MenuController
+} from "ionic-angular";
+import { RechercheutilPage } from "../rechercheutil/rechercheutil";
+import { RecherchemotoPage } from "../recherchemoto/recherchemoto";
+import { RechercheautoPage } from "../rechercheauto/rechercheauto";
+import { RecherchecamionPage } from "../recherchecamion/recherchecamion";
+import { SuperTabsController } from "ionic2-super-tabs";
+import { SuperTabs } from "ionic2-super-tabs";
+import { AlloDakarService } from "../../services/AlloDakarApi.service";
 /**
  * Generated class for the SeetOffeVentePage page.
  *
@@ -18,15 +20,16 @@ import { AlloDakarService } from '../../services/AlloDakarApi.service';
  */
 
 @IonicPage({
-  segment: 'seet-offe-vente/:type'
+  segment: "seet-offe-vente/:type"
 })
 @Component({
-  selector: 'page-seet-offe-vente',
-  templateUrl: 'seet-offe-vente.html',
+  selector: "page-seet-offe-vente",
+  templateUrl: "seet-offe-vente.html"
 })
 export class SeetOffeVentePage {
-
+ 
   @ViewChild(SuperTabs) superTabs: SuperTabs;
+  @ViewChild(RechercheautoPage) rechercheautoPage: RechercheautoPage; 
 
   //rechercheauto: any = 'RechercheautoPage';
   rechercheauto: any = RechercheautoPage;
@@ -37,39 +40,53 @@ export class SeetOffeVentePage {
   alloffrefound: any;
   nbOffre: any;
 
+  nbObjectCrite = 0;
 
-  constructor(public navCtrl: NavController,
+  @Output()
+  change: EventEmitter<number> = new EventEmitter<number>();
+
+  constructor(
+    public navCtrl: NavController,
     public navParams: NavParams,
-    private usersInfosService: UsersInfosService,
     public menu: MenuController,
     private superTabsCtrl: SuperTabsController,
-    private alloDakarService: AlloDakarService) {
-    console.log(usersInfosService.getUserNom());
+    private alloDakarService: AlloDakarService
+  ) {
     this.menu.swipeEnable(true);
     this.menu.enable(true);
     this.getNbOffreByCritre(null);
   }
 
-  ngAfterViewInit() {
 
+  ngAfterViewInit() {}
+
+  getObjet() {
+    if(this.alloDakarService.getObjetCritere()) {
+      return this.nbObjectCrite = Object.keys(this.alloDakarService.getObjetCritere()).length;
+    }else{
+      return 0;
+    }
+  }
+
+  removeObjectCriter() {
+      this.rechercheautoPage.getObjet(this.alloDakarService.getObjetCritere());
   }
 
   hideToolbar() {
     this.superTabsCtrl.showToolbar(false);
   }
 
-  onTabSelect(tab: { index: number; id: string; }) {
+  onTabSelect(tab: { index: number; id: string }) {
     console.log(`Selected tab: `, tab);
   }
 
-  getNbOffreByCritre (objectCritere) {
-    console.log('objectCritere', objectCritere);
-     this.alloDakarService.getOffreVentebycritere(objectCritere)
-     .then(newsFetched => {
-      this.alloffrefound = newsFetched;
-      console.log('alloffrefound nb' , this.alloffrefound);
-      this.nbOffre =   this.alloffrefound.length;
-     
-     });
-   }
+  getNbOffreByCritre(objectCritere) {
+    this.alloDakarService
+      .getOffreVentebycritere(objectCritere)
+      .then(newsFetched => {
+        this.alloffrefound = newsFetched;
+        console.log("alloffrefound nb", this.alloffrefound);
+        this.nbOffre = this.alloffrefound.length;
+      });
+  }
 }

@@ -2,7 +2,7 @@
 
 import { NativeStorage } from '@ionic-native/native-storage';
 
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { IonicPage, NavController, AlertController, ToastController, MenuController, NavParams } from "ionic-angular";
 
@@ -16,6 +16,7 @@ import { UsersInfosService } from '../../services/UsersInfosService';
 import { AcceuilPage } from '../acceuil/acceuil';
 import { AcceuilVentePage } from '../acceuil-vente/acceuil-vente';
 import { SeetOffeVentePage } from '../seet-offe-vente/seet-offe-vente';
+import { MyApp } from '../../app/app.component';
 /**
  * Generated class for the ConnexionPage page.
  *
@@ -72,7 +73,7 @@ export class ConnexionPage implements OnInit {
           localStorage.setItem("UserTel", data.UserTel);
           localStorage.setItem("Token", data.token);
           localStorage.setItem("islogin", "true");
-          this.usersInfosService.setUserToken(data.token);
+          this.usersInfosService.setUserToken(data.token); 
           this.usersInfosService.setUserPreNom(data.UserPrenom);
           this.usersInfosService.setUserNom(data.UserNom);
           this.usersInfosService.setUserIsLogin(true);

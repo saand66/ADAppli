@@ -10,9 +10,7 @@ import 'rxjs/add/operator/map';
 
 import { Trajet } from '../models/AlloDakar-Trajet';
 import { Login } from '../models/AlloDakar-Login';
-import { NewUser } from '../models/AlloDakar-NewUser';
 import { NewTrajet } from '../models/AlloDakar-NewTrajet';
-import { ConnexionPage } from '../pages/connexion/connexion'
 import { UsersInfosService } from './UsersInfosService';
 import { Reservation } from '../models/Reservation';
 import {OffreVente} from '../models/OffreVente'
@@ -26,6 +24,7 @@ export class AlloDakarService {
  private baseUrl: string = 'http://damaydem.com:49160/api/';
 // private baseUrl : string ='/api/';
 
+  objetCriter = new OffreVente();
     //users
   private serviceRegister: string = 'users/register';
   private serviceLogin: string = 'users/login';
@@ -60,7 +59,7 @@ export class AlloDakarService {
     return this.http.get(url)
       .toPromise()
       .then(response => response as Trajet)
-      .catch(error => console.log('une erreur est survenue ' + error))
+      .catch(error => console.log('une erreur est survenue ' + error.message))
   }
 
 
@@ -195,5 +194,14 @@ export class AlloDakarService {
     
   }
 
+
+  public getObjetCritere() {
+    return this.objetCriter;
+
+  }
+
+  public setObjetCritere(objetCriter) {
+    this.objetCriter = objetCriter;
+  }
 
 }
