@@ -1,60 +1,119 @@
-<ion-menu  [content]="mainContent" >
-  <ion-header  class="bar-balanced" >
-    <ion-toolbar color = "primary">
-      <ion-title >
-        Allo Dakar Menu 
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content id="side-menu21" on-click="goUserInfos()">
-    
-    <div class="spacer" style="width:268px;height:30px;" id="menu-list-item1"></div>
-    <ion-list id="menu-list1">
-        <ion-item color="none" id="menu-list-item14">
-            <ion-avatar item-left>
-                <img src="assets/img/laat.jpeg">
-            </ion-avatar>
-            <h2>
-                {{userprenom}} {{usernom}}
-            </h2>
-          </ion-item>
-      <ion-item color="positive" menuClose="" on-click="goToAlloDakar()" id="menu-list-item1">
+<ion-split-pane when="lg" (click)="goUserInfos()">
+  <ion-menu [content]="content" [persistent]="true" enable-menu-with-back-views="true"  >
+    <ion-header>
+      <ion-toolbar class="user-profile nav-transparent" no-padding>
+
+        <ion-grid class="white-bg">
+          <ion-row>
+            <ion-col col-4>
+              <ion-avatar item-start>
+                <img class="user-avatar" src="/assets/img/laat.jpeg">
+              </ion-avatar>
+            </ion-col>
+            <ion-col col-8>
+                <div padding-top>
+                  <h5 ion-text color="primary" class="bold" no-margin>{{userprenom}} {{usernom}}</h5>
+                  <hr />
+                  <h6 ion-text color="primary" class="normal" no-margin>Vous avez 0 offre</h6>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-grid no-padding>
+          <ion-row class="other-data">
+            <ion-col text-center class="column">
+              <span ion-text color="light" class="bold">DamayDem</span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-toolbar>
+    </ion-header>
+
+
+
+    <ion-content id="side-menu21" style="background-color: white">
+      <ion-list id="menu-list1">
+        <!-- <ion-item color="positive" menuClose="" on-click="goToAcceuil()" id="menu-list-item1">
           <ion-icon color= "primary" name="home" item-left></ion-icon>
         Home
-      </ion-item>
-      <ion-item color="positive" menuClose="" on-click="goToAlloDakar()" id="menu-list-item2">
-          <ion-icon color= "primary" name="search" item-left></ion-icon>
-        Rechercher
-      </ion-item>
-      <ion-item color="positive" menuClose="" on-click="goToDamayTukki()" id="menu-list-item3">
-          <ion-icon color= "primary" name="car" item-left></ion-icon>
-        Proposer
-      </ion-item>
-      <ion-item color="positive" menuClose="" on-click="goToInscription()" id="menu-list-item4">
-          <ion-icon color= "primary" color= "primary" name="create" item-left></ion-icon>
-        Inscription
-      </ion-item>
-      <ion-item *ngIf ="islogin=='false' || !islogin " color="positive" menuClose="" on-click="goToConnexion()" id="menu-list-item5">
-          <ion-icon color= "primary" color= "primary" name="log-in" item-left></ion-icon>
-        Connexion
-      </ion-item>
-      <ion-item *ngIf="islogin=='true'" color="positive" menuClose="" on-click="goToDeconnexion()" id="menu-list-item5">
-        <ion-icon color= "primary" name="log-out" item-left></ion-icon>
-         Deconnexion
-    </ion-item>
-      <ion-item color="positive" menuClose="" on-click="goToCloud()" id="menu-list-item6">
-          <ion-icon color= "primary" name="help-circle" item-left></ion-icon>
-        Aide
-      </ion-item>
-      <ion-item color="none" menuClose="" on-click="goToCart()" id="menu-list-item7">
-          <ion-icon color= "primary" name="information-circle" item-left></ion-icon>
+      </ion-item> -->
+        <ion-item color="positive" menuClose="" on-click="goToSeetOffreVente()" id="menu-list-item2">
+          <ion-icon color="primary" name="search" item-left></ion-icon>
+          Rechercher
+        </ion-item>
+        <ion-item color="positive" menuClose="" on-click="goToProposerOffre()" id="menu-list-item3">
+          <ion-icon color="primary" name="car" item-left></ion-icon>
+          Vendre
+        </ion-item>
+        <div *ngIf="!islogin">
+          <ion-item  color="positive" menuClose="" on-click="goToConnexion()" id="menu-list-item5">
+            <ion-icon color="primary" color="primary" name="log-in" item-left></ion-icon>
+            Connexion
+          </ion-item>
+
+          <ion-item color="positive" menuClose="" on-click="goToInscription()" id="menu-list-item4">
+            <ion-icon color="primary" color="primary" name="create" item-left></ion-icon>
+            Inscription
+          </ion-item>
+        </div>
+        <div *ngIf="islogin">
+          <ion-item  color="positive" menuClose="" (click)="editProfile()" id="menu-list-item5">
+            <ion-icon color="primary" color="primary" name="contact" item-left></ion-icon>
+            Mon compte
+          </ion-item>
+          <ion-item color="positive" menuClose="" on-click="goToDeconnexion()" id="menu-list-item5">
+            <ion-icon color="primary" name="log-out" item-left></ion-icon>
+            Deconnexion
+          </ion-item>
+        </div>
+        <ion-item color="positive" menuClose="" on-click="goToCloud()" id="menu-list-item6">
+          <ion-icon color="primary" name="help-circle" item-left></ion-icon>
+          Aide
+        </ion-item>
+        <ion-item color="none" menuClose="" on-click="goToCart()" id="menu-list-item7">
+          <ion-icon color="primary" name="information-circle" item-left></ion-icon>
+          A propos
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-nav [root]="rootPage" main #content swipeBackEnabled="false"></ion-nav>
+
+  <!-- <ion-footer  style="width:100%;height:45px;">
+  <ion-toolbar color = "primary">
+    <ion-segment [(ngModel)]="icons" color="dark">
+
+        <ion-segment-button value="ios-home" on-click="goToAcceuil()">
+            <ion-icon name="ios-home"></ion-icon>
+         </ion-segment-button>
+    
+            <ion-segment-button value="car" on-click="goToUsertrajet()">
+                <ion-icon name="car"></ion-icon>
+             </ion-segment-button>
         
-        A propos
-      </ion-item>
-    </ion-list>
-  </ion-content>
-</ion-menu>
+      <ion-segment-button value="md-search"  on-click="goToSeetVoyage()">
+        <ion-icon name="md-search"></ion-icon>
+      </ion-segment-button>
+   
+    
+      <ion-segment-button value="md-add-circle" on-click="goToDamayTukki()">
+        <ion-icon name="md-add-circle"></ion-icon>
+      </ion-segment-button>
+    
+      <ion-segment-button value="ios-chatbubbles"  on-click="goToUsermessage()">
+          <ion-icon name="ios-chatbubbles"></ion-icon> 
+      </ion-segment-button>
+    
+      <ion-segment-button value="md-person" on-click="goToUserprofil()">
+        <ion-icon name="md-person"></ion-icon>
+      </ion-segment-button>
 
 
+    </ion-segment>
+  </ion-toolbar>
+  
+</ion-footer> -->
 
-<ion-nav #mainContent [root]="rootPage" [class]="theme"></ion-nav>
+
+</ion-split-pane>

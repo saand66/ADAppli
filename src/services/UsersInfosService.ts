@@ -44,6 +44,7 @@ export class UsersInfosService {
   }
 
   public getUserIsLogin() {
+    console.log("ebfef");
     return this.userIsLogin;
 
   }

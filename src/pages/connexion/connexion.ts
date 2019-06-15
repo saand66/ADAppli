@@ -1,14 +1,22 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AlertController } from 'ionic-angular';
+
+
 import { NativeStorage } from '@ionic-native/native-storage';
 
-import {AlloDakarService} from '../../services/AlloDakarApi.service';
-import {Login} from '../../models/AlloDakar-Login';
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { IonicPage, NavController, AlertController, ToastController, MenuController, NavParams } from "ionic-angular";
+
+
+import { AlloDakarService } from '../../services/AlloDakarApi.service';
+import { Login } from '../../models/AlloDakar-Login';
 import { TrajetPage } from '../trajet/trajet';
 import { AlloDakarPage } from '../allo-dakar/allo-dakar';
-import { InscriptionPage} from '../inscription/inscription';
+import { InscriptionPage } from '../inscription/inscription';
 import { UsersInfosService } from '../../services/UsersInfosService';
+import { AcceuilPage } from '../acceuil/acceuil';
+import { AcceuilVentePage } from '../acceuil-vente/acceuil-vente';
+import { SeetOffeVentePage } from '../seet-offe-vente/seet-offe-vente';
+import { MyApp } from '../../app/app.component';
 /**
  * Generated class for the ConnexionPage page.
  *
@@ -21,75 +29,91 @@ import { UsersInfosService } from '../../services/UsersInfosService';
   selector: 'page-connexion',
   templateUrl: 'connexion.html',
 })
-export class ConnexionPage {
+export class ConnexionPage implements OnInit {
+  public onLoginForm: FormGroup;
 
-    login : Login = new Login();
-    erreur : string;
-   
-   
+  login: Login = new Login();
+  erreur: string;
+  messageerreur: string;
+
+
+
   constructor(public navCtrl: NavController,
-      private alloDakarService: AlloDakarService,
-      private usersInfosService: UsersInfosService ,    
-      public alertCtrl: AlertController,
-      private nativeStorage: NativeStorage) {
-      
-   // this.Connexion();
+    private alloDakarService: AlloDakarService,
+    private usersInfosService: UsersInfosService,
+    public alertCtrl: AlertController,
+    private nativeStorage: NativeStorage,
+    private _fb: FormBuilder,
+    public menu: MenuController,
+    public toastCtrl: ToastController,
+  ) {
+    this.menu.swipeEnable(false);
+    this.menu.enable(false);
+    // this.Connexion();
   }
 
-   // connexion 
-   public Connexion() {
-    console.log(this.login);
-    this.alloDakarService.Connexion(this.login)
-    .then(data => {
-   
-
-      if (data && data.token){
-       localStorage.setItem("UserPrenom", data.UserPrenom);
-       localStorage.setItem("UserNom", data.UserNom);
-       localStorage.setItem("Token", data.token);
-       localStorage.setItem("islogin","true");
-        this.usersInfosService.setUserToken(data.token);
-        this.usersInfosService.setUserPreNom(data.UserPrenom);
-        this.usersInfosService.setUserNom(data.UserNom);
-        this.usersInfosService.setUserIsLogin(true);
-        this.nativeStorage.setItem("UserPrenom", data.UserPrenom);
-        this.nativeStorage.setItem("UserNom", data.UserNom);
-        this.nativeStorage.setItem("Token", data.token);
-        this.nativeStorage.setItem("islogin",true);
-
-       // this.alloDakarService.userNom = data.UserNom;
-      //  this.alloDakarService.userToken = data.token;
-      //  this.alloDakarService.userIsLogin = "true";
-
-        this.navCtrl.setRoot(AlloDakarPage);
-
-      }else  if (data && data.error){
-       this.erreur = data.error;
-
-       let alert = this.alertCtrl.create({
-        title: 'Probleme',
-        subTitle: this.erreur,
-        buttons: ['OK']
-      });
-      alert.present();
-
-      }
-       }).catch(function(err){
-      ///  return Response.status(500).json({ 'error':'impossible de verifier user'});
-  
+  ngOnInit() {
+    this.onLoginForm = this._fb.group({
+      telephone: ['', Validators.compose([
+        Validators.required
+      ])],
+      password: ['', Validators.compose([
+        Validators.required
+      ])]
     });
   }
-  
- 
+  // connexion 
+  public Connexion() {
+    this.alloDakarService.connexion(this.login)
+      .then(data => {
+
+        if (data && data.token) {
+          localStorage.setItem("UserPrenom", data.UserPrenom);
+          localStorage.setItem("UserNom", data.UserNom);
+          localStorage.setItem("UserTel", data.UserTel);
+          localStorage.setItem("Token", data.token);
+          localStorage.setItem("islogin", "true");
+          this.usersInfosService.setUserToken(data.token); 
+          this.usersInfosService.setUserPreNom(data.UserPrenom);
+          this.usersInfosService.setUserNom(data.UserNom);
+          this.usersInfosService.setUserIsLogin(true);
+          this.navCtrl.setRoot(SeetOffeVentePage);
+        } else if (data && data.error) {
+
+          this.messageerreur = data.error.error;
+          console.log("mon erreur : " + this.erreur);
+
+        }
+      }).catch(e => { console.log("test " + e); })
+  }
 
 
 
-  Inscription(params){
+
+  Inscription(params) {
     if (!params) params = {};
     this.navCtrl.push(InscriptionPage);
   }
 
+  goToJaayauto(params) {
+    if (!params) params = {};
+    this.navCtrl.setRoot(AcceuilVentePage);
   }
+
+
+  goToAcceuil(params) {
+    if (!params) params = {};
+    //this.navCtrl.setRoot(AcceuilPage);
+    this.navCtrl.setRoot(AcceuilPage);
+  }
+
+  goToSeetOffreVente(params){
+    if (!params) params = {};
+    this.navCtrl.push(SeetOffeVentePage);
+  }
+  
+
+}
 
 
 

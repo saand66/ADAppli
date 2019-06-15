@@ -10,25 +10,41 @@ import 'rxjs/add/operator/map';
 
 import { Trajet } from '../models/AlloDakar-Trajet';
 import { Login } from '../models/AlloDakar-Login';
-import { NewUser } from '../models/AlloDakar-NewUser';
 import { NewTrajet } from '../models/AlloDakar-NewTrajet';
-import { ConnexionPage } from '../pages/connexion/connexion'
 import { UsersInfosService } from './UsersInfosService';
+import { Reservation } from '../models/Reservation';
+import {OffreVente} from '../models/OffreVente'
+import { Marque } from '../models/Marque';
+import { ModeleVoit } from '../models/ModeleVoit';
 @Injectable()
 
 export class AlloDakarService {
 
- // private baseUrl: string = 'http://damaydem.com:49160/api/';
-  private baseUrl : string ='/api/';
+  //Global
+ private baseUrl: string = 'http://damaydem.com:49160/api/';
+// private baseUrl : string ='/api/';
+
+  objetCriter = new OffreVente();
+    //users
   private serviceRegister: string = 'users/register';
   private serviceLogin: string = 'users/login';
   private newtrajetpath: string = 'trajets/new';
+
+    //trajets
   private serviceList: string = 'trajets';
-  private serviceReser: string = 'trajets';
-  private serviceModifResev: string = 'trajets';
-  private serviceAnnulResev: string = 'trajets';
+  private serviceReser: string = 'reservation/new';
+  private serviceModifResev: string = 'reservation/modif';
+  private serviceAnnulResev: string = 'reservation/annul';
 
+  //Offreventes
+  private servicelistoffreventes: string = 'offreVentes';
+  private servicelistoffreventesbycritere: string = 'offreVentes/filtre';
+  private servicecreateOffreVente: string = 'offreVentes/new';
 
+// Marques  
+  private servicelistmarque: string = 'marques';
+  private servicelistmodelbymarque: string = 'marques/modeles';
+  
 
   constructor(private http: HttpClient, private usersInfosService: UsersInfosService) {
 
@@ -43,7 +59,7 @@ export class AlloDakarService {
     return this.http.get(url)
       .toPromise()
       .then(response => response as Trajet)
-      .catch(error => console.log('une erreur est survenue ' + error))
+      .catch(error => console.log('une erreur est survenue ' + error.message))
   }
 
 
@@ -54,16 +70,16 @@ export class AlloDakarService {
     return this.http.post(url, NewUser)
       .toPromise()
       .then(response => response)
-      .catch(error => console.log('une erreur est survenue ' + error))
+      .catch(error => error)
   }
 
 
-  public Connexion(Login) {
+  public connexion(Login) {
     const url = `${this.baseUrl}${this.serviceLogin}`;
     return this.http.post(url, Login)
       .toPromise()
       .then(response => response)
-      .catch(error => error.json())
+      .catch(error => error)
     //.catch(error => console.log ('une erreur est survenue ' + error))
   }
 
@@ -71,25 +87,30 @@ export class AlloDakarService {
 
   public NewTrajet(newTrajet: NewTrajet) {
     const url = `${this.baseUrl}${this.newtrajetpath}`;
+    console.log("le token bey :", this.usersInfosService.getUserToken())
     const headers = new HttpHeaders()
       .set("Content-Type", "application/json")
       .set("Authorization", 'Bearer ' + this.usersInfosService.getUserToken());
-    console.log("le token bey :", this.usersInfosService.getUserToken())
-
     return this.http.post(url, newTrajet, { headers: headers })
       //return this.http.post(url, NewTrajet, { headers: headers })
       .toPromise()
       .then(response => response)
-      .catch(error => error.json())
+      .catch(error => error.json() )
     //.catch(error => console.log ('une erreur est survenue ' + error))
   }
 
-  public reserv() {
+  public reserv(newReservation : Reservation) {
     const url = `${this.baseUrl}${this.serviceReser}`;
-    return this.http.post(url, Login)
+    const headers = new HttpHeaders()
+      .set("Content-Type", "application/json")
+      .set("Authorization", 'Bearer ' + this.usersInfosService.getUserToken());
+  
+
+    return this.http.post(url,newReservation, { headers: headers })
       .toPromise()
       .then(response => response)
       .catch(error => error.json())
+      
     //.catch(error => console.log ('une erreur est survenue ' + error))
   }
 
@@ -108,6 +129,79 @@ export class AlloDakarService {
       .then(response => response)
       .catch(error => error.json())
     //.catch(error => console.log ('une erreur est survenue ' + error))
+  }
+
+
+
+  // Offres Ventes 
+  
+  public getOffreVente() {
+    const url = `${this.baseUrl}${this.servicelistoffreventes}`;
+    // const url = this.baseUrl;
+    return this.http.get(url)
+      .toPromise()
+      .then(response => response as OffreVente)
+      .catch(error => console.log('une erreur est survenue ' + error))
+  }
+
+  public getOffreVentebycritere(critere){
+    const url = `${this.baseUrl}${this.servicelistoffreventesbycritere}`;
+    // const url = this.baseUrl;
+    return this.http.post(url,critere)
+      .toPromise()
+      .then(response => response as ModeleVoit)
+      .catch(error => console.log('une erreur est survenue ' + error))
+  }
+
+
+
+  // Marques 
+  
+  public getAllMarque() {
+    const url = `${this.baseUrl}${this.servicelistmarque}`;
+    // const url = this.baseUrl;
+    return this.http.get(url)
+      .toPromise()
+      .then(response => response as Marque)
+      .catch(error => console.log('une erreur est survenue ' + error))
+  }
+
+  public getModelsbyMarque(id) {
+   let mymarque = new Marque();
+    const url = `${this.baseUrl}${this.servicelistmodelbymarque}`;
+    // const url = this.baseUrl;
+    mymarque.id = id;
+    return this.http.post(url, mymarque)
+      .toPromise()
+      .then(response => response as ModeleVoit)
+      .catch(error => console.log('une erreur est survenue ' + error))
+  }
+
+  public createOffreVente(objectoffre){
+
+    const url = `${this.baseUrl}${this.servicecreateOffreVente}`;
+    console.log("le token bey :", this.usersInfosService.getUserToken())
+    const headers = new HttpHeaders()
+      .set("Content-Type", "application/json")
+      .set("Authorization", 'Bearer ' + this.usersInfosService.getUserToken());
+    return this.http.post(url, objectoffre, { headers: headers })
+      //return this.http.post(url, NewTrajet, { headers: headers })
+      .toPromise()
+      .then(response => response)
+      .catch(error => error.json() )
+    //.catch(error => console.log ('une erreur est survenue ' + error))
+
+    
+  }
+
+
+  public getObjetCritere() {
+    return this.objetCriter;
+
+  }
+
+  public setObjetCritere(objetCriter) {
+    this.objetCriter = objetCriter;
   }
 
 }

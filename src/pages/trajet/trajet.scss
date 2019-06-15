@@ -1,27 +1,28 @@
-page-trajet {
-    .card-background-page {
+page-trajet, {
+.trips {
+	.card {
+		border-radius: 1rem
+	}
+  .trip {
+    overflow: hidden;
 
-        ion-card {
-          position: relative;
-          text-align: center;
-        }
-      
-        .card-title {
-          position: absolute;
-          top: 36%;
-          font-size: 2.0em;
+    .background {
+      background-size: 100% auto;
+      background-position: center;
+
+      .background-filter {
+        height: 16rem;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.65));
+
+        .align-bottom {
           width: 100%;
-          font-weight: bold;
-          color: #fff;
+
+          h6 {
+            margin-top: 0;
+          }
         }
-      
-        .card-subtitle {
-          font-size: 1.0em;
-          position: absolute;
-          top: 52%;
-          width: 100%;
-          color: #fff;
-        }
-      
       }
+    }
+  }
+}
 }

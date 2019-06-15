@@ -1,0 +1,116 @@
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>trajetDetails</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+      <ion-card>
+  
+          <ion-item>
+            <ion-avatar item-start>
+             
+            </ion-avatar>
+             <ion-card-title>
+                <h3> {{trajetstodetails.lieuDep + " - " + trajetstodetails.lieuArr}}</h3> 
+              </ion-card-title>
+            </ion-item> 
+          <ion-card-content>
+  
+              <ion-item>  
+              
+                  <p>
+                      <b>Arrivée :</b>   {{trajetstodetails.lieuArr}}
+                  </p>
+             <p>
+                 <b>Date de départ :</b> {{trajetstodetails.dateDep}}
+             </p>
+             <p>
+                <b>Heure :</b> {{trajetstodetails.heureDep}}
+             </p>
+             <p>
+                 <b>Tarif :</b> {{trajetstodetails.tarifvoy}}
+             </p>
+             <p>
+                 <b>Nombre de place : </b> {{trajetstodetails.nbplacedispo}}
+             </p>
+    
+             <p>
+                 <b>Posté par : </b> {{trajetstodetails.User.prenom}}
+             </p>
+            </ion-item>
+  
+  
+          </ion-card-content>
+          <ion-row>
+            <ion-col>
+              <button ion-button icon-left clear small>
+                <ion-icon name="text"></ion-icon>
+                <div>4 Comments</div>
+              </button>
+            </ion-col>
+            <ion-col center text-center>
+              <ion-note>
+                11h ago
+              </ion-note>
+            </ion-col>
+          </ion-row>
+        
+        </ion-card>
+        <ion-card>
+  
+          <ion-item>
+            <ion-avatar item-start>
+             
+            </ion-avatar>
+             <ion-card-title>
+              
+              </ion-card-title>
+            </ion-item> 
+            
+          <ion-card-content>
+              
+              <ion-item-group> 
+                    <ion-row center> 
+                  <ion-item-divider color="primary"></ion-item-divider> 
+                  <ion-col text-center>   
+                    <ion-item>
+                      <ion-label>J'accepte les Conditions Générales</ion-label>
+                      <ion-checkbox color="dark" checked="true"></ion-checkbox>
+                      </ion-item>
+                   </ion-col> 
+                  </ion-row>
+                  <ion-item-divider color="primary"></ion-item-divider> 
+                  <ion-row center>  
+                      <ion-col text-center>   
+                      <ion-item>
+                          <ion-label>Nombre de place</ion-label>
+                        <ion-select [(ngModel)]="nbplace" name="nbplace">
+                          <ion-option>1</ion-option>
+                          <ion-option>2</ion-option>
+                          <ion-option>3</ion-option>
+                          <ion-option>4</ion-option>
+                          <ion-option>5</ion-option>
+                          <ion-option>6</ion-option>
+                        </ion-select>
+                      </ion-item>
+                     </ion-col> 
+                    </ion-row>
+                    <ion-item-divider color="primary"></ion-item-divider> 
+                    <ion-row center>  
+                     <ion-col text-center>   
+                      <button  ion-button  style="width:300px;height:60px;" round id="alloDakar-button3"  on-click="goToReservation(trajetstodetails)">
+                          Reserver
+                        </button>
+                     </ion-col> 
+                    </ion-row>
+                  </ion-item-group>
+          </ion-card-content>
+          
+        
+        </ion-card>
+  
+  </ion-content>

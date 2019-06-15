@@ -1,0 +1,31 @@
+<ion-header class='animated fadeIn no-shadow'>
+  <ion-navbar class='no-border thirds-op' color='primary'>
+    <button ion-button menuToggle>
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-row>
+      <ion-col width-90>
+        <ion-title>Rechercher un véhicule</ion-title>
+      </ion-col>
+      <ion-col width-10>
+        <!-- <button *ngIf="getObjet() > 0" item-right clear (click)='removeObjectCriter()'>
+                <ion-icon name="trash"></ion-icon>
+            </button> -->
+        <ion-title *ngIf="getObjet() > 0">
+          <ion-icon name="trash" (click)="removeObjectCriter()"></ion-icon>
+        </ion-title>
+      </ion-col>
+    </ion-row>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+  <super-tabs id='mainTabs' [config]='{ sideMenu: "left" }' scrollTabs toolbarColor='light' toolbarBackground='dark' indicatorColor='yellow'
+  badgeColor='yellow' (tabSelect)='onTabSelect($event)'>
+  <super-tab [swipeBackEnabled]='false' [root]='rechercheauto' (click)="removeObjectCriter()" title='Auto' icon='ios-car' id='rechecheauto'></super-tab>
+  <super-tab [root]='recherchemoto' title='moto' icon='bicycle' id='recherchemoto'></super-tab>
+  <super-tab [root]='recherchecamion' title='Camion' icon='bus' id='recherchecamion'></super-tab>
+  <!--     <super-tab [root]='rechercheutil' title='utilitaire' icon='bus' id='rechercheutil'></super-tab>
+  --></super-tabs>
+  <page-rechercheauto></page-rechercheauto>
+</ion-content>

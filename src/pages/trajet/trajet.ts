@@ -23,7 +23,7 @@ export class TrajetPage {
 
  // trajets : Trajet = new Trajet();
   trajets : any;
-  
+  pathcovoit : string = "http://damaydem.com/images/damaydem/covoit/dest/"
    constructor(public navCtrl: NavController, private alloDakarService: AlloDakarService, public navParams: NavParams) {
     
     this.getTrajet(null);
